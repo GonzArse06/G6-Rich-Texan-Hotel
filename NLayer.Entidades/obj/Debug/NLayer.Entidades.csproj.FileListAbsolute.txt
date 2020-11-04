@@ -1,0 +1,16 @@
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\obj\Debug\NLayer.Entidades.csprojAssemblyReference.cache
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\obj\Debug\NLayer.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\NLayer.Entidades.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\NLayer.Entidades.pdb
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Flurl.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Flurl.Http.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\System.ValueTuple.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Flurl.pdb
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Flurl.xml
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Flurl.Http.pdb
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\bin\Debug\System.ValueTuple.xml
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\obj\Debug\NLayer.Entidades.csproj.CopyComplete
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\obj\Debug\NLayer.Entidades.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Entidades\obj\Debug\NLayer.Entidades.pdb

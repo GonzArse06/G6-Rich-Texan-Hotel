@@ -1,0 +1,16 @@
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Formularios.exe.config
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Formularios.exe
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Formularios.pdb
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.csprojAssemblyReference.cache
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.Form1.resources
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.Properties.Resources.resources
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.csproj.GenerateResource.cache
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.csproj.CoreCompileInputs.cache
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.csproj.CopyComplete
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.exe
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.pdb
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Entidades.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Negocios.dll
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Entidades.pdb
+C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Negocios.pdb

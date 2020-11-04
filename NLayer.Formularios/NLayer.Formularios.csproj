@@ -83,5 +83,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NLayer.Entidades\NLayer.Entidades.csproj">
+      <Project>{7dc1d831-e34f-41ed-89b9-006fbce5ebe4}</Project>
+      <Name>NLayer.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NLayer.Negocios\NLayer.Negocios.csproj">
+      <Project>{2adfcc5a-6d5c-477b-97c8-60b4163abb84}</Project>
+      <Name>NLayer.Negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
