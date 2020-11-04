@@ -49,50 +49,56 @@
             this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdCliente.Location = new System.Drawing.Point(21, 41);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(103, 29);
+            this.lblIdCliente.Size = new System.Drawing.Size(82, 23);
             this.lblIdCliente.TabIndex = 0;
             this.lblIdCliente.Text = "Id Cliente";
             // 
             // txtIdCliente
             // 
+            this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCliente.Location = new System.Drawing.Point(130, 41);
             this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(214, 22);
+            this.txtIdCliente.Size = new System.Drawing.Size(217, 29);
             this.txtIdCliente.TabIndex = 1;
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(130, 143);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 22);
+            this.textBox1.Size = new System.Drawing.Size(217, 29);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(130, 190);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(214, 22);
+            this.textBox2.Size = new System.Drawing.Size(217, 29);
             this.textBox2.TabIndex = 4;
             // 
             // textBox3
             // 
+            this.textBox3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(130, 234);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(214, 22);
+            this.textBox3.Size = new System.Drawing.Size(217, 29);
             this.textBox3.TabIndex = 5;
             // 
             // textBox4
             // 
+            this.textBox4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(130, 285);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(214, 22);
+            this.textBox4.Size = new System.Drawing.Size(217, 29);
             this.textBox4.TabIndex = 6;
             // 
             // textBox6
             // 
+            this.textBox6.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(130, 92);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(214, 22);
+            this.textBox6.Size = new System.Drawing.Size(217, 29);
             this.textBox6.TabIndex = 2;
             // 
             // lblNombre
@@ -101,7 +107,7 @@
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(21, 91);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(91, 29);
+            this.lblNombre.Size = new System.Drawing.Size(73, 23);
             this.lblNombre.TabIndex = 8;
             this.lblNombre.Text = "Nombre";
             // 
@@ -111,7 +117,7 @@
             this.lblApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.Location = new System.Drawing.Point(21, 143);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(90, 29);
+            this.lblApellido.Size = new System.Drawing.Size(72, 23);
             this.lblApellido.TabIndex = 9;
             this.lblApellido.Text = "Apellido";
             // 
@@ -131,7 +137,7 @@
             this.lblTelefono.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.Location = new System.Drawing.Point(21, 233);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(94, 29);
+            this.lblTelefono.Size = new System.Drawing.Size(75, 23);
             this.lblTelefono.TabIndex = 11;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -141,7 +147,7 @@
             this.lblMail.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMail.Location = new System.Drawing.Point(21, 284);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(73, 29);
+            this.lblMail.Size = new System.Drawing.Size(58, 23);
             this.lblMail.TabIndex = 12;
             this.lblMail.Text = "E-Mail";
             // 
@@ -154,7 +160,7 @@
             this.listBox1.Size = new System.Drawing.Size(568, 228);
             this.listBox1.TabIndex = 13;
             // 
-            // FormClientes
+            // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +178,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lblIdCliente);
-            this.Name = "FormClientes";
+            this.Name = "FrmClientes";
             this.Text = "FormClientes";
             this.ResumeLayout(false);
             this.PerformLayout();
