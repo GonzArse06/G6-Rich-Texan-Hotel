@@ -199,7 +199,7 @@
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lblIdCliente);
             this.Name = "FrmReservas";
-            this.Text = "FrmReservas";
+            this.Text = "Reservas";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

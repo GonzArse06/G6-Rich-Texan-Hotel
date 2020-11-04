@@ -41,6 +41,9 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblMail = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIdCliente
@@ -160,11 +163,28 @@
             this.listBox1.Size = new System.Drawing.Size(568, 228);
             this.listBox1.TabIndex = 13;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblResultado});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 367);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(969, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 389);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblMail);
             this.Controls.Add(this.lblTelefono);
@@ -179,7 +199,9 @@
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lblIdCliente);
             this.Name = "FrmClientes";
-            this.Text = "FormClientes";
+            this.Text = "Clientes";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +222,7 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblResultado;
     }
 }
