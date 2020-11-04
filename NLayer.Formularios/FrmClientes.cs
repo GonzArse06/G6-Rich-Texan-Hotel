@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NLayer.Formularios
 {
-    public partial class Form1 : Form
+    public partial class FrmClientes : Form
     {
-        public Form1()
+        public FrmClientes()
         {
             InitializeComponent();
         }
