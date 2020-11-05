@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.Negocios
+namespace NLayer.Formularios
 {
-    public class Class1
+    public enum AbmTipo
     {
+        Alta,Baja,Modificacion
     }
 }

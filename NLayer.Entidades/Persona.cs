@@ -15,6 +15,7 @@ namespace NLayer.Entidades
         protected string _apellido;
         private string _direccion;
         private string _mail;
+        private int _telefono;
         private int _id;
 
 
@@ -30,10 +31,10 @@ namespace NLayer.Entidades
         public string Direccion { get => _direccion; set => _direccion = value; }
 
         [DataMember]
-        public string Mail { get => _mail; set => _mail = value; }
+        public string Email { get => _mail; set => _mail = value; }
 
         [DataMember]
-        public string Telefono { get; set; }
+        public int Telefono { get => _telefono; set => _telefono = value; }
 
 
     }

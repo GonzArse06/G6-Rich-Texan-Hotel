@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Entidades
 {
-    [DataContract]
+    //[DataContract]
     public class TransactionResult
     {
         public bool IsOk { get; set; }

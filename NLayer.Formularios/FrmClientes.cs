@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NLayer.Entidades;
+using NLayer.Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,55 @@ namespace NLayer.Formularios
 {
     public partial class FrmClientes : Form
     {
+        Form formularios;
+        ClienteServicios _clienteServicios;
+        List<Cliente> _cliente;
+        ListViewItem _listViewItem;
         public FrmClientes()
         {
             InitializeComponent();
+            _clienteServicios = new ClienteServicios();
+            _cliente = new List<Cliente>();
+            _listViewItem = new ListViewItem();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            formularios = new FrmAbmClientes(AbmTipo.Alta);
+            formularios.Show();
+            CargarListView();
+        }
+
+        private void FrmClientes_Load(object sender, EventArgs e)
+        {            
+            CargarListView();
+
+        }
+        private void CargarListView()
+        {
+            lstClientes.Items.Clear();
+
+            _cliente = _clienteServicios.TraerTodo();            
+            foreach (Cliente a in _cliente)
+            {
+                _listViewItem = lstClientes.Items.Add(a.Id.ToString());
+                _listViewItem.SubItems.Add(a.Nombre);
+                _listViewItem.SubItems.Add(a.Apellido);
+                _listViewItem.SubItems.Add(a.Direccion);
+                _listViewItem.SubItems.Add(a.Email);
+                _listViewItem.SubItems.Add(a.Telefono.ToString());
+                _listViewItem.SubItems.Add(a.FechaAlta.ToString("d"));
+            }
         }
     }
 }

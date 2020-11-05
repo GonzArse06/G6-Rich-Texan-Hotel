@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -18,8 +19,10 @@ namespace NLayer.Entidades
 
         public Cliente()
         {
-            this.Usuario = "pau";
+            //this.Usuario = "pau";
+            this.Usuario = ConfigurationManager.AppSettings["Legajo"];
             this.fechaAlta = DateTime.Now;
+            this.activo = true;
         }
 
         public bool Activo
