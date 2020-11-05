@@ -27,7 +27,7 @@ namespace NLayer.Formularios
                     //
                     break;
                 case AbmTipo.Modificacion:
-                    //
+                    InicializarModificacion();
                     break;
 
             }
@@ -36,6 +36,12 @@ namespace NLayer.Formularios
         {
             txtIdCliente.Enabled = false;
             btnBuscarCliente.Visible = false;
+        }
+
+        private void InicializarModificacion()
+        {            
+            
+
         }
             
         private void btnGuardar_Click(object sender, EventArgs e)

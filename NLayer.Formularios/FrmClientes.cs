@@ -64,5 +64,15 @@ namespace NLayer.Formularios
                 _listViewItem.SubItems.Add(a.FechaAlta.ToString("d"));
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ListViewItem items = (ListViewItem)lstClientes.SelectedItems[0];
+            Cliente cliente = new Cliente();
+            cliente.Id = int.Parse(items.Text);
+            cliente.Nombre = items.SubItems[1].Text;
+
+
+        }
     }
 }

@@ -33,8 +33,6 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnExportarExcel = new FontAwesome.Sharp.IconButton();
             this.lstClientes = new System.Windows.Forms.ListView();
-            this.txtBuscador = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chApellido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,6 +40,8 @@
             this.chMail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chTelefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFechaAlta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtBuscador = new System.Windows.Forms.TextBox();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // btnNuevo
@@ -74,6 +74,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // iconButton2
             // 
@@ -115,6 +116,7 @@
             this.chMail,
             this.chTelefono,
             this.chFechaAlta});
+            this.lstClientes.FullRowSelect = true;
             this.lstClientes.HideSelection = false;
             this.lstClientes.Location = new System.Drawing.Point(12, 90);
             this.lstClientes.Name = "lstClientes";
@@ -122,28 +124,6 @@
             this.lstClientes.TabIndex = 4;
             this.lstClientes.UseCompatibleStateImageBehavior = false;
             this.lstClientes.View = System.Windows.Forms.View.Details;
-            // 
-            // txtBuscador
-            // 
-            this.txtBuscador.Location = new System.Drawing.Point(12, 62);
-            this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(562, 22);
-            this.txtBuscador.TabIndex = 5;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(1097, 36);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Rotation = 0D;
-            this.btnCerrar.Size = new System.Drawing.Size(53, 38);
-            this.btnCerrar.TabIndex = 6;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // chId
             // 
@@ -177,6 +157,28 @@
             // chFechaAlta
             // 
             this.chFechaAlta.Text = "Fecha Alta";
+            // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Location = new System.Drawing.Point(12, 62);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(600, 22);
+            this.txtBuscador.TabIndex = 5;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCerrar.IconColor = System.Drawing.Color.Black;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 28;
+            this.btnCerrar.Location = new System.Drawing.Point(1097, 36);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Rotation = 0D;
+            this.btnCerrar.Size = new System.Drawing.Size(53, 38);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmClientes
             // 
