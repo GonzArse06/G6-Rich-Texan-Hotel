@@ -14,11 +14,12 @@ namespace NLayer.Formularios
 {
     public partial class FrmAbmClientes : Form
     {
-        
+        AbmTipo _tipo;
         public FrmAbmClientes(AbmTipo tipo)
         {
             InitializeComponent();
-            switch (tipo)
+            _tipo = tipo;
+            switch (_tipo)
             {
                 case AbmTipo.Alta:
                     InicializarAlta();
@@ -29,7 +30,6 @@ namespace NLayer.Formularios
                 case AbmTipo.Modificacion:
                     InicializarModificacion();
                     break;
-
             }
         }
         private void InicializarAlta()
@@ -39,12 +39,37 @@ namespace NLayer.Formularios
         }
 
         private void InicializarModificacion()
-        {            
-            
+        {
+            txtIdCliente.Enabled = false;
+            btnBuscarCliente.Visible = true;
+            ListViewItem item = ((FrmClientes)Owner).Item;
 
         }
             
         private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            switch(_tipo)
+            {
+                case AbmTipo.Alta:
+                    GuardarNuevo();
+                    break;
+                case AbmTipo.Baja:
+                    //
+                    break;
+                case AbmTipo.Modificacion:
+                    GuardarModificacion();
+                    break;
+            }
+        }
+
+        private void GuardarModificacion()
+        {
+            lblResultado.Text = "";
+            Cliente cliente = new Cliente();
+            string mensaje = Validaciones();
+        }
+
+        private void GuardarNuevo()
         {
             lblResultado.Text = "";
             Cliente cliente = new Cliente();
@@ -52,26 +77,24 @@ namespace NLayer.Formularios
             if (mensaje != "")
                 MessageBox.Show(mensaje);
             else
-            { 
+            {
                 cliente.Nombre = txtNombre.Text;
                 cliente.Apellido = txtApellido.Text;
                 cliente.Direccion = txtDireccion.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
                 cliente.Email = txtMail.Text;
-
                 ClienteServicios clienteServicios = new ClienteServicios();
                 int resultado = clienteServicios.IngresarCliente(cliente);
                 if (resultado == -1)
                     lblResultado.Text = "No se pudo crear el cliente";
                 else
-                { 
+                {
                     lblResultado.Text = "Se creo con exito el cliente ID " + resultado;
                     LimpiarTextBox();
                 }
-
             }
-
         }
+
         private string Validaciones()
         {
             string mensaje = "";
@@ -83,7 +106,6 @@ namespace NLayer.Formularios
                     if (string.IsNullOrEmpty(a.Text))
                         mensaje = "No puede haber textos vacios";
                 }
-
             }
             return mensaje;
         }
@@ -95,7 +117,6 @@ namespace NLayer.Formularios
                 {
                     a.Text = string.Empty;
                 }
-
             }
         }
     }

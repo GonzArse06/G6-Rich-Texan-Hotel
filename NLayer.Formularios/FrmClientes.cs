@@ -18,6 +18,8 @@ namespace NLayer.Formularios
         ClienteServicios _clienteServicios;
         List<Cliente> _cliente;
         ListViewItem _listViewItem;
+        ListViewItem _items;
+        public ListViewItem Item { get => _items; }
         public FrmClientes()
         {
             InitializeComponent();
@@ -39,7 +41,9 @@ namespace NLayer.Formularios
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             formularios = new FrmAbmClientes(AbmTipo.Alta);
+            formularios.Owner = this;
             formularios.Show();
+
             CargarListView();
         }
 
@@ -67,11 +71,11 @@ namespace NLayer.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            ListViewItem items = (ListViewItem)lstClientes.SelectedItems[0];
+            _items = (ListViewItem)lstClientes.SelectedItems[0];
             Cliente cliente = new Cliente();
-            cliente.Id = int.Parse(items.Text);
-            cliente.Nombre = items.SubItems[1].Text;
-
+            cliente.Id = int.Parse(_items.Text);
+            cliente.Nombre = _items.SubItems[1].Text;
+            //esto pasar a ABMCliente para cargar el form con los datos del ListView.
 
         }
     }
