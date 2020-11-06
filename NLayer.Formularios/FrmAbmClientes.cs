@@ -24,9 +24,6 @@ namespace NLayer.Formularios
                 case AbmTipo.Alta:
                     InicializarAlta();
                     break;
-                case AbmTipo.Baja:
-                    //
-                    break;
                 case AbmTipo.Modificacion:
                     InicializarModificacion();
                     break;
@@ -58,27 +55,35 @@ namespace NLayer.Formularios
                 MessageBox.Show(mensaje);
             else
             {
-                cliente.Nombre = txtNombre.Text;
-                cliente.Apellido = txtApellido.Text;
-                cliente.Direccion = txtDireccion.Text;
-                cliente.Telefono = int.Parse(txtTelefono.Text);
-                cliente.Email = txtMail.Text;
-                ClienteServicios clienteServicios = new ClienteServicios();
-                int resultado=-1;
-                switch (_tipo)
+                try
                 {
-                    case AbmTipo.Alta:
-                        resultado = clienteServicios.IngresarCliente(cliente);
-                        LogResultado(resultado, "Ingresar Cliente");
-                        break;
-                    case AbmTipo.Baja:
-                        //
-                        break;
-                    case AbmTipo.Modificacion:
-                        resultado = clienteServicios.ModificarCliente(cliente);
-                        LogResultado(resultado, "Modificar Cliente");
-                        break;
-                }                
+                    if (_tipo != AbmTipo.Alta)
+                        cliente.Id = int.Parse(txtIdCliente.Text);
+                    cliente.Dni = int.Parse(txtDni.Text);
+                    cliente.Nombre = txtNombre.Text;
+                    cliente.Apellido = txtApellido.Text;
+                    cliente.Direccion = txtDireccion.Text;
+                    cliente.Email = txtMail.Text;
+                    cliente.Telefono = int.Parse(txtTelefono.Text);
+
+                    ClienteServicios clienteServicios = new ClienteServicios();
+                    int resultado = -1;
+                    switch (_tipo)
+                    {
+                        case AbmTipo.Alta:
+                            resultado = clienteServicios.IngresarCliente(cliente);
+                            LogResultado(resultado, "Ingresar Cliente");
+                            break;
+                        case AbmTipo.Modificacion:
+                            resultado = clienteServicios.ModificarCliente(cliente);
+                            LogResultado(resultado, "Modificar Cliente");
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    lblResultado.Text = "ERROR -> " + e.Message;
+                }
             }
         }
         private void LogResultado(int resultado, string mensaje)
@@ -115,6 +120,11 @@ namespace NLayer.Formularios
                     a.Text = string.Empty;
                 }
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

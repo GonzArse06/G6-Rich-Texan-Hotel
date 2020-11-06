@@ -87,9 +87,6 @@ namespace NLayer.Datos
             {
                 return "{ \"isOk\":false,\"id\":-1,\"error\":" + ex.Message + "}";
             }
-
-
         }
-
     }
 }

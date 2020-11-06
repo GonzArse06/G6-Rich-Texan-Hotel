@@ -35,6 +35,14 @@ namespace NLayer.Negocios
         {
             return ClienteMapper.TraerTodos();
         }
-
+        public int EliminarCliente(int id)
+        {
+            //faltan validaciones de negocio.
+            TransactionResult resultado = ClienteMapper.Delete(id);
+            if (resultado.IsOk)
+                return resultado.Id;
+            else
+                return -1;
+        }
     }
 }

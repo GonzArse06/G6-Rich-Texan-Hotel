@@ -18,9 +18,8 @@ namespace NLayer.Entidades
         private int _telefono;
         private int _id;
 
-
         [DataMember]
-        public int Id { get => _id; set => _id = value; }
+        public int Dni { get => _id; set => _id = value; }
         [DataMember]
         public string Nombre { get => _nombre; set => _nombre = value; }
 

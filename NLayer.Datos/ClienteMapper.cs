@@ -17,7 +17,7 @@ namespace NLayer.Datos
             // string json2 = WebHelper.Get("/cliente"); // trae un texto en formato json de una web
             string json2 = WebHelper.Get("/cliente/" + ConfigurationManager.AppSettings["Legajo"]);
             List<Cliente> resultado = MapList<Cliente>(json2);
-             return resultado;
+            return resultado;
         }
 
         public static TransactionResult Insert(Cliente cliente)
@@ -40,13 +40,14 @@ namespace NLayer.Datos
 
         private static List<T> MapList<T>(string json)
         {
-            return JsonConvert.DeserializeObject<List<T>>(json);
-            
+            return JsonConvert.DeserializeObject<List<T>>(json);            
         }
 
         private static NameValueCollection ReverseMap(Cliente cliente)
         {
             NameValueCollection n = new NameValueCollection();
+            n.Add("Id", cliente.Id.ToString());
+            n.Add("DNI", cliente.Dni.ToString());
             n.Add("Nombre", cliente.Nombre);
             n.Add("Apellido", cliente.Apellido);
             n.Add("Direccion", cliente.Direccion);

@@ -30,10 +30,11 @@
         {
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnExportarExcel = new FontAwesome.Sharp.IconButton();
             this.lstClientes = new System.Windows.Forms.ListView();
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDNI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chApellido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDireccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,7 +44,7 @@
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblResutadoTx = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,20 +80,21 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // iconButton2
+            // btnEliminar
             // 
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 48;
-            this.iconButton2.Location = new System.Drawing.Point(931, 248);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(219, 61);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.Text = "ELIMINAR";
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnEliminar.IconColor = System.Drawing.Color.Black;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 48;
+            this.btnEliminar.Location = new System.Drawing.Point(931, 248);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Rotation = 0D;
+            this.btnEliminar.Size = new System.Drawing.Size(219, 61);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnExportarExcel
             // 
@@ -113,6 +115,7 @@
             // 
             this.lstClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chId,
+            this.chDNI,
             this.chNombre,
             this.chApellido,
             this.chDireccion,
@@ -131,6 +134,12 @@
             // chId
             // 
             this.chId.Text = "Id";
+            this.chId.Width = 40;
+            // 
+            // chDNI
+            // 
+            this.chDNI.Text = "DNI";
+            this.chDNI.Width = 74;
             // 
             // chNombre
             // 
@@ -150,16 +159,17 @@
             // chMail
             // 
             this.chMail.Text = "Mail";
-            this.chMail.Width = 119;
+            this.chMail.Width = 138;
             // 
             // chTelefono
             // 
             this.chTelefono.Text = "Telefono";
-            this.chTelefono.Width = 142;
+            this.chTelefono.Width = 92;
             // 
             // chFechaAlta
             // 
             this.chFechaAlta.Text = "Fecha Alta";
+            this.chFechaAlta.Width = 119;
             // 
             // txtBuscador
             // 
@@ -187,18 +197,18 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblResutadoTx});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 840);
+            this.lblResultado});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 672);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1453, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1162, 24);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // lblResutadoTx
+            // lblResultado
             // 
-            this.lblResutadoTx.Name = "lblResutadoTx";
-            this.lblResutadoTx.Size = new System.Drawing.Size(0, 24);
-            this.lblResutadoTx.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(0, 18);
+            this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // FrmClientes
             // 
@@ -210,7 +220,7 @@
             this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.lstClientes);
             this.Controls.Add(this.btnExportarExcel);
-            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Name = "FrmClientes";
@@ -227,7 +237,7 @@
 
         private FontAwesome.Sharp.IconButton btnNuevo;
         private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnExportarExcel;
         private System.Windows.Forms.ListView lstClientes;
         private System.Windows.Forms.TextBox txtBuscador;
@@ -240,6 +250,7 @@
         private System.Windows.Forms.ColumnHeader chTelefono;
         private System.Windows.Forms.ColumnHeader chFechaAlta;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblResutadoTx;
+        private System.Windows.Forms.ToolStripStatusLabel lblResultado;
+        private System.Windows.Forms.ColumnHeader chDNI;
     }
 }

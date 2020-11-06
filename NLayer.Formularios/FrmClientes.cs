@@ -16,7 +16,7 @@ namespace NLayer.Formularios
     {
         Form formularios;
         ClienteServicios _clienteServicios;
-        List<Cliente> _cliente;
+        List<Cliente> _Lstclientes;
         ListViewItem _listViewItem;
         ListViewItem _items;
         public ListViewItem Item { get => _items; }
@@ -24,7 +24,7 @@ namespace NLayer.Formularios
         {
             InitializeComponent();
             _clienteServicios = new ClienteServicios();
-            _cliente = new List<Cliente>();
+            _Lstclientes = new List<Cliente>();
             _listViewItem = new ListViewItem();
         }
 
@@ -55,10 +55,11 @@ namespace NLayer.Formularios
         {
             lstClientes.Items.Clear();
 
-            _cliente = _clienteServicios.TraerTodo();            
-            foreach (Cliente a in _cliente)
+            _Lstclientes = _clienteServicios.TraerTodo();            
+            foreach (Cliente a in _Lstclientes)
             {
                 _listViewItem = lstClientes.Items.Add(a.Id.ToString());
+                _listViewItem.SubItems.Add(a.Dni.ToString());
                 _listViewItem.SubItems.Add(a.Nombre);
                 _listViewItem.SubItems.Add(a.Apellido);
                 _listViewItem.SubItems.Add(a.Direccion);
@@ -80,23 +81,47 @@ namespace NLayer.Formularios
                 CargarListView();
             }
             else
-                lblResutadoTx.Text = "Debe seleccionar una fila para realizar la modificacion.";
+                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
         }
 
         private void LlenarTextboxChild(FrmAbmClientes formularios)
         {
             _items = (ListViewItem)lstClientes.SelectedItems[0];
             formularios.txtIdCliente.Text = _items.Text;
-            formularios.txtNombre.Text = _items.SubItems[1].Text;
-            formularios.txtApellido.Text = _items.SubItems[2].Text;
-            formularios.txtDireccion.Text = _items.SubItems[3].Text;
-            formularios.txtMail.Text = _items.SubItems[4].Text;
-            formularios.txtTelefono.Text = _items.SubItems[5].Text;
+            formularios.txtDni.Text = _items.SubItems[1].Text;
+            formularios.txtNombre.Text = _items.SubItems[2].Text;
+            formularios.txtApellido.Text = _items.SubItems[3].Text;
+            formularios.txtDireccion.Text = _items.SubItems[4].Text;
+            formularios.txtMail.Text = _items.SubItems[5].Text;
+            formularios.txtTelefono.Text = _items.SubItems[6].Text;
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lstClientes.SelectedItems.Count == 1)
+            {
+                _items = (ListViewItem)lstClientes.SelectedItems[0];
+                int resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
+                LogResultado(resultado, "Eliminar Cliente");
+            }
+            else
+                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
+        }
+
+        private void LogResultado(int resultado, string mensaje)
+        {
+            if (resultado == -1)
+                lblResultado.Text = "ERROR -> " + mensaje;
+            else
+            {
+                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
+                CargarListView();
+            }
         }
     }
 }

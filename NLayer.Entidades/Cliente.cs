@@ -13,6 +13,7 @@ namespace NLayer.Entidades
     {
         private DateTime fechaAlta;
         private bool activo;
+        private int _id;
 
         [DataMember]
         public string Usuario { get; set; }
@@ -21,17 +22,18 @@ namespace NLayer.Entidades
         {
             //this.Usuario = "pau";
             this.Usuario = ConfigurationManager.AppSettings["Legajo"];
-            this.fechaAlta = DateTime.Now;
+            this.fechaAlta = DateTime.Now; //-> revisar casos de modificaciones cuando se crea un nuevo contructor.
             this.activo = true;
         }
-
+        [DataMember]
+        public int Id { get => _id; set => _id = value; }
+        [DataMember]
         public bool Activo
         {
             get { return activo; }
             set { activo = value; }
         }
-
-
+        [DataMember]
         public DateTime FechaAlta
         {
             get { return fechaAlta; }
