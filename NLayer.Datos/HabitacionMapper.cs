@@ -29,7 +29,7 @@ namespace NLayer.Datos
             NameValueCollection n = new NameValueCollection();
             n.Add("Id", item.Id.ToString());
             n.Add("IdHotel", item.IdHotel.ToString());
-            n.Add("Direccion", item.Precio.ToString());
+            n.Add("Precio", item.Precio.ToString());
             n.Add("Cancelable", item.Cancelable.ToString());
             n.Add("CantidadPlazas", item.CantidadPlazas.ToString());
             n.Add("Categoria", item.Categoria);
