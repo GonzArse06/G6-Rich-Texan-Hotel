@@ -50,17 +50,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbmTipo.cs" />
+    <Compile Include="FrmHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHabitaciones.Designer.cs">
+      <DependentUpon>FrmHabitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHabitaciones.cs">
+    <Compile Include="FrmAbmHabitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHabitaciones.Designer.cs">
-      <DependentUpon>FrmHabitaciones.cs</DependentUpon>
+    <Compile Include="FrmAbmHabitaciones.Designer.cs">
+      <DependentUpon>FrmAbmHabitaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAbmClientes.cs">
       <SubType>Form</SubType>
@@ -82,11 +88,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmHabitaciones.resx">
+      <DependentUpon>FrmHabitaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHabitaciones.resx">
-      <DependentUpon>FrmHabitaciones.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAbmHabitaciones.resx">
+      <DependentUpon>FrmAbmHabitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAbmClientes.resx">
       <DependentUpon>FrmAbmClientes.cs</DependentUpon>

@@ -38,3 +38,4 @@ C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\D
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Datos.pdb
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\Newtonsoft.Json.xml
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmClientes.resources
+C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmAbmHabitaciones.resources

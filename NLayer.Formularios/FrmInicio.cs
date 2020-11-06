@@ -96,7 +96,7 @@ namespace NLayer.Formularios
         private void btnHoteles_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
-            OpenChildForm(new FrmHabitaciones());
+            //OpenChildForm(new FrmHabitaciones());
         }
 
         private void btnHabitaciones_Click(object sender, EventArgs e)

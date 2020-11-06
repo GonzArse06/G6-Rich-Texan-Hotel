@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
             this.lblCantidadHuespedes = new System.Windows.Forms.Label();
             this.lblIdHabitacion = new System.Windows.Forms.Label();
@@ -39,21 +38,15 @@
             this.lblFechaEgreso = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.txtFechaIngreso = new System.Windows.Forms.MaskedTextBox();
-            this.txtFechaEgreso = new System.Windows.Forms.MaskedTextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.btnBuscarHabitacion = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
+            this.btnBuscarHabitacion = new FontAwesome.Sharp.IconButton();
+            this.dtFechaIngreso = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaEgreso = new System.Windows.Forms.DateTimePicker();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(485, 70);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(349, 196);
-            this.listBox1.TabIndex = 26;
             // 
             // lblFechaIngreso
             // 
@@ -130,9 +123,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 302);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 346);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(834, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(454, 22);
             this.statusStrip1.TabIndex = 27;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -141,56 +134,117 @@
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 16);
             // 
-            // txtFechaIngreso
-            // 
-            this.txtFechaIngreso.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaIngreso.Location = new System.Drawing.Point(144, 195);
-            this.txtFechaIngreso.Mask = "00/00/0000";
-            this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.Size = new System.Drawing.Size(214, 29);
-            this.txtFechaIngreso.TabIndex = 4;
-            this.txtFechaIngreso.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtFechaEgreso
-            // 
-            this.txtFechaEgreso.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaEgreso.Location = new System.Drawing.Point(144, 237);
-            this.txtFechaEgreso.Mask = "00/00/0000";
-            this.txtFechaEgreso.Name = "txtFechaEgreso";
-            this.txtFechaEgreso.Size = new System.Drawing.Size(214, 29);
-            this.txtFechaEgreso.TabIndex = 5;
-            this.txtFechaEgreso.ValidatingType = typeof(System.DateTime);
-            // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(381, 45);
+            this.btnBuscarCliente.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscarCliente.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscarCliente.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarCliente.IconSize = 26;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(364, 45);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(63, 29);
-            this.btnBuscarCliente.TabIndex = 28;
-            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.Rotation = 0D;
+            this.btnBuscarCliente.Size = new System.Drawing.Size(44, 31);
+            this.btnBuscarCliente.TabIndex = 30;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
             // btnBuscarHabitacion
             // 
-            this.btnBuscarHabitacion.Location = new System.Drawing.Point(381, 97);
+            this.btnBuscarHabitacion.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscarHabitacion.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscarHabitacion.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscarHabitacion.IconSize = 26;
+            this.btnBuscarHabitacion.Location = new System.Drawing.Point(364, 96);
             this.btnBuscarHabitacion.Name = "btnBuscarHabitacion";
-            this.btnBuscarHabitacion.Size = new System.Drawing.Size(63, 29);
-            this.btnBuscarHabitacion.TabIndex = 29;
-            this.btnBuscarHabitacion.Text = "Buscar";
+            this.btnBuscarHabitacion.Rotation = 0D;
+            this.btnBuscarHabitacion.Size = new System.Drawing.Size(44, 31);
+            this.btnBuscarHabitacion.TabIndex = 31;
             this.btnBuscarHabitacion.UseVisualStyleBackColor = true;
+            // 
+            // dtFechaIngreso
+            // 
+            this.dtFechaIngreso.CalendarFont = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaIngreso.Location = new System.Drawing.Point(144, 195);
+            this.dtFechaIngreso.Name = "dtFechaIngreso";
+            this.dtFechaIngreso.Size = new System.Drawing.Size(214, 22);
+            this.dtFechaIngreso.TabIndex = 32;
+            // 
+            // dtFechaEgreso
+            // 
+            this.dtFechaEgreso.CalendarFont = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaEgreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaEgreso.Location = new System.Drawing.Point(144, 236);
+            this.dtFechaEgreso.Name = "dtFechaEgreso";
+            this.dtFechaEgreso.Size = new System.Drawing.Size(214, 22);
+            this.dtFechaEgreso.TabIndex = 33;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 40;
+            this.btnCancelar.Location = new System.Drawing.Point(278, 290);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Rotation = 0D;
+            this.btnCancelar.Size = new System.Drawing.Size(156, 53);
+            this.btnCancelar.TabIndex = 35;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGuardar.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 40;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(116, 290);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Rotation = 0D;
+            this.btnGuardar.Size = new System.Drawing.Size(156, 53);
+            this.btnGuardar.TabIndex = 34;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCerrar.IconColor = System.Drawing.Color.Black;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 26;
+            this.btnCerrar.Location = new System.Drawing.Point(364, 8);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Rotation = 0D;
+            this.btnCerrar.Size = new System.Drawing.Size(44, 31);
+            this.btnCerrar.TabIndex = 36;
+            this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // FrmReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 324);
+            this.ClientSize = new System.Drawing.Size(454, 368);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.dtFechaEgreso);
+            this.Controls.Add(this.dtFechaIngreso);
             this.Controls.Add(this.btnBuscarHabitacion);
             this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtFechaEgreso);
-            this.Controls.Add(this.txtFechaIngreso);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblFechaEgreso);
             this.Controls.Add(this.lblFechaIngreso);
             this.Controls.Add(this.lblCantidadHuespedes);
@@ -208,8 +262,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lblFechaIngreso;
         private System.Windows.Forms.Label lblCantidadHuespedes;
         private System.Windows.Forms.Label lblIdHabitacion;
@@ -220,9 +272,12 @@
         private System.Windows.Forms.Label lblFechaEgreso;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblResultado;
-        private System.Windows.Forms.MaskedTextBox txtFechaIngreso;
-        private System.Windows.Forms.MaskedTextBox txtFechaEgreso;
-        private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.Button btnBuscarHabitacion;
+        private FontAwesome.Sharp.IconButton btnBuscarCliente;
+        private FontAwesome.Sharp.IconButton btnBuscarHabitacion;
+        private System.Windows.Forms.DateTimePicker dtFechaIngreso;
+        private System.Windows.Forms.DateTimePicker dtFechaEgreso;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private FontAwesome.Sharp.IconButton btnCerrar;
     }
 }

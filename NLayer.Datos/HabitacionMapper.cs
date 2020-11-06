@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 
 namespace NLayer.Datos
 {
-    class HabitacionMapper
+    public class HabitacionMapper
     {
         public static TransactionResult Delete(int id)
         {
