@@ -42,6 +42,9 @@
             this.chFechaAlta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblResutadoTx = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNuevo
@@ -180,11 +183,29 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblResutadoTx});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 840);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1453, 30);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblResutadoTx
+            // 
+            this.lblResutadoTx.Name = "lblResutadoTx";
+            this.lblResutadoTx.Size = new System.Drawing.Size(0, 24);
+            this.lblResutadoTx.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 696);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.lstClientes);
@@ -195,6 +216,8 @@
             this.Name = "FrmClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +239,7 @@
         private System.Windows.Forms.ColumnHeader chMail;
         private System.Windows.Forms.ColumnHeader chTelefono;
         private System.Windows.Forms.ColumnHeader chFechaAlta;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblResutadoTx;
     }
 }

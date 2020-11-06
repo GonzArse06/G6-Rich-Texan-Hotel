@@ -17,12 +17,19 @@ namespace NLayer.Negocios
         {
             //faltan validaciones de negocio.
             TransactionResult resultado = ClienteMapper.Insert(cliente);
-
             if (resultado.IsOk)
                 return resultado.Id;
             else
                 return -1;
-
+        }
+        public int ModificarCliente(Cliente cliente)
+        {
+            //faltan validaciones de negocio.
+            TransactionResult resultado = ClienteMapper.Update(cliente);
+            if (resultado.IsOk)
+                return resultado.Id;
+            else
+                return -1;
         }
         public List<Cliente> TraerTodo()
         {

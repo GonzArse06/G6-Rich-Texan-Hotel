@@ -42,8 +42,7 @@ namespace NLayer.Formularios
         {
             formularios = new FrmAbmClientes(AbmTipo.Alta);
             formularios.Owner = this;
-            formularios.Show();
-
+            formularios.ShowDialog();
             CargarListView();
         }
 
@@ -71,11 +70,32 @@ namespace NLayer.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion);
+            formularios.Owner = this;
+            if (lstClientes.SelectedItems.Count==1)
+            {
+                LlenarTextboxChild(formularios);
+                formularios.Owner = this;
+                formularios.ShowDialog();
+                CargarListView();
+            }
+            else
+                lblResutadoTx.Text = "Debe seleccionar una fila para realizar la modificacion.";
+        }
+
+        private void LlenarTextboxChild(FrmAbmClientes formularios)
+        {
             _items = (ListViewItem)lstClientes.SelectedItems[0];
-            Cliente cliente = new Cliente();
-            cliente.Id = int.Parse(_items.Text);
-            cliente.Nombre = _items.SubItems[1].Text;
-            //esto pasar a ABMCliente para cargar el form con los datos del ListView.
+            formularios.txtIdCliente.Text = _items.Text;
+            formularios.txtNombre.Text = _items.SubItems[1].Text;
+            formularios.txtApellido.Text = _items.SubItems[2].Text;
+            formularios.txtDireccion.Text = _items.SubItems[3].Text;
+            formularios.txtMail.Text = _items.SubItems[4].Text;
+            formularios.txtTelefono.Text = _items.SubItems[5].Text;
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
 
         }
     }

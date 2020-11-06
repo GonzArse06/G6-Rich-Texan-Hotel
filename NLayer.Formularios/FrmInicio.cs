@@ -141,5 +141,30 @@ namespace NLayer.Formularios
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea cerrar la aplicacion?", "Salir", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnRestore.Visible = true;
+            btnMaximizar.Visible = false;
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnRestore.Visible = false;
+            btnMaximizar.Visible = true;
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

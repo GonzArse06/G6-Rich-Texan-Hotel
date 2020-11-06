@@ -42,34 +42,14 @@ namespace NLayer.Formularios
         {
             txtIdCliente.Enabled = false;
             btnBuscarCliente.Visible = true;
-            ListViewItem item = ((FrmClientes)Owner).Item;
-
         }
             
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            switch(_tipo)
-            {
-                case AbmTipo.Alta:
-                    GuardarNuevo();
-                    break;
-                case AbmTipo.Baja:
-                    //
-                    break;
-                case AbmTipo.Modificacion:
-                    GuardarModificacion();
-                    break;
-            }
+            Guardar();
         }
 
-        private void GuardarModificacion()
-        {
-            lblResultado.Text = "";
-            Cliente cliente = new Cliente();
-            string mensaje = Validaciones();
-        }
-
-        private void GuardarNuevo()
+        private void Guardar()
         {
             lblResultado.Text = "";
             Cliente cliente = new Cliente();
@@ -84,14 +64,31 @@ namespace NLayer.Formularios
                 cliente.Telefono = int.Parse(txtTelefono.Text);
                 cliente.Email = txtMail.Text;
                 ClienteServicios clienteServicios = new ClienteServicios();
-                int resultado = clienteServicios.IngresarCliente(cliente);
-                if (resultado == -1)
-                    lblResultado.Text = "No se pudo crear el cliente";
-                else
+                int resultado=-1;
+                switch (_tipo)
                 {
-                    lblResultado.Text = "Se creo con exito el cliente ID " + resultado;
-                    LimpiarTextBox();
-                }
+                    case AbmTipo.Alta:
+                        resultado = clienteServicios.IngresarCliente(cliente);
+                        LogResultado(resultado, "Ingresar Cliente");
+                        break;
+                    case AbmTipo.Baja:
+                        //
+                        break;
+                    case AbmTipo.Modificacion:
+                        resultado = clienteServicios.ModificarCliente(cliente);
+                        LogResultado(resultado, "Modificar Cliente");
+                        break;
+                }                
+            }
+        }
+        private void LogResultado(int resultado, string mensaje)
+        {
+            if (resultado == -1)
+                lblResultado.Text = "ERROR -> "+mensaje;
+            else
+            {
+                lblResultado.Text = "OK -> "+ mensaje+". ID: "+resultado;
+                LimpiarTextBox();
             }
         }
 
@@ -104,7 +101,7 @@ namespace NLayer.Formularios
                 if (a is TextBox && a.Enabled == true)
                 {
                     if (string.IsNullOrEmpty(a.Text))
-                        mensaje = "No puede haber textos vacios";
+                        mensaje = "Hay campos vacios. Revisar!";
                 }
             }
             return mensaje;

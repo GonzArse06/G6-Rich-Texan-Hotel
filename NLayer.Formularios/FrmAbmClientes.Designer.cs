@@ -257,12 +257,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblIdCliente;
-        private System.Windows.Forms.TextBox txtIdCliente;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDireccion;
@@ -273,5 +267,11 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnBuscarCliente;
+        public System.Windows.Forms.TextBox txtIdCliente;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.TextBox txtMail;
+        public System.Windows.Forms.TextBox txtNombre;
     }
 }
