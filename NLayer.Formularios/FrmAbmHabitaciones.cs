@@ -21,25 +21,7 @@ namespace NLayer.Formularios
             InitializeComponent();
             _tipo = tipo;
             _idHotel = idHotel;
-            //switch (_tipo)
-            //{
-            //    case AbmTipo.Alta:
-            //        InicializarAlta();
-            //        break;
-            //    case AbmTipo.Modificacion:
-            //        InicializarModificacion();
-            //        break;
-            //}
         }
-        private void InicializarAlta()
-        {
-            
-        }
-
-        private void InicializarModificacion()
-        {
-        }
-
         private void cbCancelable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -53,7 +35,7 @@ namespace NLayer.Formularios
         {
             lblResultado.Text = "";
             Habitacion habitacion = new Habitacion();
-            string mensaje = Validaciones();
+            string mensaje = Estaticas.Validaciones(Controls);
             if (mensaje != "")
                 MessageBox.Show(mensaje);
             else
@@ -65,7 +47,7 @@ namespace NLayer.Formularios
                     habitacion.IdHotel = _idHotel;
                     habitacion.Categoria = txtCategoria.Text;
                     habitacion.CantidadPlazas = int.Parse(txtCantidadPlazas.Text);
-                    habitacion.Cancelable = cbCancelable.CheckOnClick;
+                    habitacion.Cancelable = cbCancelable.Checked;
                     habitacion.Precio = double.Parse(txtPrecio.Text);
 
                     HabitacionServicios habitacionServicios = new HabitacionServicios();
@@ -95,38 +77,18 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                LimpiarTextBox();
+                Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
             }
         }
-
-        private string Validaciones()
-        {
-            string mensaje = "";
-
-            foreach (Control a in Controls)
-            {
-                if (a is TextBox && a.Enabled == true)
-                {
-                    if (string.IsNullOrEmpty(a.Text))
-                        mensaje = "Hay campos vacios. Revisar!";
-                }
-            }
-            return mensaje;
-        }
-        private void LimpiarTextBox()
-        {
-            foreach (Control a in Controls)
-            {
-                if (a is TextBox && a.Enabled == true)
-                {
-                    a.Text = string.Empty;
-                }
-            }
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                this.Close();
         }
     }
 }

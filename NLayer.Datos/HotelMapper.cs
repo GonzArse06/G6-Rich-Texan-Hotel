@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Configuration;
 
 namespace NLayer.Datos
 {
@@ -9,7 +10,7 @@ namespace NLayer.Datos
     {
         public static List<Hotel> Hotel_getAll()
         {
-            string json2 = WebHelper.Get("/Hotel/Hoteles"); // trae un texto en formato json de una web
+            string json2 = WebHelper.Get("/Hotel/Hoteles/"+ConfigurationManager.AppSettings["Legajo"]); // trae un texto en formato json de una web
             List<Hotel> resultado = JsonConvert.DeserializeObject<List<Hotel>>(json2);
             return resultado;
         }
@@ -46,6 +47,7 @@ namespace NLayer.Datos
         private static NameValueCollection ReverseMap(Hotel item)
         {
             NameValueCollection n = new NameValueCollection();
+            n.Add("Id", item.Id.ToString());
             n.Add("Nombre", item.Nombre);
             n.Add("Estrellas", item.Estrellas.ToString());
             n.Add("Direccion", item.Direccion);

@@ -19,6 +19,9 @@ namespace NLayer.Formularios
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
         ListViewItem _items;
+        List<Hotel> _hoteles;
+        HotelServicios _hotelServicios;
+
         public ListViewItem Item { get => _items; }
         public FrmHabitaciones()
         {
@@ -26,11 +29,8 @@ namespace NLayer.Formularios
             _habitacionServicios = new HabitacionServicios();
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            _hoteles = new List<Hotel>();
+            _hotelServicios = new HotelServicios();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -40,21 +40,26 @@ namespace NLayer.Formularios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            string mensaje = ControlIDHotel();
-            if (string.IsNullOrEmpty(mensaje))
+            try
             {
-                formularios = new FrmAbmHabitaciones(AbmTipo.Alta,int.Parse(txtIdHotel.Text));
+                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
+                formularios = new FrmAbmHabitaciones(AbmTipo.Alta, idSeleccionado);
                 formularios.Owner = this;
                 formularios.ShowDialog();
-                CargarListView(int.Parse(txtIdHotel.Text));
-            }
-            else
-                MessageBox.Show(mensaje,"Error");
+                CargarListView(idSeleccionado);
         }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+}
 
-        private void FrmClientes_Load(object sender, EventArgs e)
+        private void FrmHabitacion_Load(object sender, EventArgs e)
         {            
-
+            
+            cbxHoteles.DataSource = _hotelServicios.TraerTodo();
+            cbxHoteles.DisplayMember = "Nombre";
+            cbxHoteles.ValueMember = "Id";
         }
         private void CargarListView(int idHotel)
         {
@@ -73,23 +78,24 @@ namespace NLayer.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            string mensaje = ControlIDHotel();
-            if (string.IsNullOrEmpty(mensaje))
+            try
             {
-                FrmAbmHabitaciones formulario = new FrmAbmHabitaciones(AbmTipo.Modificacion, int.Parse(txtIdHotel.Text));
-                //formulario.Owner = this;
+                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
+                FrmAbmHabitaciones formulario = new FrmAbmHabitaciones(AbmTipo.Modificacion, idSeleccionado);
                 if (lstHabitaciones.SelectedItems.Count == 1)
                 {
                     LlenarTextboxChild(formulario);
-                    formularios.Owner = this;
-                    formularios.ShowDialog();
-                    CargarListView(int.Parse(txtIdHotel.Text));
+                    formulario.Owner = this;
+                    formulario.ShowDialog();
+                    CargarListView(idSeleccionado);
                 }
                 else
                     lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
             }
-            else
-                MessageBox.Show(mensaje);
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }    
         }
 
         private void LlenarTextboxChild(FrmAbmHabitaciones formulario)
@@ -98,13 +104,8 @@ namespace NLayer.Formularios
             formulario.txtIdHabitacion.Text = _items.Text;
             formulario.txtCategoria.Text = _items.SubItems[1].Text;
             formulario.txtCantidadPlazas.Text = _items.SubItems[2].Text;
-            formulario.cbCancelable.CheckOnClick = bool.Parse(_items.SubItems[3].Text);
+            formulario.cbCancelable.Checked = bool.Parse(_items.SubItems[3].Text);
             formulario.txtPrecio.Text = _items.SubItems[4].Text;
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -126,32 +127,13 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView(int.Parse(txtIdHotel.Text));
+                CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
             }
         }
 
-        private void txtIdHotel_KeyPress(object sender, KeyPressEventArgs e)
+        private void cbxHoteles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                CargarListView(int.Parse(txtIdHotel.Text));
-            }
-        }
-        private string ControlIDHotel()
-        {
-            string mensaje = "";
-            if (string.IsNullOrEmpty(txtIdHotel.Text))
-                mensaje = "Debe haber un id de hotel para continuar";
-            return mensaje;
-        }
-
-        private void btnBuscarHotel_Click(object sender, EventArgs e)
-        {
-            string mensaje = ControlIDHotel();
-            if (string.IsNullOrEmpty(mensaje))
-                CargarListView(int.Parse(txtIdHotel.Text));
-            else
-                MessageBox.Show(mensaje, "Error");
+            CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
         }
     }
 }

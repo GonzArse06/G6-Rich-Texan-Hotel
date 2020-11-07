@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotelServicios.cs" />
     <Compile Include="HabitacionServicios.cs" />
     <Compile Include="ClienteServicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

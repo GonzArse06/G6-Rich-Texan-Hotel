@@ -50,7 +50,7 @@ namespace NLayer.Formularios
         {
             lblResultado.Text = "";
             Cliente cliente = new Cliente();
-            string mensaje = Validaciones();
+            string mensaje = Estaticas.Validaciones(Controls);
             if (mensaje != "")
                 MessageBox.Show(mensaje);
             else
@@ -93,35 +93,9 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> "+ mensaje+". ID: "+resultado;
-                LimpiarTextBox();
+                Estaticas.LimpiarTextBox(Controls);
             }
         }
-
-        private string Validaciones()
-        {
-            string mensaje = "";
-
-            foreach (Control a in Controls)
-            {
-                if (a is TextBox && a.Enabled == true)
-                {
-                    if (string.IsNullOrEmpty(a.Text))
-                        mensaje = "Hay campos vacios. Revisar!";
-                }
-            }
-            return mensaje;
-        }
-        private void LimpiarTextBox()
-        {
-            foreach (Control a in Controls)
-            {
-                if (a is TextBox && a.Enabled == true)
-                {
-                    a.Text = string.Empty;
-                }
-            }
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -1,6 +1,6 @@
 ﻿namespace NLayer.Formularios
 {
-    partial class FrmHabitaciones
+    partial class FrmHoteles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,81 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstHabitaciones = new System.Windows.Forms.ListView();
+            this.lstClientes = new System.Windows.Forms.ListView();
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCategoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCantidadPlaza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCancelacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chPrecio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDireccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chAmenities = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtBuscador = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ChEstrellas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.btnExportarExcel = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
-            this.lblIdHotel = new System.Windows.Forms.Label();
-            this.cbxHoteles = new System.Windows.Forms.ComboBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstHabitaciones
+            // lstClientes
             // 
-            this.lstHabitaciones.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chId,
-            this.chCategoria,
-            this.chCantidadPlaza,
-            this.chCancelacion,
-            this.chPrecio});
-            this.lstHabitaciones.FullRowSelect = true;
-            this.lstHabitaciones.HideSelection = false;
-            this.lstHabitaciones.Location = new System.Drawing.Point(12, 90);
-            this.lstHabitaciones.Name = "lstHabitaciones";
-            this.lstHabitaciones.Size = new System.Drawing.Size(913, 501);
-            this.lstHabitaciones.TabIndex = 4;
-            this.lstHabitaciones.UseCompatibleStateImageBehavior = false;
-            this.lstHabitaciones.View = System.Windows.Forms.View.Details;
+            this.chNombre,
+            this.chDireccion,
+            this.chAmenities,
+            this.ChEstrellas});
+            this.lstClientes.FullRowSelect = true;
+            this.lstClientes.HideSelection = false;
+            this.lstClientes.Location = new System.Drawing.Point(12, 90);
+            this.lstClientes.Name = "lstClientes";
+            this.lstClientes.Size = new System.Drawing.Size(913, 501);
+            this.lstClientes.TabIndex = 4;
+            this.lstClientes.UseCompatibleStateImageBehavior = false;
+            this.lstClientes.View = System.Windows.Forms.View.Details;
             // 
             // chId
             // 
             this.chId.Text = "Id";
             this.chId.Width = 40;
             // 
-            // chCategoria
+            // chNombre
             // 
-            this.chCategoria.Text = "Categoria";
-            this.chCategoria.Width = 90;
+            this.chNombre.Text = "Nombre";
+            this.chNombre.Width = 90;
             // 
-            // chCantidadPlaza
+            // chDireccion
             // 
-            this.chCantidadPlaza.Text = "Cantidad de Plazas";
-            this.chCantidadPlaza.Width = 161;
+            this.chDireccion.Text = "Direccion";
+            this.chDireccion.Width = 182;
             // 
-            // chCancelacion
+            // chAmenities
             // 
-            this.chCancelacion.Text = "Cancelacion";
-            this.chCancelacion.Width = 182;
+            this.chAmenities.Text = "Amenities";
+            this.chAmenities.Width = 138;
             // 
-            // chPrecio
+            // txtBuscador
             // 
-            this.chPrecio.Text = "Precio";
-            this.chPrecio.Width = 138;
+            this.txtBuscador.Location = new System.Drawing.Point(12, 62);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(600, 22);
+            this.txtBuscador.TabIndex = 5;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 672);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 674);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1162, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1162, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 18);
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
+            this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
+            // ChEstrellas
+            // 
+            this.ChEstrellas.Text = "Esterellas";
+            this.ChEstrellas.Width = 128;
             // 
             // btnCerrar
             // 
@@ -182,42 +189,22 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // lblIdHotel
-            // 
-            this.lblIdHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdHotel.Location = new System.Drawing.Point(12, 48);
-            this.lblIdHotel.Name = "lblIdHotel";
-            this.lblIdHotel.Size = new System.Drawing.Size(81, 26);
-            this.lblIdHotel.TabIndex = 8;
-            this.lblIdHotel.Text = "ID Hotel";
-            // 
-            // cbxHoteles
-            // 
-            this.cbxHoteles.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxHoteles.FormattingEnabled = true;
-            this.cbxHoteles.Location = new System.Drawing.Point(99, 44);
-            this.cbxHoteles.Name = "cbxHoteles";
-            this.cbxHoteles.Size = new System.Drawing.Size(228, 30);
-            this.cbxHoteles.TabIndex = 9;
-            this.cbxHoteles.SelectedIndexChanged += new System.EventHandler(this.cbxHoteles_SelectedIndexChanged);
-            // 
-            // FrmHabitaciones
+            // FrmHoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 696);
-            this.Controls.Add(this.cbxHoteles);
-            this.Controls.Add(this.lblIdHotel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.lstHabitaciones);
+            this.Controls.Add(this.txtBuscador);
+            this.Controls.Add(this.lstClientes);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
-            this.Name = "FrmHabitaciones";
-            this.Text = "Habitaciones";
-            this.Load += new System.EventHandler(this.FrmHabitacion_Load);
+            this.Name = "FrmHoteles";
+            this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.FrmClientes_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -231,16 +218,15 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnExportarExcel;
-        private System.Windows.Forms.ListView lstHabitaciones;
+        private System.Windows.Forms.ListView lstClientes;
+        private System.Windows.Forms.TextBox txtBuscador;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.ColumnHeader chId;
-        private System.Windows.Forms.ColumnHeader chCategoria;
-        private System.Windows.Forms.ColumnHeader chCantidadPlaza;
-        private System.Windows.Forms.ColumnHeader chCancelacion;
-        private System.Windows.Forms.ColumnHeader chPrecio;
+        private System.Windows.Forms.ColumnHeader chNombre;
+        private System.Windows.Forms.ColumnHeader chDireccion;
+        private System.Windows.Forms.ColumnHeader chAmenities;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblResultado;
-        private System.Windows.Forms.Label lblIdHotel;
-        private System.Windows.Forms.ComboBox cbxHoteles;
+        private System.Windows.Forms.ColumnHeader ChEstrellas;
     }
 }

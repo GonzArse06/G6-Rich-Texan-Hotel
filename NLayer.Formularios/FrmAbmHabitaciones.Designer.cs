@@ -38,12 +38,12 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cbCancelable = new System.Windows.Forms.CheckedListBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.btnBuscarHotel = new FontAwesome.Sharp.IconButton();
             this.txtIdHabitacion = new System.Windows.Forms.TextBox();
+            this.cbCancelable = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.lblIidHabitacion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIidHabitacion.Location = new System.Drawing.Point(21, 60);
             this.lblIidHabitacion.Name = "lblIidHabitacion";
-            this.lblIidHabitacion.Size = new System.Drawing.Size(140, 29);
+            this.lblIidHabitacion.Size = new System.Drawing.Size(112, 23);
             this.lblIidHabitacion.TabIndex = 0;
             this.lblIidHabitacion.Text = "Id Habitacion";
             // 
@@ -136,18 +136,6 @@
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 16);
             // 
-            // cbCancelable
-            // 
-            this.cbCancelable.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCancelable.FormattingEnabled = true;
-            this.cbCancelable.Items.AddRange(new object[] {
-            "Si"});
-            this.cbCancelable.Location = new System.Drawing.Point(179, 162);
-            this.cbCancelable.Name = "cbCancelable";
-            this.cbCancelable.Size = new System.Drawing.Size(217, 28);
-            this.cbCancelable.TabIndex = 15;
-            this.cbCancelable.SelectedIndexChanged += new System.EventHandler(this.cbCancelable_SelectedIndexChanged);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +153,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -199,6 +188,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(44, 31);
             this.btnCerrar.TabIndex = 21;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnBuscarHotel
             // 
@@ -223,17 +213,28 @@
             this.txtIdHabitacion.Size = new System.Drawing.Size(159, 29);
             this.txtIdHabitacion.TabIndex = 22;
             // 
+            // cbCancelable
+            // 
+            this.cbCancelable.AutoSize = true;
+            this.cbCancelable.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCancelable.Location = new System.Drawing.Point(179, 163);
+            this.cbCancelable.Name = "cbCancelable";
+            this.cbCancelable.Size = new System.Drawing.Size(47, 27);
+            this.cbCancelable.TabIndex = 23;
+            this.cbCancelable.Text = "SI";
+            this.cbCancelable.UseVisualStyleBackColor = true;
+            // 
             // FrmAbmHabitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 328);
+            this.Controls.Add(this.cbCancelable);
             this.Controls.Add(this.txtIdHabitacion);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBuscarHotel);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.cbCancelable);
             this.Controls.Add(this.txtCantidadPlazas);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.lblPrecio);
@@ -268,7 +269,7 @@
         public System.Windows.Forms.TextBox txtCantidadPlazas;
         public System.Windows.Forms.TextBox txtPrecio;
         public System.Windows.Forms.TextBox txtCategoria;
-        public System.Windows.Forms.CheckedListBox cbCancelable;
         public System.Windows.Forms.TextBox txtIdHabitacion;
+        public System.Windows.Forms.CheckBox cbCancelable;
     }
 }
