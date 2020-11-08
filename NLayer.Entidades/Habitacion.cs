@@ -53,6 +53,11 @@ namespace NLayer.Entidades
             set { id = value; }
         }
 
+        public override string ToString()
+        {
+            return string.Format("Id Habitacion: {0} - Categoria: {1} - Cantidad de plazas: {2} - Precio: {3}"
+                ,this.id,this.categoria,this.cantidadPlazas,this.precio );
+        }
 
 
     }

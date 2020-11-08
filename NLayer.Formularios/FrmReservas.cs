@@ -48,7 +48,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                formularios = new FrmAbmReservas(AbmTipo.Alta);
+                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado);
                 formularios.Owner = this;
                 formularios.ShowDialog();
                 CargarListView(idSeleccionado);
@@ -89,7 +89,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion);
+                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado);
                 if (lstReservas.SelectedItems.Count == 1)
                 {
                     LlenarTextboxChild(formulario);

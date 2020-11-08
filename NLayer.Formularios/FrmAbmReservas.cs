@@ -15,10 +15,12 @@ namespace NLayer.Formularios
     public partial class FrmAbmReservas : Form
     {
         AbmTipo _tipo;
-        public FrmAbmReservas(AbmTipo tipo)
+        int _idHotel;
+        public FrmAbmReservas(AbmTipo tipo, int idHotel)
         {
             InitializeComponent();
             _tipo = tipo;
+            _idHotel = idHotel;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -85,12 +87,16 @@ namespace NLayer.Formularios
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-
+            FrmBuscarCliente formulario = new FrmBuscarCliente();
+            formulario.Owner = this;
+            formulario.ShowDialog();
         }
 
         private void btnBuscarHabitacion_Click(object sender, EventArgs e)
         {
-
+            FrmBuscarHabitacion formulario = new FrmBuscarHabitacion(_idHotel);
+            formulario.Owner = this;
+            formulario.ShowDialog();
         }
     }
 }

@@ -56,6 +56,18 @@
     <Compile Include="FrmAbmHoteles.Designer.cs">
       <DependentUpon>FrmAbmHoteles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarHabitacion.Designer.cs">
+      <DependentUpon>FrmBuscarHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.Designer.cs">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="FrmAbmHoteles.resx">
       <DependentUpon>FrmAbmHoteles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarHabitacion.resx">
+      <DependentUpon>FrmBuscarHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReservas.resx">
       <DependentUpon>FrmReservas.cs</DependentUpon>

@@ -42,3 +42,5 @@ C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\D
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmAbmHoteles.resources
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmHoteles.resources
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmAbmReservas.resources
+C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmBuscarHabitacion.resources
+C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmBuscarCliente.resources
