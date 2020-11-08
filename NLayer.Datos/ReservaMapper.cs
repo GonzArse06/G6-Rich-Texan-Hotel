@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Datos
 {
-    class ReservaMapper
+    public class ReservaMapper
     {
         public static List<Reserva> Reserva_getAll()
         {
