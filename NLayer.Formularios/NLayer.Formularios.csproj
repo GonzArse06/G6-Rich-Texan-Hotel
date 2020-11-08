@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbmTipo.cs" />
+    <Compile Include="FrmAbmHoteles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmHoteles.Designer.cs">
+      <DependentUpon>FrmAbmHoteles.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHoteles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
+    <EmbeddedResource Include="FrmAbmHoteles.resx">
+      <DependentUpon>FrmAbmHoteles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHoteles.resx">
       <DependentUpon>FrmHoteles.cs</DependentUpon>
     </EmbeddedResource>

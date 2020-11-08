@@ -52,17 +52,13 @@ namespace NLayer.Datos
             n.Add("Estrellas", item.Estrellas.ToString());
             n.Add("Direccion", item.Direccion);
             n.Add("Amenities", item.Amenities.ToString());
-            //n.Add("Email", cliente.Email); // STRING
-            //n.Add("Telefono", cliente.Telefono.ToString()); // INT
-            //n.Add("FechaNacimiento", cliente.FechaNacimiento.ToShortDateString()); // DateTime
-            //n.Add("Activo", cliente.Activo.ToString()); // bool
+            n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             return n;
         }
         
         private List<T> MapList<T>(string json)
         {
-            return JsonConvert.DeserializeObject<List<T>>(json);
-          
+            return JsonConvert.DeserializeObject<List<T>>(json);         
         }
     }
 }

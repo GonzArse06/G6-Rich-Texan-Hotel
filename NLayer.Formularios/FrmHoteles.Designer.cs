@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstClientes = new System.Windows.Forms.ListView();
+            this.lstHoteles = new System.Windows.Forms.ListView();
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDireccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chAmenities = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ChEstrellas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ChEstrellas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.btnExportarExcel = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
@@ -45,22 +45,22 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstClientes
+            // lstHoteles
             // 
-            this.lstClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstHoteles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chId,
             this.chNombre,
             this.chDireccion,
             this.chAmenities,
             this.ChEstrellas});
-            this.lstClientes.FullRowSelect = true;
-            this.lstClientes.HideSelection = false;
-            this.lstClientes.Location = new System.Drawing.Point(12, 90);
-            this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(913, 501);
-            this.lstClientes.TabIndex = 4;
-            this.lstClientes.UseCompatibleStateImageBehavior = false;
-            this.lstClientes.View = System.Windows.Forms.View.Details;
+            this.lstHoteles.FullRowSelect = true;
+            this.lstHoteles.HideSelection = false;
+            this.lstHoteles.Location = new System.Drawing.Point(12, 90);
+            this.lstHoteles.Name = "lstHoteles";
+            this.lstHoteles.Size = new System.Drawing.Size(913, 501);
+            this.lstHoteles.TabIndex = 4;
+            this.lstHoteles.UseCompatibleStateImageBehavior = false;
+            this.lstHoteles.View = System.Windows.Forms.View.Details;
             // 
             // chId
             // 
@@ -81,6 +81,11 @@
             // 
             this.chAmenities.Text = "Amenities";
             this.chAmenities.Width = 138;
+            // 
+            // ChEstrellas
+            // 
+            this.ChEstrellas.Text = "Esterellas";
+            this.ChEstrellas.Width = 128;
             // 
             // txtBuscador
             // 
@@ -105,11 +110,6 @@
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 16);
             this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
-            // 
-            // ChEstrellas
-            // 
-            this.ChEstrellas.Text = "Esterellas";
-            this.ChEstrellas.Width = 128;
             // 
             // btnCerrar
             // 
@@ -197,14 +197,14 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBuscador);
-            this.Controls.Add(this.lstClientes);
+            this.Controls.Add(this.lstHoteles);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Name = "FrmHoteles";
-            this.Text = "Clientes";
-            this.Load += new System.EventHandler(this.FrmClientes_Load);
+            this.Text = "Hoteles";
+            this.Load += new System.EventHandler(this.FrmHoteles_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -218,7 +218,7 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnExportarExcel;
-        private System.Windows.Forms.ListView lstClientes;
+        private System.Windows.Forms.ListView lstHoteles;
         private System.Windows.Forms.TextBox txtBuscador;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.ColumnHeader chId;
