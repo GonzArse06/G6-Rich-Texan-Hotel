@@ -105,12 +105,15 @@ namespace NLayer.Formularios
         {
             if (lstClientes.SelectedItems.Count == 1)
             {
-                _items = (ListViewItem)lstClientes.SelectedItems[0];
+                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _items = (ListViewItem)lstClientes.SelectedItems[0];
                 int resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
                 LogResultado(resultado, "Eliminar Cliente");
             }
             else
                 lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
+            }
         }
 
         private void LogResultado(int resultado, string mensaje)

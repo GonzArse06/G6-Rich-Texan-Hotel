@@ -119,14 +119,18 @@ namespace NLayer.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (lstReservas.SelectedItems.Count == 1)
-            {
-                _items = (ListViewItem)lstReservas.SelectedItems[0];
-                int resultado = _reservaServicios.EliminarReserva(int.Parse(_items.Text));
-                LogResultado(resultado, "Eliminar reserva");
+            
+                if (lstReservas.SelectedItems.Count == 1)
+                {
+                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _items = (ListViewItem)lstReservas.SelectedItems[0];
+                    int resultado = _reservaServicios.EliminarReserva(int.Parse(_items.Text));
+                    LogResultado(resultado, "Eliminar reserva");
+                }
+                else
+                    lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
             }
-            else
-                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
         }
 
         private void LogResultado(int resultado, string mensaje)

@@ -48,6 +48,9 @@
             // 
             // lstHabitaciones
             // 
+            this.lstHabitaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstHabitaciones.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chId,
             this.chCategoria,
@@ -56,9 +59,9 @@
             this.chPrecio});
             this.lstHabitaciones.FullRowSelect = true;
             this.lstHabitaciones.HideSelection = false;
-            this.lstHabitaciones.Location = new System.Drawing.Point(12, 90);
+            this.lstHabitaciones.Location = new System.Drawing.Point(12, 66);
             this.lstHabitaciones.Name = "lstHabitaciones";
-            this.lstHabitaciones.Size = new System.Drawing.Size(913, 501);
+            this.lstHabitaciones.Size = new System.Drawing.Size(861, 501);
             this.lstHabitaciones.TabIndex = 4;
             this.lstHabitaciones.UseCompatibleStateImageBehavior = false;
             this.lstHabitaciones.View = System.Windows.Forms.View.Details;
@@ -93,25 +96,26 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 672);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 631);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1162, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1140, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 18);
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(1097, 36);
+            this.btnCerrar.Location = new System.Drawing.Point(1075, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
             this.btnCerrar.Size = new System.Drawing.Size(53, 38);
@@ -121,12 +125,13 @@
             // 
             // btnExportarExcel
             // 
+            this.btnExportarExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportarExcel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnExportarExcel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportarExcel.IconSize = 48;
-            this.btnExportarExcel.Location = new System.Drawing.Point(931, 330);
+            this.btnExportarExcel.Location = new System.Drawing.Point(909, 306);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Rotation = 0D;
             this.btnExportarExcel.Size = new System.Drawing.Size(219, 61);
@@ -136,12 +141,13 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 48;
-            this.btnEliminar.Location = new System.Drawing.Point(931, 248);
+            this.btnEliminar.Location = new System.Drawing.Point(909, 224);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Rotation = 0D;
             this.btnEliminar.Size = new System.Drawing.Size(219, 61);
@@ -152,12 +158,13 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 48;
-            this.btnEditar.Location = new System.Drawing.Point(931, 169);
+            this.btnEditar.Location = new System.Drawing.Point(909, 145);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Rotation = 0D;
             this.btnEditar.Size = new System.Drawing.Size(219, 61);
@@ -168,12 +175,13 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNuevo.IconColor = System.Drawing.Color.Black;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 48;
-            this.btnNuevo.Location = new System.Drawing.Point(931, 90);
+            this.btnNuevo.Location = new System.Drawing.Point(909, 66);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Rotation = 0D;
             this.btnNuevo.Size = new System.Drawing.Size(219, 61);
@@ -185,7 +193,7 @@
             // lblIdHotel
             // 
             this.lblIdHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdHotel.Location = new System.Drawing.Point(12, 48);
+            this.lblIdHotel.Location = new System.Drawing.Point(12, 24);
             this.lblIdHotel.Name = "lblIdHotel";
             this.lblIdHotel.Size = new System.Drawing.Size(81, 26);
             this.lblIdHotel.TabIndex = 8;
@@ -195,7 +203,7 @@
             // 
             this.cbxHoteles.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxHoteles.FormattingEnabled = true;
-            this.cbxHoteles.Location = new System.Drawing.Point(99, 44);
+            this.cbxHoteles.Location = new System.Drawing.Point(99, 20);
             this.cbxHoteles.Name = "cbxHoteles";
             this.cbxHoteles.Size = new System.Drawing.Size(228, 30);
             this.cbxHoteles.TabIndex = 9;
@@ -205,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 696);
+            this.ClientSize = new System.Drawing.Size(1140, 653);
             this.Controls.Add(this.cbxHoteles);
             this.Controls.Add(this.lblIdHotel);
             this.Controls.Add(this.statusStrip1);

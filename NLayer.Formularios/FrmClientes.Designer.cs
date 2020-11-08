@@ -50,12 +50,13 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNuevo.IconColor = System.Drawing.Color.Black;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 48;
-            this.btnNuevo.Location = new System.Drawing.Point(931, 90);
+            this.btnNuevo.Location = new System.Drawing.Point(903, 66);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Rotation = 0D;
             this.btnNuevo.Size = new System.Drawing.Size(219, 61);
@@ -66,12 +67,13 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 48;
-            this.btnEditar.Location = new System.Drawing.Point(931, 169);
+            this.btnEditar.Location = new System.Drawing.Point(903, 145);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Rotation = 0D;
             this.btnEditar.Size = new System.Drawing.Size(219, 61);
@@ -82,12 +84,13 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 48;
-            this.btnEliminar.Location = new System.Drawing.Point(931, 248);
+            this.btnEliminar.Location = new System.Drawing.Point(903, 224);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Rotation = 0D;
             this.btnEliminar.Size = new System.Drawing.Size(219, 61);
@@ -98,12 +101,13 @@
             // 
             // btnExportarExcel
             // 
+            this.btnExportarExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportarExcel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnExportarExcel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportarExcel.IconSize = 48;
-            this.btnExportarExcel.Location = new System.Drawing.Point(931, 330);
+            this.btnExportarExcel.Location = new System.Drawing.Point(903, 306);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Rotation = 0D;
             this.btnExportarExcel.Size = new System.Drawing.Size(219, 61);
@@ -113,6 +117,9 @@
             // 
             // lstClientes
             // 
+            this.lstClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chId,
             this.chDNI,
@@ -124,9 +131,9 @@
             this.chFechaAlta});
             this.lstClientes.FullRowSelect = true;
             this.lstClientes.HideSelection = false;
-            this.lstClientes.Location = new System.Drawing.Point(12, 90);
+            this.lstClientes.Location = new System.Drawing.Point(12, 66);
             this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(913, 501);
+            this.lstClientes.Size = new System.Drawing.Size(857, 422);
             this.lstClientes.TabIndex = 4;
             this.lstClientes.UseCompatibleStateImageBehavior = false;
             this.lstClientes.View = System.Windows.Forms.View.Details;
@@ -173,19 +180,22 @@
             // 
             // txtBuscador
             // 
-            this.txtBuscador.Location = new System.Drawing.Point(12, 62);
+            this.txtBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscador.Location = new System.Drawing.Point(12, 38);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(600, 22);
+            this.txtBuscador.Size = new System.Drawing.Size(572, 22);
             this.txtBuscador.TabIndex = 5;
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(1097, 36);
+            this.btnCerrar.Location = new System.Drawing.Point(1069, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
             this.btnCerrar.Size = new System.Drawing.Size(53, 38);
@@ -198,23 +208,23 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 672);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 637);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1162, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1134, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 18);
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
             this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 696);
+            this.ClientSize = new System.Drawing.Size(1134, 659);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBuscador);

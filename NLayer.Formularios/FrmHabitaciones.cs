@@ -112,12 +112,15 @@ namespace NLayer.Formularios
         {
             if (lstHabitaciones.SelectedItems.Count == 1)
             {
-                _items = (ListViewItem)lstHabitaciones.SelectedItems[0];
-                int resultado = _habitacionServicios.EliminarHabitacion(int.Parse(_items.Text));
-                LogResultado(resultado, "Eliminar habitacion");
+                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _items = (ListViewItem)lstHabitaciones.SelectedItems[0];
+                    int resultado = _habitacionServicios.EliminarHabitacion(int.Parse(_items.Text));
+                    LogResultado(resultado, "Eliminar habitacion");
+                }
+                else
+                    lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
             }
-            else
-                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
         }
 
         private void LogResultado(int resultado, string mensaje)
