@@ -95,7 +95,7 @@ namespace NLayer.Formularios
                     LogResultado(resultado, "Eliminar Hotel");
                 }
                 else
-                    lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
+                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
             }
         }
 

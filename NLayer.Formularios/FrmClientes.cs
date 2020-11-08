@@ -112,7 +112,7 @@ namespace NLayer.Formularios
                 LogResultado(resultado, "Eliminar Cliente");
             }
             else
-                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
+                lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
             }
         }
 

@@ -129,7 +129,7 @@ namespace NLayer.Formularios
                     LogResultado(resultado, "Eliminar reserva");
                 }
                 else
-                    lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
+                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
             }
         }
 
