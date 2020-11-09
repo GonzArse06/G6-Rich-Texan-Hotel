@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,7 @@ namespace NLayer.Entidades
             set { id = value; }
         }
 
+        public List<Reserva> Reservas { get; set; }
         public override string ToString()
         {
             return string.Format("Id Habitacion: {0} - Categoria: {1} - Cantidad de plazas: {2} - Precio: {3}"

@@ -40,6 +40,7 @@ namespace NLayer.Entidades
             set { amenities = value; }
         }
 
+        public List<Habitacion> Habitaciones { get; set; }
 
     }
 }

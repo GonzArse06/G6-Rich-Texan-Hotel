@@ -20,10 +20,10 @@ namespace NLayer.Formularios
         ListViewItem _listViewItem;
         ListViewItem _items;
         public ListViewItem Item { get => _items; }
-        public FrmHoteles()
+        public FrmHoteles(HotelServicios serv)
         {
             InitializeComponent();
-            _hotelServicios = new HotelServicios();
+            _hotelServicios = serv;
             _LstHoteles = new List<Hotel>();
             _listViewItem = new ListViewItem();
         }
@@ -113,6 +113,11 @@ namespace NLayer.Formularios
         private void FrmHoteles_Load(object sender, EventArgs e)
         {
             CargarListView();
+        }
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

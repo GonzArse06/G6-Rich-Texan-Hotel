@@ -23,10 +23,10 @@ namespace NLayer.Formularios
         HotelServicios _hotelServicios;
 
         public ListViewItem Item { get => _items; }
-        public FrmHabitaciones()
+        public FrmHabitaciones(HabitacionServicios serv)
         {
             InitializeComponent();
-            _habitacionServicios = new HabitacionServicios();
+            _habitacionServicios = serv;
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _hoteles = new List<Hotel>();
@@ -46,7 +46,7 @@ namespace NLayer.Formularios
                 formularios = new FrmAbmHabitaciones(AbmTipo.Alta, idSeleccionado);
                 formularios.Owner = this;
                 formularios.ShowDialog();
-                CargarListView(idSeleccionado);
+                CargarListView((Hotel)cbxHoteles.SelectedItem);
         
             }
             catch (Exception ex)
@@ -62,11 +62,20 @@ namespace NLayer.Formularios
             cbxHoteles.DisplayMember = "Nombre";
             cbxHoteles.ValueMember = "Id";
         }
-        private void CargarListView(int idHotel)
+        private void CargarListView(Hotel _hotel)
         {
             lstHabitaciones.Items.Clear();
+            if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
+            {
+                
+            }
+            else
+            {
+                _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
+               
+            }
+            _lstHabitaciones = _hotel.Habitaciones;
 
-            _lstHabitaciones = _habitacionServicios.TraerTodoPorId(idHotel);            
             foreach (Habitacion a in _lstHabitaciones)
             {
                 _listViewItem = lstHabitaciones.Items.Add(a.Id.ToString());
@@ -88,7 +97,7 @@ namespace NLayer.Formularios
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
                     formulario.ShowDialog();
-                    CargarListView(idSeleccionado);
+                    CargarListView((Hotel)cbxHoteles.SelectedItem);
                 }
                 else
                     lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
@@ -131,13 +140,13 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
+                CargarListView(((Hotel)cbxHoteles.SelectedItem));
             }
         }
 
         private void cbxHoteles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
+            CargarListView(((Hotel)cbxHoteles.SelectedItem));
         }
 
         private void lstHabitaciones_SelectedIndexChanged(object sender, EventArgs e)

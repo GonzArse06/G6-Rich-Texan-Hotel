@@ -58,12 +58,13 @@
             this.lblIidHotel.Size = new System.Drawing.Size(57, 18);
             this.lblIidHotel.TabIndex = 0;
             this.lblIidHotel.Text = "Id Hotel";
+            this.lblIidHotel.Click += new System.EventHandler(this.lblIidHotel_Click);
             // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(134, 103);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(164, 25);
             this.txtDireccion.TabIndex = 3;
@@ -72,7 +73,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(134, 75);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(164, 25);
             this.txtNombre.TabIndex = 2;
@@ -140,14 +141,15 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCancelar.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconColor = System.Drawing.Color.Red;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
             this.btnCancelar.Location = new System.Drawing.Point(181, 188);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Rotation = 0D;
             this.btnCancelar.Size = new System.Drawing.Size(117, 43);
@@ -163,12 +165,12 @@
             this.btnGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnGuardar.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconColor = System.Drawing.Color.DarkBlue;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 40;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(59, 188);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Rotation = 0D;
             this.btnGuardar.Size = new System.Drawing.Size(117, 43);
@@ -186,7 +188,7 @@
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 26;
             this.btnCerrar.Location = new System.Drawing.Point(264, 10);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
             this.btnCerrar.Size = new System.Drawing.Size(33, 25);
@@ -199,33 +201,35 @@
             // 
             this.btnBuscarHotel.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnBuscarHotel.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscarHotel.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarHotel.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscarHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHotel.IconSize = 26;
-            this.btnBuscarHotel.Location = new System.Drawing.Point(264, 45);
-            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarHotel.Location = new System.Drawing.Point(264, 39);
+            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Rotation = 0D;
-            this.btnBuscarHotel.Size = new System.Drawing.Size(33, 25);
+            this.btnBuscarHotel.Size = new System.Drawing.Size(33, 31);
             this.btnBuscarHotel.TabIndex = 20;
             this.btnBuscarHotel.UseVisualStyleBackColor = true;
+            this.btnBuscarHotel.Click += new System.EventHandler(this.btnBuscarHotel_Click);
             // 
             // txtIdHotel
             // 
             this.txtIdHotel.Enabled = false;
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHotel.Location = new System.Drawing.Point(134, 45);
-            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.Size = new System.Drawing.Size(120, 25);
             this.txtIdHotel.TabIndex = 22;
+            this.txtIdHotel.TextChanged += new System.EventHandler(this.txtIdHotel_TextChanged);
             // 
             // cbAmenities
             // 
             this.cbAmenities.AutoSize = true;
             this.cbAmenities.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAmenities.Location = new System.Drawing.Point(134, 132);
-            this.cbAmenities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbAmenities.Margin = new System.Windows.Forms.Padding(2);
             this.cbAmenities.Name = "cbAmenities";
             this.cbAmenities.Size = new System.Drawing.Size(38, 22);
             this.cbAmenities.TabIndex = 23;
@@ -236,7 +240,7 @@
             // 
             this.nuEstrellas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuEstrellas.Location = new System.Drawing.Point(134, 158);
-            this.nuEstrellas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nuEstrellas.Margin = new System.Windows.Forms.Padding(2);
             this.nuEstrellas.Maximum = new decimal(new int[] {
             5,
             0,
@@ -277,7 +281,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblIidHotel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmAbmHoteles";
             this.Text = "Hoteles";

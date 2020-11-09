@@ -20,10 +20,10 @@ namespace NLayer.Formularios
         ListViewItem _listViewItem;
         ListViewItem _items;
         public ListViewItem Item { get => _items; }
-        public FrmClientes()
+        public FrmClientes(ClienteServicios serv)
         {
             InitializeComponent();
-            _clienteServicios = new ClienteServicios();
+            _clienteServicios = serv;
             _Lstclientes = new List<Cliente>();
             _listViewItem = new ListViewItem();
         }

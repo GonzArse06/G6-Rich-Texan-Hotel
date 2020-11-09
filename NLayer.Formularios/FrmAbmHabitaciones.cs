@@ -101,5 +101,10 @@ namespace NLayer.Formularios
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

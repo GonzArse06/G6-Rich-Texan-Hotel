@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using NLayer.Negocios;
 
 namespace NLayer.Formularios
 {
@@ -17,6 +18,12 @@ namespace NLayer.Formularios
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        
+        ReservaServicios _reservaServicios;
+        HotelServicios _hotelServicios;
+        ClienteServicios _clienteServicios;
+        HabitacionServicios _habitacionServicios;
+
         public FrmInicio()
         {
             InitializeComponent();
@@ -28,6 +35,10 @@ namespace NLayer.Formularios
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            _hotelServicios = new HotelServicios();
+            _clienteServicios = new ClienteServicios();
+            _habitacionServicios = new HabitacionServicios();
+            _reservaServicios = new ReservaServicios();
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -84,25 +95,25 @@ namespace NLayer.Formularios
         private void btnCliente_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
-            OpenChildForm(new FrmClientes());
+            OpenChildForm(new FrmClientes(_clienteServicios));
         }
 
         private void btnReserva_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
-            OpenChildForm(new FrmReservas());
+            OpenChildForm(new FrmReservas( _reservaServicios,_hotelServicios,_clienteServicios));
         }
 
         private void btnHoteles_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
-            OpenChildForm(new FrmHoteles());
+            OpenChildForm(new FrmHoteles(_hotelServicios));
         }
 
         private void btnHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
-            OpenChildForm(new FrmHabitaciones());
+            OpenChildForm(new FrmHabitaciones(_habitacionServicios) );
         }
 
         private void btnReporteClientes_Click(object sender, EventArgs e)
@@ -165,6 +176,11 @@ namespace NLayer.Formularios
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panelFormularioHijo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

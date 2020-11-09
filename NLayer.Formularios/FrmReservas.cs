@@ -25,16 +25,16 @@ namespace NLayer.Formularios
         ClienteServicios _clienteServicios;
         HabitacionServicios _habitacionServicios;
         public ListViewItem Item { get => _items; }
-        public FrmReservas()
+        public FrmReservas(ReservaServicios reservas, HotelServicios hotel, ClienteServicios cls)
         {
             InitializeComponent();
-            _reservaServicios = new ReservaServicios();
+            _reservaServicios = reservas;
             _lstReservas = new List<Reserva>();
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _lstClientes = new List<Cliente>();
-            _hotelServicios = new HotelServicios();
-            _clienteServicios = new ClienteServicios();
+            _hotelServicios = hotel;
+            _clienteServicios = cls;
             _habitacionServicios = new HabitacionServicios();
         }
 
@@ -51,24 +51,42 @@ namespace NLayer.Formularios
                 formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado, _reservaServicios);
                 formularios.Owner = this;
                 formularios.ShowDialog();
-                CargarListView(idSeleccionado);
+                CargarListView((Hotel)cbxHoteles.SelectedItem);
             }
             catch (Exception ex)
             {
                 lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
-        private void CargarListView(int idHotel)
+        private void CargarListView(Hotel _hotel)
         {
             lstReservas.Items.Clear();
 
-            _lstReservas = _reservaServicios.TraerTodo();
-            _lstHabitaciones = _habitacionServicios.TraerTodoPorId(idHotel);
-            foreach (Reserva a in _lstReservas)
+            if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
             {
-                Habitacion habitacion = _lstHabitaciones.SingleOrDefault(x => x.Id == a.IdHabitacion);
-                if (habitacion != null)
+
+            }
+            else
+            {
+                _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
+
+            }
+            _lstHabitaciones = _hotel.Habitaciones;
+
+            if (_lstReservas == null || _lstReservas.Count() == 0)
+            {
+                _lstReservas = _reservaServicios.TraerTodo();
+                
+                foreach (var h in _hotel.Habitaciones)
                 {
+                    h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
+                }
+            }
+            var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
+
+            foreach (Reserva a in misreservas)
+            {
+               
                     Cliente cliente = _lstClientes.SingleOrDefault(x => x.Id == a.IdCliente);
                     if (cliente != null)
                     {
@@ -80,7 +98,7 @@ namespace NLayer.Formularios
                         _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
                         _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
                     }
-                }
+               
             }
         }
 
@@ -95,7 +113,7 @@ namespace NLayer.Formularios
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
                     formulario.ShowDialog();
-                    CargarListView(idSeleccionado);
+                    CargarListView((Hotel)cbxHoteles.SelectedItem);
                 }
                 else
                     lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
@@ -140,13 +158,13 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
+                CargarListView(((Hotel)cbxHoteles.SelectedItem));
             }
         }
 
         private void cbxHoteles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
+            CargarListView(((Hotel)cbxHoteles.SelectedItem));
         }
 
         private void FrmReservas_Load(object sender, EventArgs e)

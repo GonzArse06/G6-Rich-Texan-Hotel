@@ -63,8 +63,8 @@
             this.chFechaEgreso});
             this.lstReservas.FullRowSelect = true;
             this.lstReservas.HideSelection = false;
-            this.lstReservas.Location = new System.Drawing.Point(9, 54);
-            this.lstReservas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstReservas.Location = new System.Drawing.Point(21, 54);
+            this.lstReservas.Margin = new System.Windows.Forms.Padding(2);
             this.lstReservas.Name = "lstReservas";
             this.lstReservas.Size = new System.Drawing.Size(631, 408);
             this.lstReservas.TabIndex = 4;
@@ -85,7 +85,7 @@
             // chIdCliente
             // 
             this.chIdCliente.Text = "IdCliente";
-            this.chIdCliente.Width = 103;
+            this.chIdCliente.Width = 86;
             // 
             // chClienteNombre
             // 
@@ -127,19 +127,19 @@
             // lblIdHotel
             // 
             this.lblIdHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdHotel.Location = new System.Drawing.Point(9, 20);
+            this.lblIdHotel.Location = new System.Drawing.Point(23, 16);
             this.lblIdHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdHotel.Name = "lblIdHotel";
-            this.lblIdHotel.Size = new System.Drawing.Size(61, 21);
+            this.lblIdHotel.Size = new System.Drawing.Size(47, 21);
             this.lblIdHotel.TabIndex = 8;
-            this.lblIdHotel.Text = "ID Hotel";
+            this.lblIdHotel.Text = "Hotel";
             // 
             // cbxHoteles
             // 
             this.cbxHoteles.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxHoteles.FormattingEnabled = true;
             this.cbxHoteles.Location = new System.Drawing.Point(74, 16);
-            this.cbxHoteles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxHoteles.Margin = new System.Windows.Forms.Padding(2);
             this.cbxHoteles.Name = "cbxHoteles";
             this.cbxHoteles.Size = new System.Drawing.Size(172, 25);
             this.cbxHoteles.TabIndex = 9;
@@ -154,12 +154,13 @@
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
             this.btnCerrar.Location = new System.Drawing.Point(798, 10);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
             this.btnCerrar.Size = new System.Drawing.Size(40, 31);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Visible = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnExportarExcel
@@ -171,7 +172,7 @@
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportarExcel.IconSize = 48;
             this.btnExportarExcel.Location = new System.Drawing.Point(674, 249);
-            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Rotation = 0D;
             this.btnExportarExcel.Size = new System.Drawing.Size(164, 50);
@@ -189,7 +190,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 48;
             this.btnEliminar.Location = new System.Drawing.Point(674, 182);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Rotation = 0D;
             this.btnEliminar.Size = new System.Drawing.Size(164, 50);
@@ -207,7 +208,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 48;
             this.btnEditar.Location = new System.Drawing.Point(674, 118);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Rotation = 0D;
             this.btnEditar.Size = new System.Drawing.Size(164, 50);
@@ -225,7 +226,7 @@
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 48;
             this.btnNuevo.Location = new System.Drawing.Point(674, 54);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Rotation = 0D;
             this.btnNuevo.Size = new System.Drawing.Size(164, 50);
@@ -248,7 +249,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmReservas";
             this.Text = "Reservas";
             this.Load += new System.EventHandler(this.FrmReservas_Load);
