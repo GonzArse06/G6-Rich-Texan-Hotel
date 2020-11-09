@@ -48,7 +48,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado);
+                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado, _reservaServicios);
                 formularios.Owner = this;
                 formularios.ShowDialog();
                 CargarListView(idSeleccionado);
@@ -89,7 +89,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado);
+                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _reservaServicios);
                 if (lstReservas.SelectedItems.Count == 1)
                 {
                     LlenarTextboxChild(formulario);
@@ -122,7 +122,7 @@ namespace NLayer.Formularios
             
                 if (lstReservas.SelectedItems.Count == 1)
                 {
-                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _items = (ListViewItem)lstReservas.SelectedItems[0];
                     int resultado = _reservaServicios.EliminarReserva(int.Parse(_items.Text));
@@ -155,6 +155,11 @@ namespace NLayer.Formularios
             cbxHoteles.DataSource = _hotelServicios.TraerTodo();
             cbxHoteles.DisplayMember = "Nombre";
             cbxHoteles.ValueMember = "Id";
+        }
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

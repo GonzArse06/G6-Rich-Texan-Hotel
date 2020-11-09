@@ -56,10 +56,11 @@
             this.btnNuevo.IconColor = System.Drawing.Color.Black;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 48;
-            this.btnNuevo.Location = new System.Drawing.Point(903, 66);
+            this.btnNuevo.Location = new System.Drawing.Point(677, 54);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Rotation = 0D;
-            this.btnNuevo.Size = new System.Drawing.Size(219, 61);
+            this.btnNuevo.Size = new System.Drawing.Size(164, 50);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -73,10 +74,11 @@
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 48;
-            this.btnEditar.Location = new System.Drawing.Point(903, 145);
+            this.btnEditar.Location = new System.Drawing.Point(677, 118);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Rotation = 0D;
-            this.btnEditar.Size = new System.Drawing.Size(219, 61);
+            this.btnEditar.Size = new System.Drawing.Size(164, 50);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -90,10 +92,11 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 48;
-            this.btnEliminar.Location = new System.Drawing.Point(903, 224);
+            this.btnEliminar.Location = new System.Drawing.Point(677, 182);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Rotation = 0D;
-            this.btnEliminar.Size = new System.Drawing.Size(219, 61);
+            this.btnEliminar.Size = new System.Drawing.Size(164, 50);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -107,10 +110,11 @@
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportarExcel.IconSize = 48;
-            this.btnExportarExcel.Location = new System.Drawing.Point(903, 306);
+            this.btnExportarExcel.Location = new System.Drawing.Point(677, 249);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Rotation = 0D;
-            this.btnExportarExcel.Size = new System.Drawing.Size(219, 61);
+            this.btnExportarExcel.Size = new System.Drawing.Size(164, 50);
             this.btnExportarExcel.TabIndex = 3;
             this.btnExportarExcel.Text = "EXPORTAR A EXCEL";
             this.btnExportarExcel.UseVisualStyleBackColor = true;
@@ -131,12 +135,14 @@
             this.chFechaAlta});
             this.lstClientes.FullRowSelect = true;
             this.lstClientes.HideSelection = false;
-            this.lstClientes.Location = new System.Drawing.Point(12, 66);
+            this.lstClientes.Location = new System.Drawing.Point(9, 54);
+            this.lstClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(857, 422);
+            this.lstClientes.Size = new System.Drawing.Size(644, 344);
             this.lstClientes.TabIndex = 4;
             this.lstClientes.UseCompatibleStateImageBehavior = false;
             this.lstClientes.View = System.Windows.Forms.View.Details;
+            this.lstClientes.DoubleClick += new System.EventHandler(this.btnEditar_Click);
             // 
             // chId
             // 
@@ -182,9 +188,10 @@
             // 
             this.txtBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscador.Location = new System.Drawing.Point(12, 38);
+            this.txtBuscador.Location = new System.Drawing.Point(9, 31);
+            this.txtBuscador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(572, 22);
+            this.txtBuscador.Size = new System.Drawing.Size(430, 20);
             this.txtBuscador.TabIndex = 5;
             // 
             // btnCerrar
@@ -195,10 +202,11 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(1069, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(802, 10);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
-            this.btnCerrar.Size = new System.Drawing.Size(53, 38);
+            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -208,23 +216,24 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 637);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 513);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1134, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(850, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 16);
+            this.lblResultado.Size = new System.Drawing.Size(0, 17);
             this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // FrmClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 659);
+            this.ClientSize = new System.Drawing.Size(850, 535);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBuscador);
@@ -233,6 +242,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);

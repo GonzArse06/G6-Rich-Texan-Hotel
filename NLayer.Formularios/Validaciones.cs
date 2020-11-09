@@ -16,7 +16,7 @@ namespace NLayer.Formularios
 
             foreach (Control a in controls)
             {
-                if (a is TextBox && a.Enabled == true)
+                if (a is TextBox && a.Enabled == true && ((TextBox) a).ReadOnly == false )
                 {
                     if (string.IsNullOrEmpty(a.Text))
                         mensaje = "Hay campos vacios. Revisar!";
@@ -28,7 +28,7 @@ namespace NLayer.Formularios
         {
             foreach (Control a in controls)
             {
-                if (a is TextBox && a.Enabled == true)
+                if (a is TextBox && a.Enabled == true && ((TextBox)a).ReadOnly == false)
                 {
                     a.Text = string.Empty;
                 }

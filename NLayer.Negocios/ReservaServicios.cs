@@ -10,8 +10,10 @@ namespace NLayer.Negocios
 {
     public class ReservaServicios
     {
+        List<Reserva> listaitems;
         public ReservaServicios()
         {
+            listaitems = new List<Reserva>();
         }
         public int IngresarReserva(Reserva reserva)
         {
@@ -33,7 +35,8 @@ namespace NLayer.Negocios
         }
         public List<Reserva> TraerTodo()
         {
-            return ReservaMapper.Reserva_getAll();
+            listaitems = ReservaMapper.Reserva_getAll();
+            return listaitems;
         }
         public int EliminarReserva(int id)
         {

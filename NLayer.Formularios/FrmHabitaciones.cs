@@ -47,7 +47,8 @@ namespace NLayer.Formularios
                 formularios.Owner = this;
                 formularios.ShowDialog();
                 CargarListView(idSeleccionado);
-        }
+        
+            }
             catch (Exception ex)
             {
                 lblResultado.Text = "ERROR -> " + ex.Message;
@@ -112,7 +113,7 @@ namespace NLayer.Formularios
         {
             if (lstHabitaciones.SelectedItems.Count == 1)
             {
-                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _items = (ListViewItem)lstHabitaciones.SelectedItems[0];
                     int resultado = _habitacionServicios.EliminarHabitacion(int.Parse(_items.Text));
@@ -137,6 +138,11 @@ namespace NLayer.Formularios
         private void cbxHoteles_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarListView(((Hotel)cbxHoteles.SelectedItem).Id);
+        }
+
+        private void lstHabitaciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

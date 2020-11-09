@@ -40,7 +40,7 @@ namespace NLayer.Formularios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            formularios = new FrmAbmClientes(AbmTipo.Alta);
+            formularios = new FrmAbmClientes(AbmTipo.Alta, _clienteServicios);
             formularios.Owner = this;
             formularios.ShowDialog();
             CargarListView();
@@ -71,7 +71,7 @@ namespace NLayer.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion);
+            FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
             formularios.Owner = this;
             if (lstClientes.SelectedItems.Count==1)
             {

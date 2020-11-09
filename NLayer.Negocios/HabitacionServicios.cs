@@ -10,8 +10,10 @@ namespace NLayer.Negocios
 {
     public class HabitacionServicios
     {
+        List<Habitacion> listaitems;
         public HabitacionServicios()
         {
+            listaitems = new List<Habitacion>();
         }
         public int IngresarHabitacion(Habitacion habitacion)
         {
@@ -37,6 +39,7 @@ namespace NLayer.Negocios
         }
         public int EliminarHabitacion(int id)
         {
+            
             //faltan validaciones de negocio.
             TransactionResult resultado = HabitacionMapper.Delete(id);
             if (resultado.IsOk)

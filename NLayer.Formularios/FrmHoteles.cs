@@ -34,7 +34,7 @@ namespace NLayer.Formularios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            formularios = new FrmAbmHoteles(AbmTipo.Alta);
+            formularios = new FrmAbmHoteles(AbmTipo.Alta, _hotelServicios);
             formularios.Owner = this;
             formularios.ShowDialog();
             CargarListView();
@@ -56,7 +56,7 @@ namespace NLayer.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FrmAbmHoteles formulario = new FrmAbmHoteles(AbmTipo.Modificacion);
+            FrmAbmHoteles formulario = new FrmAbmHoteles(AbmTipo.Modificacion, _hotelServicios);
             if (lstHoteles.SelectedItems.Count==1)
             {
                 LlenarTextboxChild(formulario);
@@ -88,7 +88,7 @@ namespace NLayer.Formularios
             
                 if (lstHoteles.SelectedItems.Count == 1)
                 {
-                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _items = (ListViewItem)lstHoteles.SelectedItems[0];
                     int resultado = _hotelServicios.EliminarHotel(int.Parse(_items.Text));

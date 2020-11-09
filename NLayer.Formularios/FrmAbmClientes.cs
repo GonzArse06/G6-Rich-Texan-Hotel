@@ -15,7 +15,8 @@ namespace NLayer.Formularios
     public partial class FrmAbmClientes : Form
     {
         AbmTipo _tipo;
-        public FrmAbmClientes(AbmTipo tipo)
+        ClienteServicios clienteServicios ;
+        public FrmAbmClientes(AbmTipo tipo, ClienteServicios serv)
         {
             InitializeComponent();
             _tipo = tipo;
@@ -28,6 +29,7 @@ namespace NLayer.Formularios
                     InicializarModificacion();
                     break;
             }
+            clienteServicios = serv;
         }
         private void InicializarAlta()
         {
@@ -66,7 +68,7 @@ namespace NLayer.Formularios
                     cliente.Email = txtMail.Text;
                     cliente.Telefono = int.Parse(txtTelefono.Text);
 
-                    ClienteServicios clienteServicios = new ClienteServicios();
+                   
                     int resultado = -1;
                     switch (_tipo)
                     {
@@ -79,6 +81,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Cliente");
                             break;
                     }
+                    this.Close();
                 }
                 catch (Exception e)
                 {
@@ -97,6 +100,16 @@ namespace NLayer.Formularios
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

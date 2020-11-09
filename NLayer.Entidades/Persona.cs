@@ -13,6 +13,7 @@ namespace NLayer.Entidades
     {
         protected string _nombre;
         protected string _apellido;
+        protected DateTime _fechaNac;
         private string _direccion;
         private string _mail;
         private int _telefono;
@@ -34,6 +35,10 @@ namespace NLayer.Entidades
 
         [DataMember]
         public int Telefono { get => _telefono; set => _telefono = value; }
+
+        public DateTime FechaNacimiento { get => _fechaNac; set => _fechaNac = value; }
+
+
 
 
     }

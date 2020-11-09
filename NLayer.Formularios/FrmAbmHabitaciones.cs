@@ -63,6 +63,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Habitacion");
                             break;
                     }
+                    this.Close();
                 }
                 catch (Exception e)
                 {
@@ -89,6 +90,16 @@ namespace NLayer.Formularios
         {
             if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
+        }
+
+        private void btnBuscarHotel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIidHabitacion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

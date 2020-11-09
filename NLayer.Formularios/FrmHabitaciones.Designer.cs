@@ -59,12 +59,15 @@
             this.chPrecio});
             this.lstHabitaciones.FullRowSelect = true;
             this.lstHabitaciones.HideSelection = false;
-            this.lstHabitaciones.Location = new System.Drawing.Point(12, 66);
+            this.lstHabitaciones.Location = new System.Drawing.Point(9, 54);
+            this.lstHabitaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstHabitaciones.Name = "lstHabitaciones";
-            this.lstHabitaciones.Size = new System.Drawing.Size(861, 501);
+            this.lstHabitaciones.Size = new System.Drawing.Size(647, 408);
             this.lstHabitaciones.TabIndex = 4;
             this.lstHabitaciones.UseCompatibleStateImageBehavior = false;
             this.lstHabitaciones.View = System.Windows.Forms.View.Details;
+            this.lstHabitaciones.SelectedIndexChanged += new System.EventHandler(this.lstHabitaciones_SelectedIndexChanged);
+            this.lstHabitaciones.DoubleClick += new System.EventHandler(this.btnEditar_Click);
             // 
             // chId
             // 
@@ -96,16 +99,17 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 631);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 509);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1140, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(855, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 16);
+            this.lblResultado.Size = new System.Drawing.Size(0, 17);
             // 
             // btnCerrar
             // 
@@ -115,10 +119,11 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(1075, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(806, 10);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 0D;
-            this.btnCerrar.Size = new System.Drawing.Size(53, 38);
+            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -131,10 +136,11 @@
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportarExcel.IconSize = 48;
-            this.btnExportarExcel.Location = new System.Drawing.Point(909, 306);
+            this.btnExportarExcel.Location = new System.Drawing.Point(682, 249);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Rotation = 0D;
-            this.btnExportarExcel.Size = new System.Drawing.Size(219, 61);
+            this.btnExportarExcel.Size = new System.Drawing.Size(164, 50);
             this.btnExportarExcel.TabIndex = 3;
             this.btnExportarExcel.Text = "EXPORTAR A EXCEL";
             this.btnExportarExcel.UseVisualStyleBackColor = true;
@@ -147,10 +153,11 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 48;
-            this.btnEliminar.Location = new System.Drawing.Point(909, 224);
+            this.btnEliminar.Location = new System.Drawing.Point(682, 182);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Rotation = 0D;
-            this.btnEliminar.Size = new System.Drawing.Size(219, 61);
+            this.btnEliminar.Size = new System.Drawing.Size(164, 50);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -164,10 +171,11 @@
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 48;
-            this.btnEditar.Location = new System.Drawing.Point(909, 145);
+            this.btnEditar.Location = new System.Drawing.Point(682, 118);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Rotation = 0D;
-            this.btnEditar.Size = new System.Drawing.Size(219, 61);
+            this.btnEditar.Size = new System.Drawing.Size(164, 50);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -181,10 +189,11 @@
             this.btnNuevo.IconColor = System.Drawing.Color.Black;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 48;
-            this.btnNuevo.Location = new System.Drawing.Point(909, 66);
+            this.btnNuevo.Location = new System.Drawing.Point(682, 54);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Rotation = 0D;
-            this.btnNuevo.Size = new System.Drawing.Size(219, 61);
+            this.btnNuevo.Size = new System.Drawing.Size(164, 50);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -193,9 +202,10 @@
             // lblIdHotel
             // 
             this.lblIdHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdHotel.Location = new System.Drawing.Point(12, 24);
+            this.lblIdHotel.Location = new System.Drawing.Point(9, 20);
+            this.lblIdHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdHotel.Name = "lblIdHotel";
-            this.lblIdHotel.Size = new System.Drawing.Size(81, 26);
+            this.lblIdHotel.Size = new System.Drawing.Size(61, 21);
             this.lblIdHotel.TabIndex = 8;
             this.lblIdHotel.Text = "ID Hotel";
             // 
@@ -203,17 +213,18 @@
             // 
             this.cbxHoteles.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxHoteles.FormattingEnabled = true;
-            this.cbxHoteles.Location = new System.Drawing.Point(99, 20);
+            this.cbxHoteles.Location = new System.Drawing.Point(74, 16);
+            this.cbxHoteles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxHoteles.Name = "cbxHoteles";
-            this.cbxHoteles.Size = new System.Drawing.Size(228, 30);
+            this.cbxHoteles.Size = new System.Drawing.Size(172, 25);
             this.cbxHoteles.TabIndex = 9;
             this.cbxHoteles.SelectedIndexChanged += new System.EventHandler(this.cbxHoteles_SelectedIndexChanged);
             // 
             // FrmHabitaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 653);
+            this.ClientSize = new System.Drawing.Size(855, 531);
             this.Controls.Add(this.cbxHoteles);
             this.Controls.Add(this.lblIdHotel);
             this.Controls.Add(this.statusStrip1);
@@ -223,6 +234,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmHabitaciones";
             this.Text = "Habitaciones";
             this.Load += new System.EventHandler(this.FrmHabitacion_Load);

@@ -15,10 +15,12 @@ namespace NLayer.Formularios
     public partial class FrmAbmHoteles : Form
     {
         AbmTipo _tipo;
-        public FrmAbmHoteles(AbmTipo tipo)
+        HotelServicios hotelServicios ;
+        public FrmAbmHoteles(AbmTipo tipo, HotelServicios serv )
         {
             InitializeComponent();
             _tipo = tipo;
+            hotelServicios =serv;
         }
         private void cbCancelable_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -28,6 +30,7 @@ namespace NLayer.Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+           
         }
         private void Guardar()
         {
@@ -47,7 +50,7 @@ namespace NLayer.Formularios
                     hotel.Amenities = cbAmenities.Checked;
                     hotel.Estrellas = int.Parse(nuEstrellas.Value.ToString());
 
-                    HotelServicios hotelServicios = new HotelServicios();
+                   
                     int resultado = -1;
                     switch (_tipo)
                     {
@@ -60,6 +63,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Hotel");
                             break;
                     }
+                    this.Close();
                 }
                 catch (Exception e)
                 {

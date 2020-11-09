@@ -14,17 +14,20 @@ namespace NLayer.Formularios
 {
     public partial class FrmAbmReservas : Form
     {
+        ReservaServicios reservaServicios ;
         AbmTipo _tipo;
         int _idHotel;
-        public FrmAbmReservas(AbmTipo tipo, int idHotel)
+        public FrmAbmReservas(AbmTipo tipo, int idHotel, ReservaServicios serv )
         {
             InitializeComponent();
             _tipo = tipo;
             _idHotel = idHotel;
+            reservaServicios = serv;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            
         }
         private void Guardar()
         {
@@ -44,7 +47,7 @@ namespace NLayer.Formularios
                     reserva.CantidadHuespedes = int.Parse(txtNroHuespedes.Text);
                     reserva.FechaIngreso = dtFechaIngreso.Value;
                     reserva.FechaEgreso = dtFechaEgreso.Value;
-                    ReservaServicios reservaServicios = new ReservaServicios();
+                  
                     int resultado = -1;
                     switch (_tipo)
                     {
@@ -57,6 +60,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Reserva");
                             break;
                     }
+                    this.Close();
                 }
                 catch (Exception e)
                 {
