@@ -86,8 +86,10 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnCerrar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmBuscarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBuscarCliente";
             this.Load += new System.EventHandler(this.FrmBuscarCliente_Load);
             this.ResumeLayout(false);

@@ -35,15 +35,13 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 26;
             this.btnCerrar.Location = new System.Drawing.Point(433, 10);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Rotation = 0D;
             this.btnCerrar.Size = new System.Drawing.Size(33, 25);
             this.btnCerrar.TabIndex = 37;
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -52,7 +50,6 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSeleccionar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSeleccionar.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.btnSeleccionar.IconColor = System.Drawing.Color.Black;
@@ -60,9 +57,8 @@
             this.btnSeleccionar.IconSize = 40;
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSeleccionar.Location = new System.Drawing.Point(332, 250);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Rotation = 0D;
             this.btnSeleccionar.Size = new System.Drawing.Size(134, 43);
             this.btnSeleccionar.TabIndex = 38;
             this.btnSeleccionar.Text = "Seleccionar";
@@ -76,7 +72,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 17;
             this.listBox1.Location = new System.Drawing.Point(9, 39);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(458, 191);
             this.listBox1.TabIndex = 39;
@@ -90,8 +86,10 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnCerrar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBuscar";
             this.Load += new System.EventHandler(this.FrmBuscarCliente_Load);
             this.ResumeLayout(false);

@@ -39,12 +39,12 @@
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.btnBuscarHotel = new FontAwesome.Sharp.IconButton();
             this.cbAmenities = new System.Windows.Forms.CheckBox();
             this.nuEstrellas = new System.Windows.Forms.NumericUpDown();
             this.txtIdHotel = new NLayer.Formularios.TextoNumerico();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuEstrellas)).BeginInit();
             this.panelTop.SuspendLayout();
@@ -178,21 +178,6 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 26;
-            this.btnCerrar.Location = new System.Drawing.Point(277, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(33, 25);
-            this.btnCerrar.TabIndex = 21;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Visible = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // btnBuscarHotel
             // 
             this.btnBuscarHotel.IconChar = FontAwesome.Sharp.IconChar.Search;
@@ -248,7 +233,7 @@
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHotel.Location = new System.Drawing.Point(96, 62);
             this.txtIdHotel.Name = "txtIdHotel";
-            this.txtIdHotel.Size = new System.Drawing.Size(149, 26);
+            this.txtIdHotel.Size = new System.Drawing.Size(160, 26);
             this.txtIdHotel.TabIndex = 28;
             // 
             // panelTop
@@ -260,6 +245,20 @@
             this.panelTop.Size = new System.Drawing.Size(321, 50);
             this.panelTop.TabIndex = 29;
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCerrar.IconColor = System.Drawing.Color.Black;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 26;
+            this.btnCerrar.Location = new System.Drawing.Point(277, 11);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(33, 25);
+            this.btnCerrar.TabIndex = 22;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Visible = false;
             // 
             // FrmAbmHoteles
             // 
@@ -307,7 +306,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblResultado;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnCerrar;
         private FontAwesome.Sharp.IconButton btnBuscarHotel;
         public System.Windows.Forms.TextBox txtDireccion;
         public System.Windows.Forms.TextBox txtNombre;
@@ -315,5 +313,6 @@
         public System.Windows.Forms.NumericUpDown nuEstrellas;
         public TextoNumerico txtIdHotel;
         private System.Windows.Forms.Panel panelTop;
+        private FontAwesome.Sharp.IconButton btnCerrar;
     }
 }
