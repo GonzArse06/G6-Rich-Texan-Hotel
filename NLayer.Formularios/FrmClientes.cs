@@ -15,12 +15,12 @@ namespace NLayer.Formularios
     public partial class FrmClientes : Form
     {
         Form formularios;
-        ClienteServicios _clienteServicios;
+        HotelServicios _clienteServicios;
         List<Cliente> _Lstclientes;
         ListViewItem _listViewItem;
         ListViewItem _items;
         public ListViewItem Item { get => _items; }
-        public FrmClientes(ClienteServicios serv)
+        public FrmClientes(HotelServicios serv)
         {
             InitializeComponent();
             _clienteServicios = serv;
@@ -58,7 +58,7 @@ namespace NLayer.Formularios
         private void CargarListView()
         {
             lstClientes.Items.Clear();
-            _Lstclientes = _clienteServicios.TraerTodo();
+            _Lstclientes = _clienteServicios.TraerClientes();
                      
             foreach (Cliente a in _Lstclientes)
             {

@@ -15,11 +15,11 @@ namespace NLayer.Formularios
     public partial class FrmBuscarCliente : Form
     {
         List<Cliente> _lista;
-        ClienteServicios _clienteServicios;
+        HotelServicios _clienteServicios;
         public FrmBuscarCliente()
         {
             InitializeComponent();
-            _clienteServicios = new ClienteServicios();
+            _clienteServicios = new HotelServicios();
             _lista = new List<Cliente>();
         }
         private void listBox1_doubleClick(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace NLayer.Formularios
         private void FrmBuscarCliente_Load(object sender, EventArgs e)
         {
             listBox1.DataSource = null;
-            listBox1.DataSource = _clienteServicios.TraerTodo();
+            listBox1.DataSource = _clienteServicios.TraerClientes();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -8,13 +8,10 @@ using System.Threading.Tasks;
 
 namespace NLayer.Negocios
 {
-    public class ClienteServicios
+    public partial class HotelServicios
     {
         List<Cliente> listaclientes;
-        public ClienteServicios()
-        {
-            listaclientes = new List<Cliente>();
-        }
+      
         public int IngresarCliente(Cliente item)
         {
             //faltan validaciones de negocio.
@@ -50,7 +47,7 @@ namespace NLayer.Negocios
                 throw new ReservasException(resultado.Error);
             }
         }
-        public List<Cliente> TraerTodo()
+        public List<Cliente> TraerClientes()
         {
             listaclientes = ClienteMapper.TraerTodos();
             return listaclientes;

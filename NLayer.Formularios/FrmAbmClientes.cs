@@ -15,8 +15,8 @@ namespace NLayer.Formularios
     public partial class FrmAbmClientes : Form
     {
         AbmTipo _tipo;
-        ClienteServicios clienteServicios ;
-        public FrmAbmClientes(AbmTipo tipo, ClienteServicios serv)
+        HotelServicios clienteServicios ;
+        public FrmAbmClientes(AbmTipo tipo, HotelServicios serv)
         {
             InitializeComponent();
             _tipo = tipo;

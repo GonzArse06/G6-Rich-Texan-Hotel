@@ -15,26 +15,26 @@ namespace NLayer.Formularios
     public partial class FrmReservas : Form
     {
         Form formularios;
-        ReservaServicios _reservaServicios;
+      
         List<Reserva> _lstReservas;
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
         ListViewItem _items;
         List<Cliente> _lstClientes;
         HotelServicios _hotelServicios;
-        ClienteServicios _clienteServicios;
+  
    
         public ListViewItem Item { get => _items; }
-        public FrmReservas(ReservaServicios reservas, HotelServicios hotel, ClienteServicios cls)
+        public FrmReservas(HotelServicios srv)
         {
             InitializeComponent();
-            _reservaServicios = reservas;
+           
             _lstReservas = new List<Reserva>();
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _lstClientes = new List<Cliente>();
-            _hotelServicios = hotel;
-            _clienteServicios = cls;
+            _hotelServicios = srv;
+           
           
         }
 
@@ -48,7 +48,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado, _reservaServicios, _hotelServicios);
+                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado,  _hotelServicios);
                 formularios.Owner = this;
                 var ret =formularios.ShowDialog();
                 if (ret != DialogResult.Cancel)
@@ -65,7 +65,7 @@ namespace NLayer.Formularios
         private void CargarListView(Hotel _hotel)
         {
             lstReservas.Items.Clear();
-            _lstReservas = _reservaServicios.TraerTodo();
+            _lstReservas = _hotelServicios.TraerReservas();
             if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
             {
 
@@ -107,7 +107,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _reservaServicios, _hotelServicios);
+                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado,  _hotelServicios);
                 if (lstReservas.SelectedItems.Count == 1)
                 {
                     LlenarTextboxChild(formulario);
@@ -147,7 +147,7 @@ namespace NLayer.Formularios
                     if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         _items = (ListViewItem)lstReservas.SelectedItems[0];
-                        int resultado = _reservaServicios.EliminarReserva(int.Parse(_items.Text));
+                        int resultado = _hotelServicios.EliminarReserva(int.Parse(_items.Text));
                         LogResultado(resultado, "Eliminar reserva");
                     }
                 else
@@ -173,8 +173,8 @@ namespace NLayer.Formularios
 
         private void FrmReservas_Load(object sender, EventArgs e)
         {
-            _lstClientes = _clienteServicios.TraerTodo();
-            cbxHoteles.DataSource = _hotelServicios.TraerTodo();
+            _lstClientes = _hotelServicios.TraerClientes();
+            cbxHoteles.DataSource = _hotelServicios.TraerHoteles();
             cbxHoteles.DisplayMember = "Nombre";
             cbxHoteles.ValueMember = "Id";
         }

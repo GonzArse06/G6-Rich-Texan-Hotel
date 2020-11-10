@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Negocios
 {
-    public class HotelServicios
+    public partial class HotelServicios
     {
         List<Hotel> listahoteles;
         List<Habitacion> listaitems;
@@ -18,6 +18,7 @@ namespace NLayer.Negocios
         {
             listahoteles = new List<Hotel>();
             listaitems = new List<Habitacion>();
+            listaReservas = new List<Reserva>();
             //listahoteles = HotelMapper.Hotel_getAll();
         }
         public int IngresarHotel(Hotel hotel)
@@ -55,7 +56,7 @@ namespace NLayer.Negocios
                 throw new ReservasException(resultado.Error);
             }
         }
-        public List<Hotel> TraerTodo()
+        public List<Hotel> TraerHoteles()
         {
             listahoteles = HotelMapper.Hotel_getAll();
             return listahoteles;

@@ -62,7 +62,7 @@ namespace NLayer.Formularios
         private void FrmHabitacion_Load(object sender, EventArgs e)
         {            
             
-            cbxHoteles.DataSource = _hotelServicios.TraerTodo();
+            cbxHoteles.DataSource = _hotelServicios.TraerHoteles();
             cbxHoteles.DisplayMember = "Nombre";
             cbxHoteles.ValueMember = "Id";
         }

@@ -47,7 +47,7 @@ namespace NLayer.Formularios
         {
             lstHoteles.Items.Clear();
 
-            _LstHoteles = _hotelServicios.TraerTodo();            
+            _LstHoteles = _hotelServicios.TraerHoteles();            
             foreach (Hotel a in _LstHoteles)
             {
                 _listViewItem = lstHoteles.Items.Add(a.Id.ToString());

@@ -50,7 +50,7 @@ namespace NLayer.Formularios
         {
           
             listBox1.DataSource = null;
-            listBox1.DataSource = _Servicios.TraerTodo();
+            listBox1.DataSource = _Servicios.TraerHoteles();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

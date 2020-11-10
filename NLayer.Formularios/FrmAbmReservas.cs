@@ -15,19 +15,19 @@ namespace NLayer.Formularios
     public partial class FrmAbmReservas : Form
     {
         
-        ReservaServicios reservaServicios ;
+       
         HotelServicios hotelServicios;
         AbmTipo _tipo;
         int _idHotel;
         Habitacion hh;
 
         
-        public FrmAbmReservas(AbmTipo tipo, int idHotel, ReservaServicios serv, HotelServicios htlserv)
+        public FrmAbmReservas(AbmTipo tipo, int idHotel,  HotelServicios htlserv)
         {
             InitializeComponent();
             _tipo = tipo;
             _idHotel = idHotel;
-            reservaServicios = serv;
+           
             hotelServicios = htlserv;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -62,11 +62,11 @@ namespace NLayer.Formularios
                     switch (_tipo)
                     {
                         case AbmTipo.Alta:
-                            resultado = reservaServicios.IngresarReserva(reserva, hh);
+                            resultado = hotelServicios.IngresarReserva(reserva, hh);
                             LogResultado(resultado, "Ingresar Reserva");
                             break;
                         case AbmTipo.Modificacion:
-                            resultado = reservaServicios.ModificarReserva(reserva, hh);
+                            resultado = hotelServicios.ModificarReserva(reserva, hh);
                             LogResultado(resultado, "Modificar Reserva");
                             break;
                     }
