@@ -22,7 +22,7 @@ namespace NLayer.Formularios
         ReservaServicios _reservaServicios;
         HotelServicios _hotelServicios;
         ClienteServicios _clienteServicios;
-        HabitacionServicios _habitacionServicios;
+       
 
         public FrmInicio()
         {
@@ -37,7 +37,7 @@ namespace NLayer.Formularios
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             _hotelServicios = new HotelServicios();
             _clienteServicios = new ClienteServicios();
-            _habitacionServicios = new HabitacionServicios();
+           
             _reservaServicios = new ReservaServicios();
         }
 
@@ -113,7 +113,7 @@ namespace NLayer.Formularios
         private void btnHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
-            OpenChildForm(new FrmHabitaciones(_habitacionServicios) );
+            OpenChildForm(new FrmHabitaciones(_hotelServicios) );
         }
 
         private void btnReporteClientes_Click(object sender, EventArgs e)

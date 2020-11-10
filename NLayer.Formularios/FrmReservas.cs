@@ -23,7 +23,7 @@ namespace NLayer.Formularios
         List<Cliente> _lstClientes;
         HotelServicios _hotelServicios;
         ClienteServicios _clienteServicios;
-        HabitacionServicios _habitacionServicios;
+   
         public ListViewItem Item { get => _items; }
         public FrmReservas(ReservaServicios reservas, HotelServicios hotel, ClienteServicios cls)
         {
@@ -35,7 +35,7 @@ namespace NLayer.Formularios
             _lstClientes = new List<Cliente>();
             _hotelServicios = hotel;
             _clienteServicios = cls;
-            _habitacionServicios = new HabitacionServicios();
+          
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace NLayer.Formularios
             }
             else
             {
-                _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
+                _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
 
             }
             _lstHabitaciones = _hotel.Habitaciones;

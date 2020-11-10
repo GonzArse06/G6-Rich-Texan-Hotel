@@ -19,6 +19,9 @@ namespace NLayer.Formularios
         HotelServicios hotelServicios;
         AbmTipo _tipo;
         int _idHotel;
+        Habitacion hh;
+
+        
         public FrmAbmReservas(AbmTipo tipo, int idHotel, ReservaServicios serv, HotelServicios htlserv)
         {
             InitializeComponent();
@@ -29,16 +32,24 @@ namespace NLayer.Formularios
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
+           
+
+                Guardar();
+
+           
             
         }
         private void Guardar()
         {
-            lblResultado.Text = "";
+           
+            lblResultado.Text = string.Empty;
             Reserva reserva = new Reserva();
             string mensaje = Estaticas.Validaciones(Controls);
             if (mensaje != "")
+            {
                 MessageBox.Show(mensaje);
+                
+            }
             else
             {
                 try
@@ -55,15 +66,15 @@ namespace NLayer.Formularios
                     switch (_tipo)
                     {
                         case AbmTipo.Alta:
-                            resultado = reservaServicios.IngresarReserva(reserva);
+                            resultado = reservaServicios.IngresarReserva(reserva, hh);
                             LogResultado(resultado, "Ingresar Reserva");
                             break;
                         case AbmTipo.Modificacion:
-                            resultado = reservaServicios.ModificarReserva(reserva);
+                            resultado = reservaServicios.ModificarReserva(reserva, hh);
                             LogResultado(resultado, "Modificar Reserva");
                             break;
                     }
-                    this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
                 catch (Exception e)
                 {
@@ -88,8 +99,9 @@ namespace NLayer.Formularios
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                this.Close();
+            this.DialogResult = DialogResult.Cancel;
+            //if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    this.Close();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -104,6 +116,13 @@ namespace NLayer.Formularios
             FrmBuscarHabitacion formulario = new FrmBuscarHabitacion(_idHotel);
             formulario.Owner = this;
             formulario.ShowDialog();
+            var obj = formulario.Tag;
+            if (obj != null && obj is Habitacion)
+            {
+                hh = ((Habitacion)obj);
+               
+            }
+           
         }
 
         private void btnBuscarHotel_Click(object sender, EventArgs e)

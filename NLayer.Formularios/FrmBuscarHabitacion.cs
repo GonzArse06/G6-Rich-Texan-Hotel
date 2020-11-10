@@ -15,12 +15,12 @@ namespace NLayer.Formularios
     public partial class FrmBuscarHabitacion : Form
     {
         List<Habitacion> _lista;
-        HabitacionServicios _habitacionServicios;
+        HotelServicios _habitacionServicios;
         int _idHotel;
         public FrmBuscarHabitacion(int idHotel)
         {
             InitializeComponent();
-            _habitacionServicios = new HabitacionServicios();
+            _habitacionServicios = new HotelServicios();
             _lista = new List<Habitacion>();
             _idHotel = idHotel;
         }
@@ -41,6 +41,7 @@ namespace NLayer.Formularios
             else
             {
                 int idHabitacion = ((Habitacion)listBox1.SelectedItem).Id;
+                this.Tag = listBox1.SelectedItem;//Habitacion
                 ((FrmAbmReservas)Owner).txtIdHabitacion.Text = idHabitacion.ToString();
                 this.Close();
             }

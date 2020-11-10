@@ -15,7 +15,7 @@ namespace NLayer.Formularios
     public partial class FrmHabitaciones : Form
     {
         //Form formularios;
-        HabitacionServicios _habitacionServicios;
+        HotelServicios _habitacionServicios;
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
         ListViewItem _items;
@@ -23,7 +23,7 @@ namespace NLayer.Formularios
         HotelServicios _hotelServicios;
 
         public ListViewItem Item { get => _items; }
-        public FrmHabitaciones(HabitacionServicios serv)
+        public FrmHabitaciones(HotelServicios serv)
         {
             InitializeComponent();
             _habitacionServicios = serv;
