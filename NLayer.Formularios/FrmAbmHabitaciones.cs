@@ -63,7 +63,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Habitacion");
                             break;
                     }
-                    this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
                 catch (Exception e)
                 {

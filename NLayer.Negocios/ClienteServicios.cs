@@ -20,22 +20,35 @@ namespace NLayer.Negocios
             //faltan validaciones de negocio.
             if (listaclientes.Any(o => o.Nombre == item.Nombre))
             {
-                throw new ReservasException("El hotel ya existe");
+                throw new ReservasException("El cliente ya existe");
+            }
+            if (listaclientes.Any(o => o.Dni == item.Dni))
+            {
+                throw new ReservasException("Eel DNI se encuentra registrado");
             }
             TransactionResult resultado = ClienteMapper.Insert(item);
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
+                
         }
         public int ModificarCliente(Cliente item)
         {
             //faltan validaciones de negocio.
+            if (listaclientes.Any(o => o.Dni == item.Dni && o.Id != item.Id))
+            {
+                throw new ReservasException("Eel DNI se encuentra registrado");
+            }
             TransactionResult resultado = ClienteMapper.Update(item);
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
         public List<Cliente> TraerTodo()
         {
@@ -49,9 +62,14 @@ namespace NLayer.Negocios
             {
                 throw new ReservasException("No se pudo encontrar el cliente");
             }
+            //validar que no tenga reservas o borrarlas?
             TransactionResult resultado = ClienteMapper.Delete(id);
-            return resultado.IsOk;
-            
+            if (resultado.IsOk)
+                return true;
+            else
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using NLayer.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,9 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
         public int ModificarHotel(Hotel hotel)
         {
@@ -48,7 +51,9 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
         public List<Hotel> TraerTodo()
         {
@@ -70,17 +75,27 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
 
         public int IngresarHabitacion(Habitacion habitacion)
         {
             //faltan validaciones de negocio.
+            var minimo = int.Parse(ConfigurationSettings.AppSettings["PrecioMinimo"]);
+            if (habitacion.Precio <= minimo)
+            {
+                throw new ReservasException("El precio debe ser superior a " + minimo.ToString());
+            }
+
             TransactionResult resultado = HabitacionMapper.Insert(habitacion);
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
         public int ModificarHabitacion(Habitacion habitacion)
         {
@@ -89,7 +104,9 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
         public List<Habitacion> TraerTodoPorId(int id)
         {
@@ -103,7 +120,9 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
                 return resultado.Id;
             else
-                return -1;
+            {
+                throw new ReservasException(resultado.Error);
+            }
         }
     }
 }

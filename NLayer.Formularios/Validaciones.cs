@@ -53,12 +53,16 @@ namespace NLayer.Formularios
         public static void LogResultado(ToolStripLabel lblResultado, bool resultado, string mensaje)
         {
             if (!resultado)
+            {
                 lblResultado.Text = "ERROR -> " + mensaje;
+            }
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ";
 
             }
         }
+
+
     }
 }

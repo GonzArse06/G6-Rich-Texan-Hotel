@@ -63,7 +63,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Hotel");
                             break;
                     }
-                    this.Close();
+                    this.DialogResult = DialogResult.OK; //cierra
                 }
                 catch (Exception e)
                 {

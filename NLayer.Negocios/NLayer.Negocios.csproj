@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="ReservaServicios.cs" />
     <Compile Include="HotelServicios.cs" />
-    <Compile Include="HabitacionServicios.cs" />
+    <Compile Include="ValidationHelper.cs" />
     <Compile Include="ClienteServicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

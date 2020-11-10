@@ -45,22 +45,40 @@ namespace NLayer.Formularios
             
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             Guardar();
         }
 
         private void Guardar()
         {
             lblResultado.Text = "";
-            Cliente cliente = new Cliente();
+           
             string mensaje = Estaticas.Validaciones(Controls);
+
             if (mensaje != "")
+            {
                 MessageBox.Show(mensaje);
+            }
+            else if (!ValidationHelper.IsValidEmail(txtMail.Text))
+            {
+                MessageBox.Show("Email invalido");
+            }
+            //else if (!ValidationHelper.IsUInteger(txtDni.Text))
+            //{
+            //    MessageBox.Show("DNI invalido");
+            //}
+            //else if (!ValidationHelper.IsUInteger(txtTelefono.Text))
+            //{
+            //    MessageBox.Show("Telefono invalido");
+            //}
             else
             {
                 try
                 {
+                    Cliente cliente = new Cliente();
                     if (_tipo != AbmTipo.Alta)
                         cliente.Id = int.Parse(txtIdCliente.Text);
+
                     cliente.Dni = int.Parse(txtDni.Text);
                     cliente.Nombre = txtNombre.Text;
                     cliente.Apellido = txtApellido.Text;
@@ -81,7 +99,7 @@ namespace NLayer.Formularios
                             LogResultado(resultado, "Modificar Cliente");
                             break;
                     }
-                    this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
                 catch (Exception e)
                 {
