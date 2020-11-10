@@ -42,5 +42,9 @@ namespace NLayer.Entidades
 
         public List<Habitacion> Habitaciones { get; set; }
 
+        public override string ToString()
+        {
+            return string.Format($"Nombre: {Nombre} Direccion: {Direccion} "); 
+        }
     }
 }

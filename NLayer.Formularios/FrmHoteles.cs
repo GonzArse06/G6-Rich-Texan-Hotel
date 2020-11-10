@@ -36,8 +36,12 @@ namespace NLayer.Formularios
         {
             formularios = new FrmAbmHoteles(AbmTipo.Alta, _hotelServicios);
             formularios.Owner = this;
-            formularios.ShowDialog();
-            CargarListView();
+            var ret = formularios.ShowDialog();
+            if (ret != DialogResult.Cancel)
+            {
+                CargarListView();
+            }
+           
         }
         private void CargarListView()
         {
@@ -61,8 +65,11 @@ namespace NLayer.Formularios
             {
                 LlenarTextboxChild(formulario);
                 formulario.Owner = this;
-                formulario.ShowDialog();
-                CargarListView();
+                var ret = formulario.ShowDialog();
+                if (ret != DialogResult.Cancel)
+                {
+                    CargarListView();
+                }
             }
             else
                 lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";

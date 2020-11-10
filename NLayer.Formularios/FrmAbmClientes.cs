@@ -40,7 +40,7 @@ namespace NLayer.Formularios
         private void InicializarModificacion()
         {
             txtIdCliente.Enabled = false;
-            btnBuscarCliente.Visible = true;
+            btnBuscarCliente.Visible = false;
         }
             
         private void btnGuardar_Click(object sender, EventArgs e)

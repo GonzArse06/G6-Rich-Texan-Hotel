@@ -42,7 +42,7 @@ namespace NLayer.Negocios
             listaclientes = ClienteMapper.TraerTodos();
             return listaclientes;
         }
-        public int EliminarCliente(int id)
+        public bool EliminarCliente(int id)
         {
             //faltan validaciones de negocio.
             if (!listaclientes.Any(o => o.Id == id))
@@ -50,10 +50,8 @@ namespace NLayer.Negocios
                 throw new ReservasException("No se pudo encontrar el cliente");
             }
             TransactionResult resultado = ClienteMapper.Delete(id);
-            if (resultado.IsOk)
-                return resultado.Id;
-            else
-                return -1;
+            return resultado.IsOk;
+            
         }
     }
 }

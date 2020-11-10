@@ -14,15 +14,18 @@ namespace NLayer.Formularios
 {
     public partial class FrmAbmReservas : Form
     {
+        
         ReservaServicios reservaServicios ;
+        HotelServicios hotelServicios;
         AbmTipo _tipo;
         int _idHotel;
-        public FrmAbmReservas(AbmTipo tipo, int idHotel, ReservaServicios serv )
+        public FrmAbmReservas(AbmTipo tipo, int idHotel, ReservaServicios serv, HotelServicios htlserv)
         {
             InitializeComponent();
             _tipo = tipo;
             _idHotel = idHotel;
             reservaServicios = serv;
+            hotelServicios = htlserv;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -101,6 +104,21 @@ namespace NLayer.Formularios
             FrmBuscarHabitacion formulario = new FrmBuscarHabitacion(_idHotel);
             formulario.Owner = this;
             formulario.ShowDialog();
+        }
+
+        private void btnBuscarHotel_Click(object sender, EventArgs e)
+        {
+            FrmBuscar formulario = new FrmBuscar(hotelServicios);
+            formulario.Owner = this;
+            formulario.ShowDialog();
+            var obj = formulario.Tag;
+            //var obj = this.Tag;
+            if (obj != null && obj is Hotel)
+            {
+                _idHotel = ((Hotel)obj).Id;
+                this.txtIdHotel.Text = _idHotel.ToString();
+                this.txtIdHabitacion.Text = string.Empty;
+            }
         }
     }
 }

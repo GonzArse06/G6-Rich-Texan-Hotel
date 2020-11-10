@@ -14,7 +14,7 @@ namespace NLayer.Formularios
 {
     public partial class FrmHabitaciones : Form
     {
-        Form formularios;
+        //Form formularios;
         HabitacionServicios _habitacionServicios;
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
@@ -43,10 +43,14 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                formularios = new FrmAbmHabitaciones(AbmTipo.Alta, idSeleccionado);
+                FrmAbmHabitaciones formularios = new FrmAbmHabitaciones(AbmTipo.Alta, idSeleccionado);
                 formularios.Owner = this;
-                formularios.ShowDialog();
-                CargarListView((Hotel)cbxHoteles.SelectedItem);
+               
+                var ret = formularios.ShowDialog();
+                if (ret != DialogResult.Cancel)
+                {
+                    CargarListView((Hotel)cbxHoteles.SelectedItem);
+                }
         
             }
             catch (Exception ex)
@@ -65,15 +69,9 @@ namespace NLayer.Formularios
         private void CargarListView(Hotel _hotel)
         {
             lstHabitaciones.Items.Clear();
-            if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
-            {
-                
-            }
-            else
-            {
-                _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
-               
-            }
+
+            _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
+
             _lstHabitaciones = _hotel.Habitaciones;
 
             foreach (Habitacion a in _lstHabitaciones)
@@ -90,14 +88,19 @@ namespace NLayer.Formularios
         {
             try
             {
-                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmHabitaciones formulario = new FrmAbmHabitaciones(AbmTipo.Modificacion, idSeleccionado);
+                
                 if (lstHabitaciones.SelectedItems.Count == 1)
                 {
+                    int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
+                    FrmAbmHabitaciones formulario = new FrmAbmHabitaciones(AbmTipo.Modificacion, idSeleccionado);
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
-                    formulario.ShowDialog();
-                    CargarListView((Hotel)cbxHoteles.SelectedItem);
+                    var ret = formulario.ShowDialog();
+                    if (ret != DialogResult.Cancel)
+                    {
+                        CargarListView((Hotel)cbxHoteles.SelectedItem);
+                    }
+                   
                 }
                 else
                     lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";

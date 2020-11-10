@@ -24,7 +24,7 @@ namespace NLayer.Formularios
         {
             InitializeComponent();
             _clienteServicios = serv;
-            _Lstclientes = new List<Cliente>();
+            //_Lstclientes = new List<Cliente>();
             _listViewItem = new ListViewItem();
         }
 
@@ -42,8 +42,12 @@ namespace NLayer.Formularios
         {
             formularios = new FrmAbmClientes(AbmTipo.Alta, _clienteServicios);
             formularios.Owner = this;
-            formularios.ShowDialog();
-            CargarListView();
+            var ret= formularios.ShowDialog();
+            if (ret != DialogResult.Cancel)
+            {
+                CargarListView();
+            }
+           
         }
 
         private void FrmClientes_Load(object sender, EventArgs e)
@@ -54,8 +58,8 @@ namespace NLayer.Formularios
         private void CargarListView()
         {
             lstClientes.Items.Clear();
-
-            _Lstclientes = _clienteServicios.TraerTodo();            
+            _Lstclientes = _clienteServicios.TraerTodo();
+                     
             foreach (Cliente a in _Lstclientes)
             {
                 _listViewItem = lstClientes.Items.Add(a.Id.ToString());
@@ -77,8 +81,11 @@ namespace NLayer.Formularios
             {
                 LlenarTextboxChild(formularios);
                 formularios.Owner = this;
-                formularios.ShowDialog();
-                CargarListView();
+                var ret = formularios.ShowDialog();
+                if (ret != DialogResult.Cancel)
+                {
+                    CargarListView();
+                }
             }
             else
                 lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
@@ -108,23 +115,18 @@ namespace NLayer.Formularios
                 if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _items = (ListViewItem)lstClientes.SelectedItems[0];
-                int resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
-                LogResultado(resultado, "Eliminar Cliente");
-            }
-            else
-                lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                    var resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
+                    LogHelper.LogResultado( lblResultado, resultado, "Eliminar Cliente");
+                    if (resultado)
+                    {
+                        CargarListView();
+                    }
+                }
+                else
+                    lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
             }
         }
 
-        private void LogResultado(int resultado, string mensaje)
-        {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView();
-            }
-        }
+        
     }
 }

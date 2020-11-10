@@ -34,5 +34,31 @@ namespace NLayer.Formularios
                 }
             }
         }
+
+       
+    }
+
+    public  class LogHelper
+    {
+        public static void LogResultado(ToolStripLabel lblResultado, int resultado, string mensaje)
+        {
+            if (resultado == -1)
+                lblResultado.Text = "ERROR -> " + mensaje;
+            else
+            {
+                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
+
+            }
+        }
+        public static void LogResultado(ToolStripLabel lblResultado, bool resultado, string mensaje)
+        {
+            if (!resultado)
+                lblResultado.Text = "ERROR -> " + mensaje;
+            else
+            {
+                lblResultado.Text = "OK -> " + mensaje + ". ";
+
+            }
+        }
     }
 }

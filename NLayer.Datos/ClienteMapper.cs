@@ -11,6 +11,19 @@ namespace NLayer.Datos
 {
     public class ClienteMapper
     {
+
+        public static TransactionResult EnviarMail(string mail, string asunto, string mensaje)
+        {
+            NameValueCollection n = new NameValueCollection();
+            n.Add("Para", mail);
+            n.Add("Asunto", asunto);
+            n.Add("Mensaje", mensaje);
+            string result = WebHelper.Post("/Utilidades", n);
+
+            TransactionResult resultadoTransaccion = MapResultado(result);
+            return resultadoTransaccion;
+        }
+            
         public static List<Cliente> TraerTodos()
         {
             //string json2 = WebHelper.Get("/cliente/" + "pau"); // trae un texto en formato json de una web

@@ -48,10 +48,14 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado, _reservaServicios);
+                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado, _reservaServicios, _hotelServicios);
                 formularios.Owner = this;
-                formularios.ShowDialog();
-                CargarListView((Hotel)cbxHoteles.SelectedItem);
+                var ret =formularios.ShowDialog();
+                if (ret != DialogResult.Cancel)
+                {
+                    CargarListView((Hotel)cbxHoteles.SelectedItem);
+                }
+                
             }
             catch (Exception ex)
             {
@@ -61,7 +65,7 @@ namespace NLayer.Formularios
         private void CargarListView(Hotel _hotel)
         {
             lstReservas.Items.Clear();
-
+            _lstReservas = _reservaServicios.TraerTodo();
             if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
             {
 
@@ -73,15 +77,11 @@ namespace NLayer.Formularios
             }
             _lstHabitaciones = _hotel.Habitaciones;
 
-            if (_lstReservas == null || _lstReservas.Count() == 0)
+            foreach (var h in _hotel.Habitaciones)
             {
-                _lstReservas = _reservaServicios.TraerTodo();
-                
-                foreach (var h in _hotel.Habitaciones)
-                {
-                    h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
-                }
+                h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
             }
+
             var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
 
             foreach (Reserva a in misreservas)
@@ -107,13 +107,17 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _reservaServicios);
+                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _reservaServicios, _hotelServicios);
                 if (lstReservas.SelectedItems.Count == 1)
                 {
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
-                    formulario.ShowDialog();
-                    CargarListView((Hotel)cbxHoteles.SelectedItem);
+                    var ret = formulario.ShowDialog();
+                    if (ret != DialogResult.Cancel)
+                    {
+                        CargarListView((Hotel)cbxHoteles.SelectedItem);
+                    }
+                    
                 }
                 else
                     lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
@@ -140,12 +144,12 @@ namespace NLayer.Formularios
             
                 if (lstReservas.SelectedItems.Count == 1)
                 {
-                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    _items = (ListViewItem)lstReservas.SelectedItems[0];
-                    int resultado = _reservaServicios.EliminarReserva(int.Parse(_items.Text));
-                    LogResultado(resultado, "Eliminar reserva");
-                }
+                    if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        _items = (ListViewItem)lstReservas.SelectedItems[0];
+                        int resultado = _reservaServicios.EliminarReserva(int.Parse(_items.Text));
+                        LogResultado(resultado, "Eliminar reserva");
+                    }
                 else
                     lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
             }
