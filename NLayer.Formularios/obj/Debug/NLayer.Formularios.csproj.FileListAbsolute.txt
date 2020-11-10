@@ -17,7 +17,6 @@ C:\Users\lugoisol\Source\Repos\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Formularios.exe.config
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Formularios.exe
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Formularios.pdb
-C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Entidades.dll
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Negocios.dll
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\bin\Debug\NLayer.Entidades.pdb
@@ -75,3 +74,4 @@ C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios
 C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.exe
 C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.pdb
 C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmBuscar.resources
+C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmBuscar.resources
