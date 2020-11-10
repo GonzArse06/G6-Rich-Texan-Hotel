@@ -204,5 +204,11 @@
   <ItemGroup>
     <None Include="Properties\Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ImgFondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ImgFondo2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

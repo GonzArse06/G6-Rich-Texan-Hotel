@@ -29,31 +29,35 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.LblTitulo = new System.Windows.Forms.Label();
+            this.panelFormularioHijo = new System.Windows.Forms.Panel();
+            this.ImgHome = new System.Windows.Forms.PictureBox();
+            this.btnRestore = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.imgFormularioActual = new FontAwesome.Sharp.IconPictureBox();
             this.btnReporteHabitaciones = new FontAwesome.Sharp.IconButton();
             this.btnReporteClientes = new FontAwesome.Sharp.IconButton();
             this.btnHabitaciones = new FontAwesome.Sharp.IconButton();
             this.btnHoteles = new FontAwesome.Sharp.IconButton();
             this.btnReserva = new FontAwesome.Sharp.IconButton();
             this.btnCliente = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.PictureBox();
-            this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.btnRestore = new FontAwesome.Sharp.IconButton();
-            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
-            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
-            this.LblTitulo = new System.Windows.Forms.Label();
-            this.imgFormularioActual = new FontAwesome.Sharp.IconPictureBox();
-            this.panelFormularioHijo = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
+            this.panelFormularioHijo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFormularioActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panelMenu.Controls.Add(this.btnReporteHabitaciones);
             this.panelMenu.Controls.Add(this.btnReporteClientes);
             this.panelMenu.Controls.Add(this.btnHabitaciones);
@@ -67,6 +71,143 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(192, 706);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.btnInicio);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(192, 119);
+            this.panelLogo.TabIndex = 1;
+            // 
+            // panelBarraTitulo
+            // 
+            this.panelBarraTitulo.Controls.Add(this.btnRestore);
+            this.panelBarraTitulo.Controls.Add(this.btnMinimizar);
+            this.panelBarraTitulo.Controls.Add(this.btnMaximizar);
+            this.panelBarraTitulo.Controls.Add(this.btnCerrar);
+            this.panelBarraTitulo.Controls.Add(this.LblTitulo);
+            this.panelBarraTitulo.Controls.Add(this.imgFormularioActual);
+            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBarraTitulo.Location = new System.Drawing.Point(192, 0);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelBarraTitulo.Name = "panelBarraTitulo";
+            this.panelBarraTitulo.Size = new System.Drawing.Size(842, 61);
+            this.panelBarraTitulo.TabIndex = 1;
+            this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
+            // 
+            // LblTitulo
+            // 
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Location = new System.Drawing.Point(50, 10);
+            this.LblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(73, 33);
+            this.LblTitulo.TabIndex = 1;
+            this.LblTitulo.Text = "Inicio";
+            // 
+            // panelFormularioHijo
+            // 
+            this.panelFormularioHijo.Controls.Add(this.ImgHome);
+            this.panelFormularioHijo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormularioHijo.Location = new System.Drawing.Point(192, 61);
+            this.panelFormularioHijo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelFormularioHijo.Name = "panelFormularioHijo";
+            this.panelFormularioHijo.Size = new System.Drawing.Size(842, 645);
+            this.panelFormularioHijo.TabIndex = 2;
+            this.panelFormularioHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormularioHijo_Paint);
+            // 
+            // ImgHome
+            // 
+            this.ImgHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ImgHome.Image = global::NLayer.Formularios.Properties.Resources.ImgFondo2;
+            this.ImgHome.Location = new System.Drawing.Point(0, 0);
+            this.ImgHome.Name = "ImgHome";
+            this.ImgHome.Size = new System.Drawing.Size(842, 645);
+            this.ImgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImgHome.TabIndex = 0;
+            this.ImgHome.TabStop = false;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestore.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            this.btnRestore.IconColor = System.Drawing.Color.Black;
+            this.btnRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRestore.IconSize = 20;
+            this.btnRestore.Location = new System.Drawing.Point(784, 8);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(23, 25);
+            this.btnRestore.TabIndex = 5;
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Visible = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizar.IconSize = 20;
+            this.btnMinimizar.Location = new System.Drawing.Point(757, 8);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(23, 25);
+            this.btnMinimizar.TabIndex = 4;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
+            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximizar.IconSize = 20;
+            this.btnMaximizar.Location = new System.Drawing.Point(784, 8);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(23, 25);
+            this.btnMaximizar.TabIndex = 3;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrar.IconColor = System.Drawing.Color.Black;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 20;
+            this.btnCerrar.Location = new System.Drawing.Point(812, 8);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(23, 25);
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // imgFormularioActual
+            // 
+            this.imgFormularioActual.BackColor = System.Drawing.SystemColors.Control;
+            this.imgFormularioActual.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.imgFormularioActual.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.imgFormularioActual.IconColor = System.Drawing.Color.CornflowerBlue;
+            this.imgFormularioActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.imgFormularioActual.IconSize = 33;
+            this.imgFormularioActual.Location = new System.Drawing.Point(13, 10);
+            this.imgFormularioActual.Margin = new System.Windows.Forms.Padding(2);
+            this.imgFormularioActual.Name = "imgFormularioActual";
+            this.imgFormularioActual.Size = new System.Drawing.Size(33, 37);
+            this.imgFormularioActual.TabIndex = 0;
+            this.imgFormularioActual.TabStop = false;
             // 
             // btnReporteHabitaciones
             // 
@@ -200,16 +341,6 @@
             this.btnCliente.UseVisualStyleBackColor = true;
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.btnInicio);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(192, 119);
-            this.panelLogo.TabIndex = 1;
-            // 
             // btnInicio
             // 
             this.btnInicio.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -222,119 +353,6 @@
             this.btnInicio.TabIndex = 0;
             this.btnInicio.TabStop = false;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
-            // panelBarraTitulo
-            // 
-            this.panelBarraTitulo.Controls.Add(this.btnRestore);
-            this.panelBarraTitulo.Controls.Add(this.btnMinimizar);
-            this.panelBarraTitulo.Controls.Add(this.btnMaximizar);
-            this.panelBarraTitulo.Controls.Add(this.btnCerrar);
-            this.panelBarraTitulo.Controls.Add(this.LblTitulo);
-            this.panelBarraTitulo.Controls.Add(this.imgFormularioActual);
-            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(192, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
-            this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(842, 81);
-            this.panelBarraTitulo.TabIndex = 1;
-            this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestore.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            this.btnRestore.IconColor = System.Drawing.Color.Black;
-            this.btnRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRestore.IconSize = 30;
-            this.btnRestore.Location = new System.Drawing.Point(784, 8);
-            this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(23, 25);
-            this.btnRestore.TabIndex = 5;
-            this.btnRestore.UseVisualStyleBackColor = true;
-            this.btnRestore.Visible = false;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
-            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimizar.IconSize = 30;
-            this.btnMinimizar.Location = new System.Drawing.Point(757, 8);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(23, 25);
-            this.btnMinimizar.TabIndex = 4;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
-            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximizar.IconSize = 30;
-            this.btnMaximizar.Location = new System.Drawing.Point(784, 8);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(23, 25);
-            this.btnMaximizar.TabIndex = 3;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 30;
-            this.btnCerrar.Location = new System.Drawing.Point(812, 8);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(23, 25);
-            this.btnCerrar.TabIndex = 2;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // LblTitulo
-            // 
-            this.LblTitulo.AutoSize = true;
-            this.LblTitulo.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(50, 10);
-            this.LblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(73, 33);
-            this.LblTitulo.TabIndex = 1;
-            this.LblTitulo.Text = "Inicio";
-            // 
-            // imgFormularioActual
-            // 
-            this.imgFormularioActual.BackColor = System.Drawing.SystemColors.Control;
-            this.imgFormularioActual.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.imgFormularioActual.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.imgFormularioActual.IconColor = System.Drawing.Color.CornflowerBlue;
-            this.imgFormularioActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.imgFormularioActual.IconSize = 33;
-            this.imgFormularioActual.Location = new System.Drawing.Point(13, 10);
-            this.imgFormularioActual.Margin = new System.Windows.Forms.Padding(2);
-            this.imgFormularioActual.Name = "imgFormularioActual";
-            this.imgFormularioActual.Size = new System.Drawing.Size(33, 37);
-            this.imgFormularioActual.TabIndex = 0;
-            this.imgFormularioActual.TabStop = false;
-            // 
-            // panelFormularioHijo
-            // 
-            this.panelFormularioHijo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormularioHijo.Location = new System.Drawing.Point(192, 81);
-            this.panelFormularioHijo.Margin = new System.Windows.Forms.Padding(2);
-            this.panelFormularioHijo.Name = "panelFormularioHijo";
-            this.panelFormularioHijo.Size = new System.Drawing.Size(842, 625);
-            this.panelFormularioHijo.TabIndex = 2;
-            this.panelFormularioHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormularioHijo_Paint);
             // 
             // FrmInicio
             // 
@@ -349,10 +367,12 @@
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
+            this.panelFormularioHijo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImgHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFormularioActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,6 +396,7 @@
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.Label LblTitulo;
         private FontAwesome.Sharp.IconButton btnRestore;
+        private System.Windows.Forms.PictureBox ImgHome;
     }
 }
 
