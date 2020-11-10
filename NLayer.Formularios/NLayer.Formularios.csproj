@@ -124,6 +124,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextoNumerico.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextoNumerico.Designer.cs">
+      <DependentUpon>TextoNumerico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="FrmAbmHoteles.resx">
       <DependentUpon>FrmAbmHoteles.cs</DependentUpon>

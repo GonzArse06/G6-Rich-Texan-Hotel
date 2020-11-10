@@ -131,6 +131,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(40, 31);
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnExportarExcel
             // 
@@ -145,6 +146,7 @@
             this.btnExportarExcel.TabIndex = 11;
             this.btnExportarExcel.Text = "EXPORTAR A EXCEL";
             this.btnExportarExcel.UseVisualStyleBackColor = true;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // btnEliminar
             // 
@@ -159,6 +161,7 @@
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -173,6 +176,7 @@
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -187,6 +191,7 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // FrmHoteles
             // 

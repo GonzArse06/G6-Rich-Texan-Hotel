@@ -107,5 +107,10 @@ namespace NLayer.Formularios
         {
 
         }
+
+        private void txtCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

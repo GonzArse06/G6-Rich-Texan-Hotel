@@ -132,5 +132,10 @@ namespace NLayer.Formularios
             this.DialogResult = DialogResult.Cancel;
            
         }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

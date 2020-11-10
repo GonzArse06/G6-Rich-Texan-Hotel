@@ -63,7 +63,7 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(192, 706);
             this.panelMenu.TabIndex = 0;
@@ -73,17 +73,15 @@
             this.btnReporteHabitaciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReporteHabitaciones.FlatAppearance.BorderSize = 0;
             this.btnReporteHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteHabitaciones.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnReporteHabitaciones.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.btnReporteHabitaciones.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnReporteHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReporteHabitaciones.IconSize = 32;
             this.btnReporteHabitaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporteHabitaciones.Location = new System.Drawing.Point(0, 379);
-            this.btnReporteHabitaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReporteHabitaciones.Margin = new System.Windows.Forms.Padding(2);
             this.btnReporteHabitaciones.Name = "btnReporteHabitaciones";
             this.btnReporteHabitaciones.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnReporteHabitaciones.Rotation = 0D;
             this.btnReporteHabitaciones.Size = new System.Drawing.Size(192, 52);
             this.btnReporteHabitaciones.TabIndex = 7;
             this.btnReporteHabitaciones.Text = "Reporte de Habitaciones";
@@ -97,17 +95,15 @@
             this.btnReporteClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReporteClientes.FlatAppearance.BorderSize = 0;
             this.btnReporteClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteClientes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnReporteClientes.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.btnReporteClientes.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnReporteClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReporteClientes.IconSize = 32;
             this.btnReporteClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporteClientes.Location = new System.Drawing.Point(0, 327);
-            this.btnReporteClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReporteClientes.Margin = new System.Windows.Forms.Padding(2);
             this.btnReporteClientes.Name = "btnReporteClientes";
             this.btnReporteClientes.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnReporteClientes.Rotation = 0D;
             this.btnReporteClientes.Size = new System.Drawing.Size(192, 52);
             this.btnReporteClientes.TabIndex = 6;
             this.btnReporteClientes.Text = "Reportes de Clientes";
@@ -121,17 +117,15 @@
             this.btnHabitaciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHabitaciones.FlatAppearance.BorderSize = 0;
             this.btnHabitaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHabitaciones.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnHabitaciones.IconChar = FontAwesome.Sharp.IconChar.DoorClosed;
             this.btnHabitaciones.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHabitaciones.IconSize = 32;
             this.btnHabitaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHabitaciones.Location = new System.Drawing.Point(0, 275);
-            this.btnHabitaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHabitaciones.Margin = new System.Windows.Forms.Padding(2);
             this.btnHabitaciones.Name = "btnHabitaciones";
             this.btnHabitaciones.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnHabitaciones.Rotation = 0D;
             this.btnHabitaciones.Size = new System.Drawing.Size(192, 52);
             this.btnHabitaciones.TabIndex = 5;
             this.btnHabitaciones.Text = "Habitaciones";
@@ -145,17 +139,15 @@
             this.btnHoteles.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHoteles.FlatAppearance.BorderSize = 0;
             this.btnHoteles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoteles.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnHoteles.IconChar = FontAwesome.Sharp.IconChar.Hotel;
             this.btnHoteles.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnHoteles.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoteles.IconSize = 32;
             this.btnHoteles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHoteles.Location = new System.Drawing.Point(0, 223);
-            this.btnHoteles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHoteles.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoteles.Name = "btnHoteles";
             this.btnHoteles.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnHoteles.Rotation = 0D;
             this.btnHoteles.Size = new System.Drawing.Size(192, 52);
             this.btnHoteles.TabIndex = 4;
             this.btnHoteles.Text = "Hoteles";
@@ -169,17 +161,15 @@
             this.btnReserva.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReserva.FlatAppearance.BorderSize = 0;
             this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserva.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnReserva.IconChar = FontAwesome.Sharp.IconChar.Calendar;
             this.btnReserva.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReserva.IconSize = 32;
             this.btnReserva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReserva.Location = new System.Drawing.Point(0, 171);
-            this.btnReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btnReserva.Name = "btnReserva";
             this.btnReserva.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnReserva.Rotation = 0D;
             this.btnReserva.Size = new System.Drawing.Size(192, 52);
             this.btnReserva.TabIndex = 3;
             this.btnReserva.Text = "Reservas";
@@ -193,17 +183,15 @@
             this.btnCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCliente.FlatAppearance.BorderSize = 0;
             this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliente.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
             this.btnCliente.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCliente.IconSize = 32;
             this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCliente.Location = new System.Drawing.Point(0, 119);
-            this.btnCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.btnCliente.Rotation = 0D;
             this.btnCliente.Size = new System.Drawing.Size(192, 52);
             this.btnCliente.TabIndex = 2;
             this.btnCliente.Text = "Clientes";
@@ -217,7 +205,7 @@
             this.panelLogo.Controls.Add(this.btnInicio);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(192, 119);
             this.panelLogo.TabIndex = 1;
@@ -227,7 +215,7 @@
             this.btnInicio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnInicio.Image = global::NLayer.Formularios.Properties.Resources.Logo;
             this.btnInicio.Location = new System.Drawing.Point(0, 0);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(2);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(192, 119);
             this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -245,24 +233,22 @@
             this.panelBarraTitulo.Controls.Add(this.imgFormularioActual);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(192, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(842, 78);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(842, 81);
             this.panelBarraTitulo.TabIndex = 1;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
             // btnRestore
             // 
             this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestore.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnRestore.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
             this.btnRestore.IconColor = System.Drawing.Color.Black;
             this.btnRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRestore.IconSize = 30;
             this.btnRestore.Location = new System.Drawing.Point(784, 8);
-            this.btnRestore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(2);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Rotation = 0D;
             this.btnRestore.Size = new System.Drawing.Size(23, 25);
             this.btnRestore.TabIndex = 5;
             this.btnRestore.UseVisualStyleBackColor = true;
@@ -272,15 +258,13 @@
             // btnMinimizar
             // 
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnMinimizar.IconColor = System.Drawing.Color.Black;
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 30;
             this.btnMinimizar.Location = new System.Drawing.Point(757, 8);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Rotation = 0D;
             this.btnMinimizar.Size = new System.Drawing.Size(23, 25);
             this.btnMinimizar.TabIndex = 4;
             this.btnMinimizar.UseVisualStyleBackColor = true;
@@ -289,15 +273,13 @@
             // btnMaximizar
             // 
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximizar.IconColor = System.Drawing.Color.Black;
             this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximizar.IconSize = 30;
             this.btnMaximizar.Location = new System.Drawing.Point(784, 8);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Rotation = 0D;
             this.btnMaximizar.Size = new System.Drawing.Size(23, 25);
             this.btnMaximizar.TabIndex = 3;
             this.btnMaximizar.UseVisualStyleBackColor = true;
@@ -306,15 +288,13 @@
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 30;
             this.btnCerrar.Location = new System.Drawing.Point(812, 8);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Rotation = 0D;
             this.btnCerrar.Size = new System.Drawing.Size(23, 25);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -340,7 +320,7 @@
             this.imgFormularioActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.imgFormularioActual.IconSize = 33;
             this.imgFormularioActual.Location = new System.Drawing.Point(13, 10);
-            this.imgFormularioActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgFormularioActual.Margin = new System.Windows.Forms.Padding(2);
             this.imgFormularioActual.Name = "imgFormularioActual";
             this.imgFormularioActual.Size = new System.Drawing.Size(33, 37);
             this.imgFormularioActual.TabIndex = 0;
@@ -349,10 +329,10 @@
             // panelFormularioHijo
             // 
             this.panelFormularioHijo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormularioHijo.Location = new System.Drawing.Point(192, 78);
-            this.panelFormularioHijo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFormularioHijo.Location = new System.Drawing.Point(192, 81);
+            this.panelFormularioHijo.Margin = new System.Windows.Forms.Padding(2);
             this.panelFormularioHijo.Name = "panelFormularioHijo";
-            this.panelFormularioHijo.Size = new System.Drawing.Size(842, 628);
+            this.panelFormularioHijo.Size = new System.Drawing.Size(842, 625);
             this.panelFormularioHijo.TabIndex = 2;
             this.panelFormularioHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormularioHijo_Paint);
             // 
@@ -364,7 +344,7 @@
             this.Controls.Add(this.panelFormularioHijo);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInicio";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
