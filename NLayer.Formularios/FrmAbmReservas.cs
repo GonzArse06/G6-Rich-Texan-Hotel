@@ -103,9 +103,14 @@ namespace NLayer.Formularios
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            FrmBuscarCliente formulario = new FrmBuscarCliente();
+            FrmBuscarCliente formulario = new FrmBuscarCliente(hotelServicios);
             formulario.Owner = this;
             formulario.ShowDialog();
+            var obj = formulario.Tag;
+            if (obj != null && obj is Cliente)
+            {
+                txtIdCliente.Text = ((Cliente)obj).Id.ToString();
+            }
         }
 
         private void btnBuscarHabitacion_Click(object sender, EventArgs e)

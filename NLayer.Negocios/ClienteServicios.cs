@@ -21,7 +21,7 @@ namespace NLayer.Negocios
             }
             if (listaclientes.Any(o => o.Dni == item.Dni))
             {
-                throw new ReservasException("Eel DNI se encuentra registrado");
+                throw new ReservasException("El DNI se encuentra registrado");
             }
             TransactionResult resultado = ClienteMapper.Insert(item);
             if (resultado.IsOk)

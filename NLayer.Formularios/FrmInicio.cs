@@ -19,10 +19,7 @@ namespace NLayer.Formularios
         private Panel leftBorderBtn;
         private Form currentChildForm;
         
-       
         HotelServicios _hotelServicios;
-    
-       
 
         public FrmInicio()
         {
@@ -35,10 +32,7 @@ namespace NLayer.Formularios
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            _hotelServicios = new HotelServicios();
-          
-           
-
+            _hotelServicios = new HotelServicios();    
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -119,6 +113,7 @@ namespace NLayer.Formularios
         private void btnReporteClientes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
+            OpenChildForm(new FrmReporteReservas(_hotelServicios));
         }
 
         private void btnReporteHabitaciones_Click(object sender, EventArgs e)

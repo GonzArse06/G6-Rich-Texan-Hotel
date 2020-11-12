@@ -20,9 +20,6 @@ namespace NLayer.Formularios
         {
             InitializeComponent();
             _Servicios = serv;
-            
-
-
         }
         private void listBox1_doubleClick(object sender, EventArgs e)
         {

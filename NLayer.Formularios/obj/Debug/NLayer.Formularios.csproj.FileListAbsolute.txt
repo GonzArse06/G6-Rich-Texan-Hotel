@@ -75,3 +75,4 @@ C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios
 C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.pdb
 C:\Users\lugoisol\Source\Repos\GonzArse06\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmBuscar.resources
 C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmBuscar.resources
+C:\Users\gcarranza\Documents\GitHub\G6-Rich-Texan-Hotel\NLayer.Formularios\obj\Debug\NLayer.Formularios.FrmReporteReservas.resources

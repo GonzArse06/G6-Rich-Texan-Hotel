@@ -16,10 +16,10 @@ namespace NLayer.Formularios
     {
         List<Cliente> _lista;
         HotelServicios _clienteServicios;
-        public FrmBuscarCliente()
+        public FrmBuscarCliente(HotelServicios serv)
         {
             InitializeComponent();
-            _clienteServicios = new HotelServicios();
+            _clienteServicios = serv;
             _lista = new List<Cliente>();
         }
         private void listBox1_doubleClick(object sender, EventArgs e)
@@ -38,8 +38,9 @@ namespace NLayer.Formularios
             }
             else
             {
-                int idCliente = ((Cliente)listBox1.SelectedItem).Id;
-                ((FrmAbmReservas)Owner).txtIdCliente.Text = idCliente.ToString();
+                //int idCliente = ((Cliente)listBox1.SelectedItem).Id;
+                this.Tag = (Cliente)listBox1.SelectedItem;
+                //((FrmAbmReservas)Owner).txtIdCliente.Text = idCliente.ToString();
                 this.Close();
             }
         }
