@@ -30,6 +30,8 @@
         {
             this.lstReporte = new System.Windows.Forms.ListView();
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFechaIngreso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFechaEgreso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chHabitacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCantidadHuespedes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ChPrecio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,11 +43,10 @@
             this.lblIidCliente = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
-            this.chFechaIngreso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFechaEgreso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.lblImporteTotal = new System.Windows.Forms.Label();
             this.txtImporteTotal = new System.Windows.Forms.TextBox();
+            this.btnEjecutar = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,16 +67,25 @@
             this.lstReporte.Location = new System.Drawing.Point(12, 90);
             this.lstReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstReporte.Name = "lstReporte";
-            this.lstReporte.Size = new System.Drawing.Size(1077, 363);
+            this.lstReporte.Size = new System.Drawing.Size(1011, 306);
             this.lstReporte.TabIndex = 4;
             this.lstReporte.UseCompatibleStateImageBehavior = false;
             this.lstReporte.View = System.Windows.Forms.View.Details;
-            this.lstReporte.DoubleClick += new System.EventHandler(this.btnEditar_Click);
             // 
             // chId
             // 
             this.chId.Text = "Id Reserva";
             this.chId.Width = 92;
+            // 
+            // chFechaIngreso
+            // 
+            this.chFechaIngreso.Text = "Fecha de Ingreso";
+            this.chFechaIngreso.Width = 133;
+            // 
+            // chFechaEgreso
+            // 
+            this.chFechaEgreso.Text = "Fecha de Egreso";
+            this.chFechaEgreso.Width = 141;
             // 
             // chHabitacion
             // 
@@ -116,8 +126,7 @@
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 16);
-            this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            this.lblResultado.Size = new System.Drawing.Size(0, 18);
             // 
             // btnCerrar
             // 
@@ -126,7 +135,7 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(1036, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(970, 10);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(53, 38);
@@ -140,7 +149,7 @@
             this.btnExportarExcel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportarExcel.Location = new System.Drawing.Point(870, 471);
+            this.btnExportarExcel.Location = new System.Drawing.Point(804, 409);
             this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Size = new System.Drawing.Size(219, 62);
@@ -177,16 +186,6 @@
             this.txtNombreCliente.Size = new System.Drawing.Size(210, 29);
             this.txtNombreCliente.TabIndex = 26;
             // 
-            // chFechaIngreso
-            // 
-            this.chFechaIngreso.Text = "Fecha de Ingreso";
-            this.chFechaIngreso.Width = 133;
-            // 
-            // chFechaEgreso
-            // 
-            this.chFechaEgreso.Text = "Fecha de Egreso";
-            this.chFechaEgreso.Width = 141;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
@@ -220,11 +219,28 @@
             this.txtImporteTotal.Size = new System.Drawing.Size(160, 29);
             this.txtImporteTotal.TabIndex = 29;
             // 
+            // btnEjecutar
+            // 
+            this.btnEjecutar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEjecutar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEjecutar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnEjecutar.IconColor = System.Drawing.Color.Black;
+            this.btnEjecutar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEjecutar.Location = new System.Drawing.Point(334, 10);
+            this.btnEjecutar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEjecutar.Name = "btnEjecutar";
+            this.btnEjecutar.Size = new System.Drawing.Size(148, 29);
+            this.btnEjecutar.TabIndex = 31;
+            this.btnEjecutar.Text = "Ejecutar";
+            this.btnEjecutar.UseVisualStyleBackColor = true;
+            this.btnEjecutar.Click += new System.EventHandler(this.btnEjecutar_Click);
+            // 
             // FrmReporteReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1103, 570);
+            this.Controls.Add(this.btnEjecutar);
             this.Controls.Add(this.lblImporteTotal);
             this.Controls.Add(this.txtImporteTotal);
             this.Controls.Add(this.btnBuscar);
@@ -239,7 +255,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmReporteReservas";
             this.Text = "Hoteles";
-            this.Load += new System.EventHandler(this.FrmHoteles_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -266,5 +281,6 @@
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.Label lblImporteTotal;
         private System.Windows.Forms.TextBox txtImporteTotal;
+        private FontAwesome.Sharp.IconButton btnEjecutar;
     }
 }

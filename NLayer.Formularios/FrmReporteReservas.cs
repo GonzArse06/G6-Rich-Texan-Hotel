@@ -30,111 +30,49 @@ namespace NLayer.Formularios
             _LstHabitacion = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _LstReservas = new List<Reserva>();
+            _LstReservas = _hotelServicios.TraerReservas();
+            _LstHoteles = _hotelServicios.TraerHoteles();
+            CargarHabitaciones(_LstHoteles);
+
+        }
+        private void CargarHabitaciones(List<Hotel> lsthoteles)
+        {
+            foreach (Hotel a in lsthoteles)
+            {
+                _LstHabitacion.AddRange(_hotelServicios.TraerTodoPorId(a.Id));
+            }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            formularios = new FrmAbmHoteles(AbmTipo.Alta, _hotelServicios);
-            formularios.Owner = this;
-            var ret = formularios.ShowDialog();
-            if (ret != DialogResult.Cancel)
-            {
-                CargarListView();
-            }
-           
-        }
-        private void CargarListView()
+        private void CargarListView(int idCliente)
         {
             lstReporte.Items.Clear();
-
-            _LstReservas = _hotelServicios.TraerReservas();
-            //_LstHabitacion = _hotelServicios.TraerTodoPorId();
+            double PrecioFinal = 0;
             foreach (Reserva a in _LstReservas)
             {
-                TimeSpan dias = a.FechaEgreso - a.FechaIngreso;
-                int days = dias.Days;
-                _listViewItem = lstReporte.Items.Add(a.Id.ToString());
-                _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
-                _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
-                _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
-                _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
-                _listViewItem.SubItems.Add(a.ToString());
+                if(a.IdCliente == idCliente)
+                { 
+                    TimeSpan dias = a.FechaEgreso - a.FechaIngreso;
+                    int days = dias.Days;
+                    Habitacion habitacion = _LstHabitacion.SingleOrDefault(x => x.Id == a.IdHabitacion);
+                    if (habitacion != null) 
+                    {
+                        double precio = habitacion.Precio * days;
+                        PrecioFinal += precio;
+                        _listViewItem = lstReporte.Items.Add(a.Id.ToString());
+                        _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
+                        _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
+                        _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
+                        _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
+                        _listViewItem.SubItems.Add(precio.ToString());
+                    }
+                    txtImporteTotal.Text = PrecioFinal.ToString();
+                }                
             }
         }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            FrmAbmHoteles formulario = new FrmAbmHoteles(AbmTipo.Modificacion, _hotelServicios);
-            if (lstReporte.SelectedItems.Count==1)
-            {
-                LlenarTextboxChild(formulario);
-                formulario.Owner = this;
-                var ret = formulario.ShowDialog();
-                if (ret != DialogResult.Cancel)
-                {
-                    CargarListView();
-                }
-            }
-            else
-                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
-        }
-
-        private void LlenarTextboxChild(FrmAbmHoteles formularios)
-        {
-            _items = (ListViewItem)lstReporte.SelectedItems[0];
-            formularios.txtIdHotel.Text = _items.Text;
-            formularios.txtNombre.Text = _items.SubItems[1].Text;
-            formularios.txtDireccion.Text = _items.SubItems[2].Text;
-            formularios.cbAmenities.Text = _items.SubItems[3].Text;
-            formularios.nuEstrellas.Text = _items.SubItems[4].Text;
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            
-                if (lstReporte.SelectedItems.Count == 1)
-                {
-                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    _items = (ListViewItem)lstReporte.SelectedItems[0];
-                    int resultado = _hotelServicios.EliminarHotel(int.Parse(_items.Text));
-                    LogResultado(resultado, "Eliminar Hotel");
-                }
-                else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
-            }
-        }
-
-        private void LogResultado(int resultado, string mensaje)
-        {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView();
-            }
-        }
-
-        private void FrmHoteles_Load(object sender, EventArgs e)
-        {
-            CargarListView();
-        }
-
-        private void btnExportarExcel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FrmBuscarCliente formulario = new FrmBuscarCliente(_hotelServicios);
@@ -146,6 +84,21 @@ namespace NLayer.Formularios
                 txtIdCliente.Text = ((Cliente)obj).Id.ToString();
                 txtNombreCliente.Text = ((Cliente)obj).ToString();
             }
+        }
+
+        private void btnEjecutar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtIdCliente.Text))
+                lblResultado.Text = "ERROR -> Debe seleccionar un cliente";
+            else
+            {
+                CargarListView(int.Parse(txtIdCliente.Text));
+            }
+        }
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
