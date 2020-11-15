@@ -59,7 +59,6 @@
             this.lblIidHotel.Size = new System.Drawing.Size(71, 23);
             this.lblIidHotel.TabIndex = 0;
             this.lblIidHotel.Text = "Id Hotel";
-            this.lblIidHotel.Click += new System.EventHandler(this.lblIidHotel_Click);
             // 
             // txtDireccion
             // 
@@ -185,7 +184,7 @@
             this.btnBuscarHotel.Size = new System.Drawing.Size(44, 32);
             this.btnBuscarHotel.TabIndex = 20;
             this.btnBuscarHotel.UseVisualStyleBackColor = true;
-            this.btnBuscarHotel.Click += new System.EventHandler(this.btnBuscarHotel_Click);
+            this.btnBuscarHotel.Visible = false;
             // 
             // cbAmenities
             // 
@@ -195,7 +194,7 @@
             this.cbAmenities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAmenities.Name = "cbAmenities";
             this.cbAmenities.Size = new System.Drawing.Size(47, 27);
-            this.cbAmenities.TabIndex = 23;
+            this.cbAmenities.TabIndex = 4;
             this.cbAmenities.Text = "SI";
             this.cbAmenities.UseVisualStyleBackColor = true;
             // 
@@ -216,7 +215,7 @@
             0});
             this.nuEstrellas.Name = "nuEstrellas";
             this.nuEstrellas.Size = new System.Drawing.Size(264, 29);
-            this.nuEstrellas.TabIndex = 24;
+            this.nuEstrellas.TabIndex = 5;
             this.nuEstrellas.Value = new decimal(new int[] {
             1,
             0,
@@ -227,17 +226,17 @@
             // 
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHotel.Location = new System.Drawing.Point(128, 76);
-            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.Size = new System.Drawing.Size(212, 30);
-            this.txtIdHotel.TabIndex = 28;
+            this.txtIdHotel.TabIndex = 1;
             // 
             // panelTop
             // 
             this.panelTop.Controls.Add(this.btnCerrar);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(428, 62);
             this.panelTop.TabIndex = 29;
@@ -253,8 +252,9 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(44, 31);
-            this.btnCerrar.TabIndex = 22;
+            this.btnCerrar.TabIndex = 8;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // FrmAbmHoteles
             // 
@@ -281,6 +281,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FrmAbmHoteles";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoteles";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

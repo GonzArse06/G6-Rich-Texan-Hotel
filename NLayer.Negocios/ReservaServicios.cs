@@ -37,11 +37,12 @@ namespace NLayer.Negocios
                     throw new ReservasException("La habitacion se encuentra reservada.");
                 }
             }
-           
-            //faltan validaciones de negocio.
             TransactionResult resultado = ReservaMapper.Insert(reserva);
             if (resultado.IsOk)
+            {
+                ReservaCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -80,11 +81,12 @@ namespace NLayer.Negocios
                     throw new ReservasException("La habitacion se encuentra reservada");
                 }
             }
-
-            //faltan validaciones de negocio.
             TransactionResult resultado = ReservaMapper.Update(reserva);
             if (resultado.IsOk)
+            {
+                ReservaCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -92,15 +94,22 @@ namespace NLayer.Negocios
         }
         public List<Reserva> TraerReservas()
         {
-            listaReservas = ReservaMapper.Reserva_getAll();
+            //listaReservas = ReservaMapper.Reserva_getAll();
             return listaReservas;
+        }
+        private void ReservaCache()
+        {
+            listaReservas = ReservaMapper.Reserva_getAll();
         }
         public int EliminarReserva(int id)
         {
             //faltan validaciones de negocio.
             TransactionResult resultado = ReservaMapper.Delete(id);
             if (resultado.IsOk)
+            {
+                ReservaCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);

@@ -60,7 +60,11 @@ namespace NLayer.Formularios
                 _listViewItem.SubItems.Add(a.Cancelable.ToString());
                 _listViewItem.SubItems.Add(a.Precio.ToString());
             }
-        }       
+        }
+        private void cbxHoteles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarListView(((Hotel)cbxHoteles.SelectedItem));
+        }
 
         private void LlenarTextboxChild(FrmAbmHabitaciones formulario)
         {

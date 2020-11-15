@@ -23,15 +23,9 @@ namespace NLayer.Formularios
             _tipo = tipo;
             hotelServicios =serv;
         }
-        private void cbCancelable_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
-           
+            Guardar();           
         }
         private void Guardar()
         {
@@ -93,21 +87,6 @@ namespace NLayer.Formularios
             if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
         }
-
-        private void btnBuscarHotel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIdHotel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIidHotel_Click(object sender, EventArgs e)
-        {
-
-        }
         //drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -118,6 +97,11 @@ namespace NLayer.Formularios
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

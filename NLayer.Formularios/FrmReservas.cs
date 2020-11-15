@@ -33,8 +33,7 @@ namespace NLayer.Formularios
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _lstClientes = new List<Cliente>();
-            _hotelServicios = srv;
-           
+            _hotelServicios = srv;          
           
         }
 
@@ -62,43 +61,41 @@ namespace NLayer.Formularios
                 lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
-        private void CargarListView(Hotel _hotel)
+        private void CargarListView(Hotel hotel)
         {
             lstReservas.Items.Clear();
             _lstReservas = _hotelServicios.TraerReservas();
-            if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
+            /*if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
             {
-
             }
             else
             {
                 _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
-
             }
             _lstHabitaciones = _hotel.Habitaciones;
-
             foreach (var h in _hotel.Habitaciones)
             {
                 h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
             }
+            var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
+             */
 
+            _lstHabitaciones = _hotelServicios.TraerTodoPorId(hotel.Id);
             var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
 
             foreach (Reserva a in misreservas)
             {
-               
-                    Cliente cliente = _lstClientes.SingleOrDefault(x => x.Id == a.IdCliente);
-                    if (cliente != null)
-                    {
-                        _listViewItem = lstReservas.Items.Add(a.Id.ToString());
-                        _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
-                        _listViewItem.SubItems.Add(a.IdCliente.ToString());
-                        _listViewItem.SubItems.Add(cliente.ToString());
-                        _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
-                        _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
-                        _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
-                    }
-               
+                Cliente cliente = _lstClientes.SingleOrDefault(x => x.Id == a.IdCliente);
+                if (cliente != null)
+                {
+                    _listViewItem = lstReservas.Items.Add(a.Id.ToString());
+                    _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
+                    _listViewItem.SubItems.Add(a.IdCliente.ToString());
+                    _listViewItem.SubItems.Add(cliente.ToString());
+                    _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
+                    _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
+                    _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
+                }
             }
         }
 

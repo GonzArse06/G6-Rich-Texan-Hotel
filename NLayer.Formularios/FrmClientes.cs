@@ -26,12 +26,6 @@ namespace NLayer.Formularios
             _clienteServicios = serv;
             _listViewItem = new ListViewItem();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,7 +37,7 @@ namespace NLayer.Formularios
             formularios.Owner = this;
             var ret= formularios.ShowDialog();
             if (ret != DialogResult.Cancel)
-            {
+            {                
                 CargarListView();
             }
         }

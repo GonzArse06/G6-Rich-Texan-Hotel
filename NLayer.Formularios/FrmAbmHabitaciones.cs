@@ -116,7 +116,7 @@ namespace NLayer.Formularios
 
         private void FrmAbmHabitaciones_Load(object sender, EventArgs e)
         {
-
+            txtIdHotel.Text = _idHotel.ToString();
         }
         //drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

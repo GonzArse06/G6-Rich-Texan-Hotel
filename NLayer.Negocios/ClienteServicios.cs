@@ -25,7 +25,10 @@ namespace NLayer.Negocios
             }
             TransactionResult resultado = ClienteMapper.Insert(item);
             if (resultado.IsOk)
+            {
+                ClienteCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -41,7 +44,10 @@ namespace NLayer.Negocios
             }
             TransactionResult resultado = ClienteMapper.Update(item);
             if (resultado.IsOk)
+            {
+                ClienteCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -49,8 +55,12 @@ namespace NLayer.Negocios
         }
         public List<Cliente> TraerClientes()
         {
-            listaclientes = ClienteMapper.TraerTodos();
+            //listaclientes = ClienteMapper.TraerTodos();
             return listaclientes;
+        }
+        private void ClienteCache()
+        {
+            listaclientes = ClienteMapper.TraerTodos();
         }
         public bool EliminarCliente(int id)
         {
@@ -58,11 +68,19 @@ namespace NLayer.Negocios
             if (!listaclientes.Any(o => o.Id == id))
             {
                 throw new ReservasException("No se pudo encontrar el cliente");
+            }           
+            
+            if (listaReservas.Any(o => o.IdCliente == id))
+            {
+                throw new ReservasException("El Cliente tiene reservas activas. Primero debe eliminar las reservas.");
             }
-            //validar que no tenga reservas o borrarlas?
+
             TransactionResult resultado = ClienteMapper.Delete(id);
             if (resultado.IsOk)
+            {
+                ClienteCache();
                 return true;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);

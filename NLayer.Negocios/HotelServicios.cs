@@ -19,7 +19,16 @@ namespace NLayer.Negocios
             listahoteles = new List<Hotel>();
             listaitems = new List<Habitacion>();
             listaReservas = new List<Reserva>();
-            //listahoteles = HotelMapper.Hotel_getAll();
+            //Cache
+            listaclientes = ClienteMapper.TraerTodos();
+            listahoteles = HotelMapper.Hotel_getAll();
+            listaReservas = ReservaMapper.Reserva_getAll();
+            foreach(Hotel a in listahoteles)
+                listaitems.AddRange(HabitacionMapper.Habitacion_getAllByHotel(a.Id));
+        }
+        public void HotelesCache()
+        {
+            listahoteles = HotelMapper.Hotel_getAll();
         }
         public int IngresarHotel(Hotel hotel)
         {
@@ -31,7 +40,10 @@ namespace NLayer.Negocios
 
             TransactionResult resultado = HotelMapper.Insert(hotel);
             if (resultado.IsOk)
+            {
+                HotelesCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -47,10 +59,12 @@ namespace NLayer.Negocios
             {
                 throw new ReservasException("Hotel no encontrado");
             }
-            //faltan validaciones de negocio.
             TransactionResult resultado = HotelMapper.Update(hotel);
             if (resultado.IsOk)
+            {
+                HotelesCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -58,27 +72,41 @@ namespace NLayer.Negocios
         }
         public List<Hotel> TraerHoteles()
         {
-            listahoteles = HotelMapper.Hotel_getAll();
+            //listahoteles = HotelMapper.Hotel_getAll();
             return listahoteles;
         }
         public int EliminarHotel(int id)
         {
-            //faltan validaciones de negocio.
-           
             if (!listahoteles.Any(o => o.Id == id))
             {
                 throw new ReservasException("No existe el hotel");
             }
-
-            // si tiene reservas?
-            
+            List<Habitacion> listaHabitaciones = listaitems.Where(x => x.Id == id).ToList();
+            foreach (Habitacion a in listaHabitaciones)
+            {
+                if (listaReservas.Any(o => o.IdHabitacion == a.Id))
+                    throw new ReservasException("Existen reservas para este hotel. Primero elimine las reservas.");
+            }
+            if (listaHabitaciones.Count > 0)
+            { 
+                throw new ReservasException("Existen habitaciones para este hotel. Primero elimine las habitaciones.");
+            }
             TransactionResult resultado = HotelMapper.Delete(id);
             if (resultado.IsOk)
+            {
+                HotelesCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
             }
+        }
+
+        private void HabitacionesCache()
+        {
+            foreach (Hotel a in listahoteles)
+                listaitems = HabitacionMapper.Habitacion_getAllByHotel(a.Id);
         }
 
         public int IngresarHabitacion(Habitacion habitacion)
@@ -92,7 +120,10 @@ namespace NLayer.Negocios
 
             TransactionResult resultado = HabitacionMapper.Insert(habitacion);
             if (resultado.IsOk)
+            {
+                HabitacionesCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -100,10 +131,18 @@ namespace NLayer.Negocios
         }
         public int ModificarHabitacion(Habitacion habitacion)
         {
+            var minimo = int.Parse(ConfigurationSettings.AppSettings["PrecioMinimo"]);
+            if (habitacion.Precio <= minimo)
+            {
+                throw new ReservasException("El precio debe ser superior a " + minimo.ToString());
+            }
             //faltan validaciones de negocio.
             TransactionResult resultado = HabitacionMapper.Update(habitacion);
             if (resultado.IsOk)
+            {
+                HabitacionesCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
@@ -111,15 +150,20 @@ namespace NLayer.Negocios
         }
         public List<Habitacion> TraerTodoPorId(int id)
         {
-            return HabitacionMapper.Habitacion_getAllByHotel(id);
+            return listaitems.Where(x => x.IdHotel == id).ToList();
         }
         public int EliminarHabitacion(int id)
         {
-
-            //faltan validaciones de negocio.
+            if (listaReservas.Any(o => o.IdHabitacion == id))
+            {
+                throw new ReservasException("La habitacion tiene reservas activas. Primero debe eliminar las reservas.");
+            }
             TransactionResult resultado = HabitacionMapper.Delete(id);
             if (resultado.IsOk)
+            {
+                HabitacionesCache();
                 return resultado.Id;
+            }
             else
             {
                 throw new ReservasException(resultado.Error);
