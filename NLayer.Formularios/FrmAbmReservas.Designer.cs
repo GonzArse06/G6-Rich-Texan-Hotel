@@ -128,7 +128,7 @@
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(44, 32);
-            this.btnBuscarCliente.TabIndex = 30;
+            this.btnBuscarCliente.TabIndex = 5;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
@@ -142,7 +142,7 @@
             this.btnBuscarHabitacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarHabitacion.Name = "btnBuscarHabitacion";
             this.btnBuscarHabitacion.Size = new System.Drawing.Size(44, 32);
-            this.btnBuscarHabitacion.TabIndex = 31;
+            this.btnBuscarHabitacion.TabIndex = 7;
             this.btnBuscarHabitacion.UseVisualStyleBackColor = true;
             this.btnBuscarHabitacion.Click += new System.EventHandler(this.btnBuscarHabitacion_Click);
             // 
@@ -154,7 +154,7 @@
             this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Size = new System.Drawing.Size(171, 22);
-            this.dtFechaIngreso.TabIndex = 32;
+            this.dtFechaIngreso.TabIndex = 9;
             // 
             // dtFechaEgreso
             // 
@@ -164,7 +164,7 @@
             this.dtFechaEgreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtFechaEgreso.Name = "dtFechaEgreso";
             this.dtFechaEgreso.Size = new System.Drawing.Size(171, 22);
-            this.dtFechaEgreso.TabIndex = 33;
+            this.dtFechaEgreso.TabIndex = 10;
             // 
             // btnCancelar
             // 
@@ -178,7 +178,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(156, 53);
-            this.btnCancelar.TabIndex = 35;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -197,7 +197,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 53);
-            this.btnGuardar.TabIndex = 34;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -213,7 +213,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(44, 31);
-            this.btnCerrar.TabIndex = 36;
+            this.btnCerrar.TabIndex = 13;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -237,7 +237,7 @@
             this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Size = new System.Drawing.Size(44, 33);
-            this.btnBuscarHotel.TabIndex = 41;
+            this.btnBuscarHotel.TabIndex = 3;
             this.btnBuscarHotel.UseVisualStyleBackColor = true;
             this.btnBuscarHotel.Click += new System.EventHandler(this.btnBuscarHotel_Click);
             // 
@@ -259,7 +259,7 @@
             this.txtIdReserva.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdReserva.Name = "txtIdReserva";
             this.txtIdReserva.Size = new System.Drawing.Size(171, 30);
-            this.txtIdReserva.TabIndex = 43;
+            this.txtIdReserva.TabIndex = 1;
             // 
             // txtIdHotel
             // 
@@ -268,7 +268,7 @@
             this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.Size = new System.Drawing.Size(171, 30);
-            this.txtIdHotel.TabIndex = 44;
+            this.txtIdHotel.TabIndex = 2;
             // 
             // txtIdCliente
             // 
@@ -277,7 +277,7 @@
             this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(171, 30);
-            this.txtIdCliente.TabIndex = 45;
+            this.txtIdCliente.TabIndex = 4;
             // 
             // txtIdHabitacion
             // 
@@ -286,7 +286,7 @@
             this.txtIdHabitacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHabitacion.Name = "txtIdHabitacion";
             this.txtIdHabitacion.Size = new System.Drawing.Size(171, 30);
-            this.txtIdHabitacion.TabIndex = 46;
+            this.txtIdHabitacion.TabIndex = 6;
             // 
             // txtNroHuespedes
             // 
@@ -295,7 +295,7 @@
             this.txtNroHuespedes.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroHuespedes.Name = "txtNroHuespedes";
             this.txtNroHuespedes.Size = new System.Drawing.Size(171, 30);
-            this.txtNroHuespedes.TabIndex = 47;
+            this.txtNroHuespedes.TabIndex = 8;
             // 
             // panelTop
             // 
@@ -337,6 +337,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAbmReservas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservas";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
