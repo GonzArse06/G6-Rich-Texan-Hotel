@@ -126,7 +126,7 @@
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 18);
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
             // 
             // btnCerrar
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.lstReporte);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmReporteReservas";
-            this.Text = "Hoteles";
+            this.Text = "Reporte de Reservas";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

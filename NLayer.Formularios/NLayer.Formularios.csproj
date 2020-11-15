@@ -74,6 +74,12 @@
     <Compile Include="FrmBuscarCliente.Designer.cs">
       <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteHabitaciones.Designer.cs">
+      <DependentUpon>FrmReporteHabitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporteReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarCliente.resx">
       <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteHabitaciones.resx">
+      <DependentUpon>FrmReporteHabitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteReservas.resx">
       <DependentUpon>FrmReporteReservas.cs</DependentUpon>

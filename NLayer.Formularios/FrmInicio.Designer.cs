@@ -338,7 +338,6 @@
             this.panelFormularioHijo.Name = "panelFormularioHijo";
             this.panelFormularioHijo.Size = new System.Drawing.Size(1123, 794);
             this.panelFormularioHijo.TabIndex = 2;
-            this.panelFormularioHijo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormularioHijo_Paint);
             // 
             // ImgHome
             // 

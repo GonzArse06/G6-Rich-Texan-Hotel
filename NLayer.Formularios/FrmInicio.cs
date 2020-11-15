@@ -119,6 +119,7 @@ namespace NLayer.Formularios
         private void btnReporteHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.LightBlue);
+            OpenChildForm(new FrmReporteHabitaciones(_hotelServicios));
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -128,6 +129,10 @@ namespace NLayer.Formularios
 
         private void Reset()
         {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
             DisableButton();
             leftBorderBtn.Visible = false;
             imgFormularioActual.IconChar = IconChar.Home;
@@ -171,11 +176,6 @@ namespace NLayer.Formularios
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void panelFormularioHijo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

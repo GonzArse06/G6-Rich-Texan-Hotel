@@ -65,14 +65,6 @@ namespace NLayer.Formularios
             {
                 MessageBox.Show("Email invalido");
             }
-            //else if (!ValidationHelper.IsUInteger(txtDni.Text))
-            //{
-            //    MessageBox.Show("DNI invalido");
-            //}
-            //else if (!ValidationHelper.IsUInteger(txtTelefono.Text))
-            //{
-            //    MessageBox.Show("Telefono invalido");
-            //}
             else
             {
                 try
@@ -87,8 +79,6 @@ namespace NLayer.Formularios
                     cliente.Direccion = txtDireccion.Text;
                     cliente.Email = txtMail.Text;
                     cliente.Telefono = int.Parse(txtTelefono.Text);
-
-                   
                     int resultado = -1;
                     switch (_tipo)
                     {

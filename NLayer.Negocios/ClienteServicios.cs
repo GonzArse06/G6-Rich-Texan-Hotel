@@ -37,7 +37,7 @@ namespace NLayer.Negocios
             //faltan validaciones de negocio.
             if (listaclientes.Any(o => o.Dni == item.Dni && o.Id != item.Id))
             {
-                throw new ReservasException("Eel DNI se encuentra registrado");
+                throw new ReservasException("El DNI se encuentra registrado");
             }
             TransactionResult resultado = ClienteMapper.Update(item);
             if (resultado.IsOk)

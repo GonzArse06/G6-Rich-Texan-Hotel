@@ -215,7 +215,6 @@
             this.btnCerrar.Size = new System.Drawing.Size(44, 31);
             this.btnCerrar.TabIndex = 36;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Visible = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblIdReserva
@@ -257,7 +256,7 @@
             this.txtIdReserva.Enabled = false;
             this.txtIdReserva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdReserva.Location = new System.Drawing.Point(183, 69);
-            this.txtIdReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdReserva.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdReserva.Name = "txtIdReserva";
             this.txtIdReserva.Size = new System.Drawing.Size(171, 30);
             this.txtIdReserva.TabIndex = 43;
@@ -266,7 +265,7 @@
             // 
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHotel.Location = new System.Drawing.Point(183, 108);
-            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.Size = new System.Drawing.Size(171, 30);
             this.txtIdHotel.TabIndex = 44;
@@ -275,7 +274,7 @@
             // 
             this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCliente.Location = new System.Drawing.Point(183, 148);
-            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(171, 30);
             this.txtIdCliente.TabIndex = 45;
@@ -284,7 +283,7 @@
             // 
             this.txtIdHabitacion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHabitacion.Location = new System.Drawing.Point(183, 187);
-            this.txtIdHabitacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdHabitacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHabitacion.Name = "txtIdHabitacion";
             this.txtIdHabitacion.Size = new System.Drawing.Size(171, 30);
             this.txtIdHabitacion.TabIndex = 46;
@@ -293,7 +292,7 @@
             // 
             this.txtNroHuespedes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroHuespedes.Location = new System.Drawing.Point(183, 226);
-            this.txtNroHuespedes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNroHuespedes.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroHuespedes.Name = "txtNroHuespedes";
             this.txtNroHuespedes.Size = new System.Drawing.Size(171, 30);
             this.txtNroHuespedes.TabIndex = 47;
@@ -303,7 +302,7 @@
             this.panelTop.Controls.Add(this.btnCerrar);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(431, 62);
             this.panelTop.TabIndex = 48;

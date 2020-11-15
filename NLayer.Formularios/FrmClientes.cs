@@ -24,7 +24,6 @@ namespace NLayer.Formularios
         {
             InitializeComponent();
             _clienteServicios = serv;
-            //_Lstclientes = new List<Cliente>();
             _listViewItem = new ListViewItem();
         }
 
@@ -47,7 +46,6 @@ namespace NLayer.Formularios
             {
                 CargarListView();
             }
-           
         }
 
         private void FrmClientes_Load(object sender, EventArgs e)
@@ -127,6 +125,20 @@ namespace NLayer.Formularios
             }
         }
 
-        
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _clienteServicios.DescargarAExcel(lstClientes);
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+            finally
+            {
+                lblResultado.Text = "OK -> Exportacion exitosa.";
+            }
+        }
     }
 }

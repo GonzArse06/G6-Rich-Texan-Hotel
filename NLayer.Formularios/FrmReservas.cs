@@ -181,7 +181,18 @@ namespace NLayer.Formularios
 
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                _hotelServicios.DescargarAExcel(lstReservas);
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+            finally
+            {
+                lblResultado.Text = "OK -> Exportacion exitosa.";
+            }
         }
     }
 }

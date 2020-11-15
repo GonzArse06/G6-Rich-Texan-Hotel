@@ -11,9 +11,7 @@ using System.Threading.Tasks;
 namespace NLayer.Negocios
 {
     public class ValidationHelper
-    {
-       
-
+    {     
         public static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -57,8 +55,6 @@ namespace NLayer.Negocios
                 return false;
             }
         }
-
-
         public static bool IsUInteger(string number)
         {
             if (string.IsNullOrWhiteSpace(number))
@@ -67,7 +63,5 @@ namespace NLayer.Negocios
             return uint.TryParse(number, out uint i);
 
         }
-
-    }
-    
+    }    
 }

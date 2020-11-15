@@ -14,14 +14,11 @@ namespace NLayer.Formularios
 {
     public partial class FrmReporteReservas : Form
     {
-        Form formularios;
         HotelServicios _hotelServicios;
         List<Hotel> _LstHoteles;
         List<Habitacion> _LstHabitacion;
         List<Reserva> _LstReservas;
         ListViewItem _listViewItem;
-        ListViewItem _items;
-        public ListViewItem Item { get => _items; }
         public FrmReporteReservas(HotelServicios serv)
         {
             InitializeComponent();
@@ -98,7 +95,18 @@ namespace NLayer.Formularios
 
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                _hotelServicios.DescargarAExcel(lstReporte);
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+            finally
+            {
+                lblResultado.Text = "OK -> Exportacion exitosa.";
+            }
         }
     }
 }
