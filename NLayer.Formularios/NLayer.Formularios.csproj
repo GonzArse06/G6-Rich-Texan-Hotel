@@ -56,11 +56,11 @@
     <Compile Include="FrmAbmHoteles.Designer.cs">
       <DependentUpon>FrmAbmHoteles.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscar.cs">
+    <Compile Include="FrmBuscarHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuscar.Designer.cs">
-      <DependentUpon>FrmBuscar.cs</DependentUpon>
+    <Compile Include="FrmBuscarHotel.Designer.cs">
+      <DependentUpon>FrmBuscarHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBuscarHabitacion.cs">
       <SubType>Form</SubType>
@@ -146,8 +146,8 @@
     <EmbeddedResource Include="FrmAbmHoteles.resx">
       <DependentUpon>FrmAbmHoteles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscar.resx">
-      <DependentUpon>FrmBuscar.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBuscarHotel.resx">
+      <DependentUpon>FrmBuscarHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarHabitacion.resx">
       <DependentUpon>FrmBuscarHabitacion.cs</DependentUpon>

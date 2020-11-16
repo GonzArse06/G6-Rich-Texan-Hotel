@@ -15,22 +15,20 @@ namespace NLayer.Formularios
     public partial class FrmReporteHabitaciones : Form
     {
         //Form formularios;
-        HotelServicios _habitacionServicios;
+        HotelServicios _hotelServicios;
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
         ListViewItem _items;
         List<Hotel> _hoteles;
-        HotelServicios _hotelServicios;
 
         public ListViewItem Item { get => _items; }
         public FrmReporteHabitaciones(HotelServicios serv)
         {
             InitializeComponent();
-            _habitacionServicios = serv;
+            _hotelServicios = serv;
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _hoteles = new List<Hotel>();
-            _hotelServicios = new HotelServicios();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -48,7 +46,7 @@ namespace NLayer.Formularios
         {
             lstHabitaciones.Items.Clear();
 
-            _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
+            _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
 
             _lstHabitaciones = _hotel.Habitaciones;
 

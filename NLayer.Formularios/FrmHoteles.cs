@@ -92,17 +92,23 @@ namespace NLayer.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
                 if (lstHoteles.SelectedItems.Count == 1)
                 {
-                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    _items = (ListViewItem)lstHoteles.SelectedItems[0];
-                    int resultado = _hotelServicios.EliminarHotel(int.Parse(_items.Text));
-                    LogResultado(resultado, "Eliminar Hotel");
+                    if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        _items = (ListViewItem)lstHoteles.SelectedItems[0];
+                        int resultado = _hotelServicios.EliminarHotel(int.Parse(_items.Text));
+                        LogResultado(resultado, "Eliminar Hotel");
+                    }
+                    else
+                        lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
                 }
-                else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> "+ex.Message;
             }
         }
 

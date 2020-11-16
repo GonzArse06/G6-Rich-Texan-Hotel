@@ -102,20 +102,28 @@ namespace NLayer.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (lstClientes.SelectedItems.Count == 1)
+            try
             {
-                if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+                if (lstClientes.SelectedItems.Count == 1)
                 {
-                    _items = (ListViewItem)lstClientes.SelectedItems[0];
-                    var resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
-                    LogHelper.LogResultado( lblResultado, resultado, "Eliminar Cliente");
-                    if (resultado)
+                    if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        CargarListView();
+                        _items = (ListViewItem)lstClientes.SelectedItems[0];
+                        var resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
+                        LogHelper.LogResultado(lblResultado, resultado, "Eliminar Cliente");
+                        if (resultado)
+                        {
+                            CargarListView();
+                        }
                     }
+                    else
+                        lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
                 }
-                else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
 

@@ -43,18 +43,15 @@
             this.cbAmenities = new System.Windows.Forms.CheckBox();
             this.nuEstrellas = new System.Windows.Forms.NumericUpDown();
             this.txtIdHotel = new NLayer.Formularios.TextoNumerico();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuEstrellas)).BeginInit();
-            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIidHotel
             // 
             this.lblIidHotel.AutoSize = true;
             this.lblIidHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIidHotel.Location = new System.Drawing.Point(15, 81);
+            this.lblIidHotel.Location = new System.Drawing.Point(21, 35);
             this.lblIidHotel.Name = "lblIidHotel";
             this.lblIidHotel.Size = new System.Drawing.Size(71, 23);
             this.lblIidHotel.TabIndex = 0;
@@ -63,7 +60,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(128, 150);
+            this.txtDireccion.Location = new System.Drawing.Point(134, 104);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(263, 29);
@@ -72,7 +69,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(128, 114);
+            this.txtNombre.Location = new System.Drawing.Point(134, 68);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(263, 29);
@@ -82,7 +79,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(15, 118);
+            this.lblNombre.Location = new System.Drawing.Point(21, 72);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(73, 23);
             this.lblNombre.TabIndex = 8;
@@ -91,7 +88,7 @@
             // lblDireccion
             // 
             this.lblDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(15, 154);
+            this.lblDireccion.Location = new System.Drawing.Point(21, 108);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(108, 30);
             this.lblDireccion.TabIndex = 9;
@@ -101,7 +98,7 @@
             // 
             this.lblAmenities.AutoSize = true;
             this.lblAmenities.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmenities.Location = new System.Drawing.Point(15, 188);
+            this.lblAmenities.Location = new System.Drawing.Point(21, 142);
             this.lblAmenities.Name = "lblAmenities";
             this.lblAmenities.Size = new System.Drawing.Size(87, 23);
             this.lblAmenities.TabIndex = 10;
@@ -111,7 +108,7 @@
             // 
             this.lblEstrellas.AutoSize = true;
             this.lblEstrellas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstrellas.Location = new System.Drawing.Point(15, 220);
+            this.lblEstrellas.Location = new System.Drawing.Point(21, 174);
             this.lblEstrellas.Name = "lblEstrellas";
             this.lblEstrellas.Size = new System.Drawing.Size(74, 23);
             this.lblEstrellas.TabIndex = 11;
@@ -122,10 +119,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 344);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 316);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(428, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(436, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -143,7 +140,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Red;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
-            this.btnCancelar.Location = new System.Drawing.Point(237, 265);
+            this.btnCancelar.Location = new System.Drawing.Point(243, 219);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(156, 53);
@@ -162,7 +159,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 40;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(75, 265);
+            this.btnGuardar.Location = new System.Drawing.Point(81, 219);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 53);
@@ -178,7 +175,7 @@
             this.btnBuscarHotel.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscarHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHotel.IconSize = 22;
-            this.btnBuscarHotel.Location = new System.Drawing.Point(348, 76);
+            this.btnBuscarHotel.Location = new System.Drawing.Point(354, 30);
             this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Size = new System.Drawing.Size(44, 32);
@@ -190,7 +187,7 @@
             // 
             this.cbAmenities.AutoSize = true;
             this.cbAmenities.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAmenities.Location = new System.Drawing.Point(128, 186);
+            this.cbAmenities.Location = new System.Drawing.Point(134, 140);
             this.cbAmenities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAmenities.Name = "cbAmenities";
             this.cbAmenities.Size = new System.Drawing.Size(47, 27);
@@ -201,7 +198,7 @@
             // nuEstrellas
             // 
             this.nuEstrellas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuEstrellas.Location = new System.Drawing.Point(128, 218);
+            this.nuEstrellas.Location = new System.Drawing.Point(134, 172);
             this.nuEstrellas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nuEstrellas.Maximum = new decimal(new int[] {
             5,
@@ -225,44 +222,18 @@
             // txtIdHotel
             // 
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdHotel.Location = new System.Drawing.Point(128, 76);
+            this.txtIdHotel.Location = new System.Drawing.Point(134, 30);
             this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.Size = new System.Drawing.Size(212, 30);
             this.txtIdHotel.TabIndex = 1;
-            // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.btnCerrar);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(428, 62);
-            this.panelTop.TabIndex = 29;
-            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 26;
-            this.btnCerrar.Location = new System.Drawing.Point(369, 14);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(44, 31);
-            this.btnCerrar.TabIndex = 8;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // FrmAbmHoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(428, 366);
-            this.Controls.Add(this.panelTop);
+            this.ClientSize = new System.Drawing.Size(436, 338);
             this.Controls.Add(this.txtIdHotel);
             this.Controls.Add(this.nuEstrellas);
             this.Controls.Add(this.cbAmenities);
@@ -277,16 +248,16 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblIidHotel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(454, 385);
             this.Name = "FrmAbmHoteles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoteles";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuEstrellas)).EndInit();
-            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,7 +280,5 @@
         public System.Windows.Forms.CheckBox cbAmenities;
         public System.Windows.Forms.NumericUpDown nuEstrellas;
         public TextoNumerico txtIdHotel;
-        private System.Windows.Forms.Panel panelTop;
-        private FontAwesome.Sharp.IconButton btnCerrar;
     }
 }

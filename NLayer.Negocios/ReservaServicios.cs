@@ -19,13 +19,13 @@ namespace NLayer.Negocios
             {
                 throw new ReservasException("La reserva supera la cantidad de plazas de la habitacion.");
             }
-            if (reserva.FechaIngreso <= DateTime.Today)
+            if (reserva.FechaIngreso.Date < DateTime.Today.Date)
             {
                 throw new ReservasException("La fecha de reserva debe ser mayor o igual a hoy.");
             }
-            if (reserva.FechaEgreso - reserva.FechaIngreso  < TimeSpan.FromDays(1))
+            if (reserva.FechaEgreso.Date - reserva.FechaIngreso.Date < TimeSpan.FromDays(1))
             {
-                throw new ReservasException("La fecha de egreso no puede ser anterior a la fecha de ingreso.");
+                throw new ReservasException("La fecha de egreso no puede igual o anterior a la fecha de ingreso.");
             }
 
             var reservas = listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion);
@@ -63,11 +63,11 @@ namespace NLayer.Negocios
                 }
             }
            
-            if (reserva.FechaIngreso <= DateTime.Today)
+            if (reserva.FechaIngreso.Date < DateTime.Today.Date)
             {
                 throw new ReservasException("La fecha de reserva debe ser mayor o igual a hoy.");
             }
-            if (reserva.FechaEgreso - reserva.FechaIngreso < TimeSpan.FromDays(1))
+            if (reserva.FechaEgreso.Date - reserva.FechaIngreso.Date < TimeSpan.FromDays(1))
             {
                 throw new ReservasException("La fecha de egreso no puede ser anterior a la fecha de ingreso.");
             }

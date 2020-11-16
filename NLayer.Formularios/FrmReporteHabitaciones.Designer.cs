@@ -117,6 +117,7 @@
             // 
             // cbxHoteles
             // 
+            this.cbxHoteles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxHoteles.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxHoteles.FormattingEnabled = true;
             this.cbxHoteles.Location = new System.Drawing.Point(99, 18);

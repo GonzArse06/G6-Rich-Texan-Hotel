@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnReporteHabitaciones = new FontAwesome.Sharp.IconButton();
             this.btnReporteClientes = new FontAwesome.Sharp.IconButton();
@@ -346,7 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ImgHome.Image = global::NLayer.Formularios.Properties.Resources.ImgFondo2;
             this.ImgHome.Location = new System.Drawing.Point(0, 0);
-            this.ImgHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ImgHome.Margin = new System.Windows.Forms.Padding(4);
             this.ImgHome.Name = "ImgHome";
             this.ImgHome.Size = new System.Drawing.Size(1123, 794);
             this.ImgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -361,6 +362,7 @@
             this.Controls.Add(this.panelFormularioHijo);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmInicio";
             this.Text = "Form1";

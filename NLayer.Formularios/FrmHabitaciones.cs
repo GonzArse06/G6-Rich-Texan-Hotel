@@ -15,22 +15,20 @@ namespace NLayer.Formularios
     public partial class FrmHabitaciones : Form
     {
         //Form formularios;
-        HotelServicios _habitacionServicios;
+        HotelServicios _hotelServicios;
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
         ListViewItem _items;
         List<Hotel> _hoteles;
-        HotelServicios _hotelServicios;
 
         public ListViewItem Item { get => _items; }
         public FrmHabitaciones(HotelServicios serv)
         {
             InitializeComponent();
-            _habitacionServicios = serv;
+            _hotelServicios = serv;
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _hoteles = new List<Hotel>();
-            _hotelServicios = new HotelServicios();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -70,7 +68,7 @@ namespace NLayer.Formularios
         {
             lstHabitaciones.Items.Clear();
 
-            _hotel.Habitaciones = _habitacionServicios.TraerTodoPorId(_hotel.Id);
+            _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
 
             _lstHabitaciones = _hotel.Habitaciones;
 
@@ -123,16 +121,23 @@ namespace NLayer.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (lstHabitaciones.SelectedItems.Count == 1)
+            try
             {
-                if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (lstHabitaciones.SelectedItems.Count == 1)
                 {
-                    _items = (ListViewItem)lstHabitaciones.SelectedItems[0];
-                    int resultado = _habitacionServicios.EliminarHabitacion(int.Parse(_items.Text));
-                    LogResultado(resultado, "Eliminar habitacion");
+                    if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        _items = (ListViewItem)lstHabitaciones.SelectedItems[0];
+                        int resultado = _hotelServicios.EliminarHabitacion(int.Parse(_items.Text));
+                        LogResultado(resultado, "Eliminar habitacion");
+                    }
+                    else
+                        lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
                 }
-                else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
 
@@ -151,12 +156,6 @@ namespace NLayer.Formularios
         {
             CargarListView(((Hotel)cbxHoteles.SelectedItem));
         }
-
-        private void lstHabitaciones_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
             try

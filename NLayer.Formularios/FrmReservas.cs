@@ -138,7 +138,8 @@ namespace NLayer.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            try 
+            { 
                 if (lstReservas.SelectedItems.Count == 1)
                 {
                     if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -149,6 +150,11 @@ namespace NLayer.Formularios
                     }
                 else
                     lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
 

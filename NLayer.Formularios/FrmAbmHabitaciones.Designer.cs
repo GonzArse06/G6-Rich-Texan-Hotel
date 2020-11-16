@@ -39,7 +39,6 @@
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.btnBuscarHaitacion = new FontAwesome.Sharp.IconButton();
             this.cbCancelable = new System.Windows.Forms.CheckBox();
             this.btnBuscarHotel = new FontAwesome.Sharp.IconButton();
@@ -47,26 +46,23 @@
             this.txtIdHotel = new NLayer.Formularios.TextoNumerico();
             this.txtIdHabitacion = new NLayer.Formularios.TextoNumerico();
             this.txtCantidadPlazas = new NLayer.Formularios.TextoNumerico();
-            this.panelTop = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
-            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIidHabitacion
             // 
             this.lblIidHabitacion.AutoSize = true;
             this.lblIidHabitacion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIidHabitacion.Location = new System.Drawing.Point(29, 126);
+            this.lblIidHabitacion.Location = new System.Drawing.Point(22, 67);
             this.lblIidHabitacion.Name = "lblIidHabitacion";
             this.lblIidHabitacion.Size = new System.Drawing.Size(125, 23);
             this.lblIidHabitacion.TabIndex = 0;
             this.lblIidHabitacion.Text = "Nro Habitacion";
-            this.lblIidHabitacion.Click += new System.EventHandler(this.lblIidHabitacion_Click);
             // 
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(185, 266);
+            this.txtPrecio.Location = new System.Drawing.Point(178, 207);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(236, 29);
@@ -75,18 +71,17 @@
             // txtCategoria
             // 
             this.txtCategoria.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(185, 159);
+            this.txtCategoria.Location = new System.Drawing.Point(178, 100);
             this.txtCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(236, 29);
             this.txtCategoria.TabIndex = 2;
-            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(29, 162);
+            this.lblCategoria.Location = new System.Drawing.Point(22, 103);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(83, 23);
             this.lblCategoria.TabIndex = 8;
@@ -95,7 +90,7 @@
             // lblCantidadPlazas
             // 
             this.lblCantidadPlazas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadPlazas.Location = new System.Drawing.Point(27, 201);
+            this.lblCantidadPlazas.Location = new System.Drawing.Point(20, 142);
             this.lblCantidadPlazas.Name = "lblCantidadPlazas";
             this.lblCantidadPlazas.Size = new System.Drawing.Size(165, 31);
             this.lblCantidadPlazas.TabIndex = 9;
@@ -105,7 +100,7 @@
             // 
             this.lblCancelable.AutoSize = true;
             this.lblCancelable.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancelable.Location = new System.Drawing.Point(29, 236);
+            this.lblCancelable.Location = new System.Drawing.Point(22, 177);
             this.lblCancelable.Name = "lblCancelable";
             this.lblCancelable.Size = new System.Drawing.Size(92, 23);
             this.lblCancelable.TabIndex = 10;
@@ -115,7 +110,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(29, 270);
+            this.lblPrecio.Location = new System.Drawing.Point(22, 211);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(58, 23);
             this.lblPrecio.TabIndex = 11;
@@ -126,10 +121,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 373);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 340);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(476, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(509, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -146,7 +141,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Red;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
-            this.btnCancelar.Location = new System.Drawing.Point(307, 313);
+            this.btnCancelar.Location = new System.Drawing.Point(300, 254);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(156, 53);
@@ -165,7 +160,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 40;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(145, 313);
+            this.btnGuardar.Location = new System.Drawing.Point(138, 254);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 53);
@@ -175,40 +170,25 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 26;
-            this.btnCerrar.Location = new System.Drawing.Point(417, 14);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(45, 38);
-            this.btnCerrar.TabIndex = 8;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // btnBuscarHaitacion
             // 
             this.btnBuscarHaitacion.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnBuscarHaitacion.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscarHaitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHaitacion.IconSize = 18;
-            this.btnBuscarHaitacion.Location = new System.Drawing.Point(379, 121);
+            this.btnBuscarHaitacion.Location = new System.Drawing.Point(372, 62);
             this.btnBuscarHaitacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarHaitacion.Name = "btnBuscarHaitacion";
             this.btnBuscarHaitacion.Size = new System.Drawing.Size(44, 32);
             this.btnBuscarHaitacion.TabIndex = 20;
             this.btnBuscarHaitacion.UseVisualStyleBackColor = true;
             this.btnBuscarHaitacion.Visible = false;
-            this.btnBuscarHaitacion.Click += new System.EventHandler(this.btnBuscarHotel_Click);
             // 
             // cbCancelable
             // 
             this.cbCancelable.AutoSize = true;
             this.cbCancelable.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCancelable.Location = new System.Drawing.Point(185, 234);
+            this.cbCancelable.Location = new System.Drawing.Point(178, 175);
             this.cbCancelable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCancelable.Name = "cbCancelable";
             this.cbCancelable.Size = new System.Drawing.Size(47, 27);
@@ -222,20 +202,19 @@
             this.btnBuscarHotel.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscarHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHotel.IconSize = 18;
-            this.btnBuscarHotel.Location = new System.Drawing.Point(379, 81);
+            this.btnBuscarHotel.Location = new System.Drawing.Point(372, 22);
             this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Size = new System.Drawing.Size(44, 32);
             this.btnBuscarHotel.TabIndex = 25;
             this.btnBuscarHotel.UseVisualStyleBackColor = true;
             this.btnBuscarHotel.Visible = false;
-            this.btnBuscarHotel.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // lblIidHotel
             // 
             this.lblIidHotel.AutoSize = true;
             this.lblIidHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIidHotel.Location = new System.Drawing.Point(29, 87);
+            this.lblIidHotel.Location = new System.Drawing.Point(22, 28);
             this.lblIidHotel.Name = "lblIidHotel";
             this.lblIidHotel.Size = new System.Drawing.Size(71, 23);
             this.lblIidHotel.TabIndex = 24;
@@ -244,7 +223,7 @@
             // txtIdHotel
             // 
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdHotel.Location = new System.Drawing.Point(185, 81);
+            this.txtIdHotel.Location = new System.Drawing.Point(178, 22);
             this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.ReadOnly = true;
@@ -254,7 +233,7 @@
             // txtIdHabitacion
             // 
             this.txtIdHabitacion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdHabitacion.Location = new System.Drawing.Point(185, 121);
+            this.txtIdHabitacion.Location = new System.Drawing.Point(178, 62);
             this.txtIdHabitacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHabitacion.Name = "txtIdHabitacion";
             this.txtIdHabitacion.ReadOnly = true;
@@ -264,29 +243,17 @@
             // txtCantidadPlazas
             // 
             this.txtCantidadPlazas.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadPlazas.Location = new System.Drawing.Point(185, 196);
+            this.txtCantidadPlazas.Location = new System.Drawing.Point(178, 137);
             this.txtCantidadPlazas.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidadPlazas.Name = "txtCantidadPlazas";
             this.txtCantidadPlazas.Size = new System.Drawing.Size(171, 30);
             this.txtCantidadPlazas.TabIndex = 3;
             // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.btnCerrar);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(476, 62);
-            this.panelTop.TabIndex = 30;
-            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
-            // 
             // FrmAbmHabitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 395);
-            this.Controls.Add(this.panelTop);
+            this.ClientSize = new System.Drawing.Size(509, 362);
             this.Controls.Add(this.txtCantidadPlazas);
             this.Controls.Add(this.txtIdHabitacion);
             this.Controls.Add(this.txtIdHotel);
@@ -304,15 +271,15 @@
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblIidHabitacion);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(527, 409);
             this.Name = "FrmAbmHabitaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Habitaciones";
             this.Load += new System.EventHandler(this.FrmAbmHabitaciones_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,7 +296,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblResultado;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnCerrar;
         private FontAwesome.Sharp.IconButton btnBuscarHaitacion;
         public System.Windows.Forms.TextBox txtPrecio;
         public System.Windows.Forms.TextBox txtCategoria;
@@ -339,6 +305,5 @@
         public TextoNumerico txtIdHotel;
         public TextoNumerico txtIdHabitacion;
         public TextoNumerico txtCantidadPlazas;
-        private System.Windows.Forms.Panel panelTop;
     }
 }

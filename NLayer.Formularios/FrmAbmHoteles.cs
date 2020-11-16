@@ -22,7 +22,26 @@ namespace NLayer.Formularios
             InitializeComponent();
             _tipo = tipo;
             hotelServicios =serv;
+            switch (_tipo)
+            {
+                case AbmTipo.Alta:
+                    InicializarAlta();
+                    break;
+                case AbmTipo.Modificacion:
+                    InicializarModificacion();
+                    break;
+            }
         }
+        private void InicializarAlta()
+        {
+            Text = "Nuevo Hotel";
+        }
+
+        private void InicializarModificacion()
+        {
+            Text = "Modificar Hotel";
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();           
@@ -73,7 +92,7 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
+                //Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)

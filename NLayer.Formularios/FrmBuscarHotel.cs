@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace NLayer.Formularios
 {
-    public partial class FrmBuscar : Form
+    public partial class FrmBuscarHotel : Form
     {
         List<Hotel> _lista;
         HotelServicios _Servicios;
-        public FrmBuscar( HotelServicios serv)
+        public FrmBuscarHotel( HotelServicios serv)
         {
             InitializeComponent();
             _Servicios = serv;

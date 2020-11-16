@@ -17,10 +17,10 @@ namespace NLayer.Formularios
         List<Habitacion> _lista;
         HotelServicios _habitacionServicios;
         int _idHotel;
-        public FrmBuscarHabitacion(int idHotel)
+        public FrmBuscarHabitacion(int idHotel, HotelServicios serv)
         {
             InitializeComponent();
-            _habitacionServicios = new HotelServicios();
+            _habitacionServicios = serv; // new HotelServicios();
             _lista = new List<Habitacion>();
             _idHotel = idHotel;
         }

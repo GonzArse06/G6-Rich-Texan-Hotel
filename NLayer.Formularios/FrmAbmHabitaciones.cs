@@ -22,10 +22,24 @@ namespace NLayer.Formularios
             InitializeComponent();
             _tipo = tipo;
             _idHotel = idHotel;
+            switch (_tipo)
+            {
+                case AbmTipo.Alta:
+                    InicializarAlta();
+                    break;
+                case AbmTipo.Modificacion:
+                    InicializarModificacion();
+                    break;
+            }
         }
-        private void cbCancelable_SelectedIndexChanged(object sender, EventArgs e)
+        private void InicializarAlta()
         {
+            Text = "Nueva Habitacion";
+        }
 
+        private void InicializarModificacion()
+        {
+            Text = "Modificar Habitacion";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -79,7 +93,7 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
+                //Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -93,27 +107,6 @@ namespace NLayer.Formularios
             if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
         }
-
-        private void btnBuscarHotel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIidHabitacion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCategoria_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmAbmHabitaciones_Load(object sender, EventArgs e)
         {
             txtIdHotel.Text = _idHotel.ToString();

@@ -30,11 +30,28 @@ namespace NLayer.Formularios
             _idHotel = idHotel;
            
             hotelServicios = htlserv;
+            switch (_tipo)
+            {
+                case AbmTipo.Alta:
+                    InicializarAlta();
+                    break;
+                case AbmTipo.Modificacion:
+                    InicializarModificacion();
+                    break;
+            }
+        }
+        private void InicializarAlta()
+        {
+            Text = "Nueva Reserva";
+        }
+
+        private void InicializarModificacion()
+        {
+            Text = "Modificar Reserva";
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-                Guardar();
-            
+            Guardar();            
         }
         private void Guardar()
         {
@@ -44,8 +61,7 @@ namespace NLayer.Formularios
             string mensaje = Estaticas.Validaciones(Controls);
             if (mensaje != "")
             {
-                MessageBox.Show(mensaje);
-                
+                MessageBox.Show(mensaje);                
             }
             else
             {
@@ -86,7 +102,7 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                Estaticas.LimpiarTextBox(Controls); 
+                //Estaticas.LimpiarTextBox(Controls); 
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -115,21 +131,19 @@ namespace NLayer.Formularios
 
         private void btnBuscarHabitacion_Click(object sender, EventArgs e)
         {
-            FrmBuscarHabitacion formulario = new FrmBuscarHabitacion(_idHotel);
+            FrmBuscarHabitacion formulario = new FrmBuscarHabitacion(_idHotel, hotelServicios);
             formulario.Owner = this;
             formulario.ShowDialog();
             var obj = formulario.Tag;
             if (obj != null && obj is Habitacion)
             {
-                hh = ((Habitacion)obj);
-               
-            }
-           
+                hh = ((Habitacion)obj);               
+            }           
         }
 
         private void btnBuscarHotel_Click(object sender, EventArgs e)
         {
-            FrmBuscar formulario = new FrmBuscar(hotelServicios);
+            FrmBuscarHotel formulario = new FrmBuscarHotel(hotelServicios);
             formulario.Owner = this;
             formulario.ShowDialog();
             var obj = formulario.Tag;

@@ -44,20 +44,17 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.lblDNI = new System.Windows.Forms.Label();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.txtIdCliente = new NLayer.Formularios.TextoNumerico();
             this.txtDni = new NLayer.Formularios.TextoNumerico();
-            this.panelTop = new System.Windows.Forms.Panel();
             this.txtTelefono = new NLayer.Formularios.TextoNumerico();
             this.statusStrip1.SuspendLayout();
-            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.Location = new System.Drawing.Point(24, 80);
+            this.lblIdCliente.Location = new System.Drawing.Point(39, 33);
             this.lblIdCliente.Name = "lblIdCliente";
             this.lblIdCliente.Size = new System.Drawing.Size(82, 23);
             this.lblIdCliente.TabIndex = 0;
@@ -66,7 +63,7 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(133, 186);
+            this.txtApellido.Location = new System.Drawing.Point(148, 139);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(319, 29);
@@ -75,7 +72,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(133, 222);
+            this.txtDireccion.Location = new System.Drawing.Point(148, 175);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(319, 29);
@@ -84,7 +81,7 @@
             // txtMail
             // 
             this.txtMail.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(133, 292);
+            this.txtMail.Location = new System.Drawing.Point(148, 245);
             this.txtMail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(319, 29);
@@ -93,7 +90,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(133, 151);
+            this.txtNombre.Location = new System.Drawing.Point(148, 104);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(319, 29);
@@ -103,7 +100,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(24, 151);
+            this.lblNombre.Location = new System.Drawing.Point(39, 104);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(73, 23);
             this.lblNombre.TabIndex = 8;
@@ -113,7 +110,7 @@
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(24, 187);
+            this.lblApellido.Location = new System.Drawing.Point(39, 140);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(72, 23);
             this.lblApellido.TabIndex = 9;
@@ -123,7 +120,7 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(24, 223);
+            this.lblDireccion.Location = new System.Drawing.Point(39, 176);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(82, 23);
             this.lblDireccion.TabIndex = 10;
@@ -133,7 +130,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(24, 256);
+            this.lblTelefono.Location = new System.Drawing.Point(39, 209);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(75, 23);
             this.lblTelefono.TabIndex = 11;
@@ -143,7 +140,7 @@
             // 
             this.lblMail.AutoSize = true;
             this.lblMail.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMail.Location = new System.Drawing.Point(24, 292);
+            this.lblMail.Location = new System.Drawing.Point(39, 245);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(58, 23);
             this.lblMail.TabIndex = 12;
@@ -154,10 +151,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 419);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 389);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(475, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(509, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -172,7 +169,7 @@
             this.btnBuscarCliente.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarCliente.IconSize = 18;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(346, 78);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(361, 31);
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(44, 32);
@@ -188,7 +185,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Red;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
-            this.btnCancelar.Location = new System.Drawing.Point(295, 342);
+            this.btnCancelar.Location = new System.Drawing.Point(310, 295);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(156, 53);
@@ -207,7 +204,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 40;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(133, 342);
+            this.btnGuardar.Location = new System.Drawing.Point(148, 295);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 53);
@@ -221,30 +218,16 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNI.Location = new System.Drawing.Point(24, 116);
+            this.lblDNI.Location = new System.Drawing.Point(39, 69);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(40, 23);
             this.lblDNI.TabIndex = 18;
             this.lblDNI.Text = "DNI";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 26;
-            this.btnCerrar.Location = new System.Drawing.Point(419, 11);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(44, 31);
-            this.btnCerrar.TabIndex = 11;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // txtIdCliente
             // 
             this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdCliente.Location = new System.Drawing.Point(133, 80);
+            this.txtIdCliente.Location = new System.Drawing.Point(148, 33);
             this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(204, 30);
@@ -253,26 +236,16 @@
             // txtDni
             // 
             this.txtDni.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDni.Location = new System.Drawing.Point(133, 116);
+            this.txtDni.Location = new System.Drawing.Point(148, 69);
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(257, 30);
             this.txtDni.TabIndex = 3;
             // 
-            // panelTop
-            // 
-            this.panelTop.Controls.Add(this.btnCerrar);
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(475, 62);
-            this.panelTop.TabIndex = 22;
-            this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
-            // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(133, 257);
+            this.txtTelefono.Location = new System.Drawing.Point(148, 210);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(318, 30);
@@ -282,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 441);
+            this.ClientSize = new System.Drawing.Size(509, 411);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.txtIdCliente);
@@ -301,15 +274,14 @@
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.lblIdCliente);
-            this.Controls.Add(this.panelTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(527, 458);
             this.Name = "FrmAbmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,10 +305,8 @@
         public System.Windows.Forms.TextBox txtMail;
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblDNI;
-        private FontAwesome.Sharp.IconButton btnCerrar;
         public TextoNumerico txtIdCliente;
         public TextoNumerico txtDni;
-        private System.Windows.Forms.Panel panelTop;
         public TextoNumerico txtTelefono;
     }
 }

@@ -33,9 +33,7 @@ namespace NLayer.Formularios
                     a.Text = string.Empty;
                 }
             }
-        }
-
-       
+        }       
     }
 
     public  class LogHelper

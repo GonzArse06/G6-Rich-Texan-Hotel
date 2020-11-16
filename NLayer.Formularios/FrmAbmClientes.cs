@@ -37,12 +37,14 @@ namespace NLayer.Formularios
         {
             txtIdCliente.Enabled = false;
             btnBuscarCliente.Visible = false;
+            Text = "Nuevo Cliente";
         }
 
         private void InicializarModificacion()
         {
             txtIdCliente.Enabled = false;
             btnBuscarCliente.Visible = false;
+            Text = "Modificar Cliente";
         }
             
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -106,7 +108,7 @@ namespace NLayer.Formularios
             else
             {
                 lblResultado.Text = "OK -> "+ mensaje+". ID: "+resultado;
-                Estaticas.LimpiarTextBox(Controls);
+                //Estaticas.LimpiarTextBox(Controls);
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
