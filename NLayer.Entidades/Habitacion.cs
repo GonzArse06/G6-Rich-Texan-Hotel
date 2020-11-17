@@ -17,6 +17,7 @@ namespace NLayer.Entidades
         private double _precio;
         private bool _cancelable;
         private int _id;
+        private List<Reserva> _reserva;
 
         [DataMember]
         public int IdHotel
@@ -52,6 +53,10 @@ namespace NLayer.Entidades
             get { return _cancelable; }
             set { _cancelable = value; }
         }
+        public string CancelableTexto
+        {
+            get { if (_cancelable) return "SI"; else return "NO"; }
+        }
 
         [DataMember]
         public int Id
@@ -60,7 +65,10 @@ namespace NLayer.Entidades
             set { _id = value; }
         }
 
-        public List<Reserva> Reservas { get; set; }
+        public List<Reserva> Reservas {
+            get { return _reserva; }
+            set { _reserva = value; }
+        }
         public override string ToString()
         {
             return string.Format("Id Habitacion: {0} - Categoria: {1} - Cantidad de plazas: {2} - Precio: {3}"

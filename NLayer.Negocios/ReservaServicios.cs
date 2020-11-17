@@ -11,24 +11,24 @@ namespace NLayer.Negocios
 {
     public partial class HotelServicios
     {
-        List<Reserva> listaReservas;
+        List<Reserva> _listaReservas;
        
         public int IngresarReserva(Reserva reserva, Habitacion hab)
         {
             if (reserva.CantidadHuespedes > hab.CantidadPlazas)
             {
-                throw new ReservasException("La reserva supera la cantidad de plazas de la habitacion.");
+                throw new ReservasException("Cantidad de huespedes superior a plaza.");
             }
             if (reserva.FechaIngreso.Date < DateTime.Today.Date)
             {
-                throw new ReservasException("La fecha de reserva debe ser mayor o igual a hoy.");
+                throw new ReservasException("La fecha debe ser mayor o igual a hoy.");
             }
             if (reserva.FechaEgreso.Date - reserva.FechaIngreso.Date < TimeSpan.FromDays(1))
             {
-                throw new ReservasException("La fecha de egreso no puede igual o anterior a la fecha de ingreso.");
+                throw new ReservasException("Fecha de egreso debe ser mayor a ingreso.");
             }
 
-            var reservas = listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion);
+            var reservas = _listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion);
 
             for (DateTime i = reserva.FechaIngreso; i <= reserva.FechaEgreso; i= i.AddDays(1))
             {
@@ -50,29 +50,32 @@ namespace NLayer.Negocios
         }
         public int ModificarReserva(Reserva reserva, Habitacion hab)
         {
-            var old = listaReservas.Where(o => o.Id == reserva.Id).FirstOrDefault();
-            if (old==null)
-            {
+            //var old = _listaReservas.Where(o => o.Id == reserva.Id).FirstOrDefault();
+            //if (old==null)
+            //{
 
-            }
-            if (old.IdHabitacion != reserva.IdHabitacion)
+            //}
+            //if (old.IdHabitacion != reserva.IdHabitacion)
+            //{
+            //    if (reserva.CantidadHuespedes > hab.CantidadPlazas)
+            //    {
+            //        throw new ReservasException("Cantidad de huespedes superior a plaza.");
+            //    }
+            //}
+            if (reserva.CantidadHuespedes > hab.CantidadPlazas)
             {
-                if (reserva.CantidadHuespedes > hab.CantidadPlazas)
-                {
-                    throw new ReservasException("La reserva supera la cantidad de plazas de la habitacion.");
-                }
+                throw new ReservasException("Cantidad de huespedes superior a plaza.");
             }
-           
             if (reserva.FechaIngreso.Date < DateTime.Today.Date)
             {
-                throw new ReservasException("La fecha de reserva debe ser mayor o igual a hoy.");
+                throw new ReservasException("La fecha debe ser mayor o igual a hoy.");
             }
             if (reserva.FechaEgreso.Date - reserva.FechaIngreso.Date < TimeSpan.FromDays(1))
             {
-                throw new ReservasException("La fecha de egreso no puede ser anterior a la fecha de ingreso.");
+                throw new ReservasException("Fecha de egreso debe ser mayor a ingreso.");
             }
 
-            var reservas = listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion && o.Id != reserva.Id);
+            var reservas = _listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion && o.Id != reserva.Id);
 
             for (DateTime i = reserva.FechaIngreso; i <= reserva.FechaEgreso; i = i.AddDays(1))
             {
@@ -95,15 +98,14 @@ namespace NLayer.Negocios
         public List<Reserva> TraerReservas()
         {
             //listaReservas = ReservaMapper.Reserva_getAll();
-            return listaReservas;
+            return _listaReservas;
         }
         private void ReservaCache()
         {
-            listaReservas = ReservaMapper.Reserva_getAll();
+            _listaReservas = ReservaMapper.Reserva_getAll();
         }
         public int EliminarReserva(int id)
         {
-            //faltan validaciones de negocio.
             TransactionResult resultado = ReservaMapper.Delete(id);
             if (resultado.IsOk)
             {

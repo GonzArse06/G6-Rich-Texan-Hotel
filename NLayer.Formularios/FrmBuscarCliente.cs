@@ -14,22 +14,13 @@ namespace NLayer.Formularios
 {
     public partial class FrmBuscarCliente : Form
     {
-        List<Cliente> _lista;
         HotelServicios _clienteServicios;
         public FrmBuscarCliente(HotelServicios serv)
         {
             InitializeComponent();
             _clienteServicios = serv;
-            _lista = new List<Cliente>();
         }
-        private void listBox1_doubleClick(object sender, EventArgs e)
-        {
-            Seleccionar();
-        }
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            Seleccionar();
-        }
+        
         private void Seleccionar() 
         {
             if (listBox1.SelectedIndex < 0)
@@ -50,10 +41,13 @@ namespace NLayer.Formularios
             listBox1.DataSource = null;
             listBox1.DataSource = _clienteServicios.TraerClientes();
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void listBox1_doubleClick(object sender, EventArgs e)
         {
-            this.Close();
+            Seleccionar();
+        }
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            Seleccionar();
         }
     }
 }

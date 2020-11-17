@@ -214,7 +214,6 @@
             // 
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 16);
-            this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // FrmClientes
             // 

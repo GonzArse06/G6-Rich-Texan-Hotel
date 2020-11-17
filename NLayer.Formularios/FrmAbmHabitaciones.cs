@@ -41,11 +41,6 @@ namespace NLayer.Formularios
         {
             Text = "Modificar Habitacion";
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Guardar();
-        }
         private void Guardar()
         {
             lblResultado.Text = "";
@@ -71,11 +66,11 @@ namespace NLayer.Formularios
                     {
                         case AbmTipo.Alta:
                             resultado = habitacionServicios.IngresarHabitacion(habitacion);
-                            LogResultado(resultado, "Ingresar Habitacion");
+                            LogHelper.LogResultado(lblResultado, resultado, "Ingresar Habitacion");
                             break;
                         case AbmTipo.Modificacion:
                             resultado = habitacionServicios.ModificarHabitacion(habitacion);
-                            LogResultado(resultado, "Modificar Habitacion");
+                            LogHelper.LogResultado(lblResultado, resultado, "Modificar Habitacion");
                             break;
                     }
                     this.DialogResult = DialogResult.OK;
@@ -86,21 +81,11 @@ namespace NLayer.Formularios
                 }
             }
         }
-        private void LogResultado(int resultado, string mensaje)
-        {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                //Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
-            }
-        }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -111,16 +96,17 @@ namespace NLayer.Formularios
         {
             txtIdHotel.Text = _idHotel.ToString();
         }
-        //drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
 
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
-        private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        ////drag Form
+        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        //private extern static void ReleaseCapture();
+
+        //[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        //private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
+        //private void panelTop_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ReleaseCapture();
+        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
+        //}
     }
 }

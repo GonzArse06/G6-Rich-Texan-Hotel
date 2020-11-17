@@ -10,37 +10,53 @@ namespace NLayer.Entidades
     [DataContract]
     public class Hotel
     {
-        private int estrellas;
+        private int _estrellas;
+        private int _id;
+        private string _nombre;
+        private string _direccion;
+        private bool _amenities;
+        private List<Habitacion> _habitacion;
 
         [DataMember]
         public int Estrellas
         {
-            get { return estrellas; }
-            set { estrellas = value; }
+            get { return _estrellas; }
+            set { _estrellas = value; }
         }
-
-        private int id  ;
         [DataMember]
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get { return _id; }
+            set { _id = value; }
         }
-
         [DataMember]
-        public string Nombre { get; set; }
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
         [DataMember]
-        public string Direccion { get; set; }
-
-        private bool amenities;
+        public string Direccion
+        {
+            get { return _direccion; }
+            set { _direccion = value; }
+        }                
         [DataMember]
         public bool Amenities
         {
-            get { return amenities; }
-            set { amenities = value; }
+            get { return _amenities; }
+            set { _amenities = value; }
         }
 
-        public List<Habitacion> Habitaciones { get; set; }
+        public string AmenitiesTexto
+        {
+            get { if (_amenities) return "SI"; else return "NO"; }
+        }
+
+        public List<Habitacion> Habitaciones {
+            get { return _habitacion; }
+            set { _habitacion = value; }
+        }
 
         public override string ToString()
         {

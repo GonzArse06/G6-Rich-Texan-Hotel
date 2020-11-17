@@ -30,7 +30,6 @@ namespace NLayer.Formularios
             _LstReservas = _hotelServicios.TraerReservas();
             _LstHoteles = _hotelServicios.TraerHoteles();
             CargarHabitaciones(_LstHoteles);
-
         }
         private void CargarHabitaciones(List<Hotel> lsthoteles)
         {
@@ -38,10 +37,6 @@ namespace NLayer.Formularios
             {
                 _LstHabitacion.AddRange(_hotelServicios.TraerTodoPorId(a.Id));
             }
-        }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void CargarListView(int idCliente)
@@ -70,6 +65,10 @@ namespace NLayer.Formularios
                 }                
             }
         }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FrmBuscarCliente formulario = new FrmBuscarCliente(_hotelServicios);
@@ -82,7 +81,6 @@ namespace NLayer.Formularios
                 txtNombreCliente.Text = ((Cliente)obj).ToString();
             }
         }
-
         private void btnEjecutar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtIdCliente.Text))
@@ -92,20 +90,17 @@ namespace NLayer.Formularios
                 CargarListView(int.Parse(txtIdCliente.Text));
             }
         }
-
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
             try
             {
+                lblResultado.Text = "Exportando...";
                 _hotelServicios.DescargarAExcel(lstReporte);
+                lblResultado.Text = "OK -> Exportacion exitosa.";
             }
             catch (Exception ex)
             {
                 lblResultado.Text = "ERROR -> " + ex.Message;
-            }
-            finally
-            {
-                lblResultado.Text = "OK -> Exportacion exitosa.";
             }
         }
     }

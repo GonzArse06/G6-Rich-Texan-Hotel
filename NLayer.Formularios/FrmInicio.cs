@@ -15,67 +15,76 @@ namespace NLayer.Formularios
 {
     public partial class FrmInicio : Form
     {
-        private IconButton currentBtn;
-        private Panel leftBorderBtn;
-        private Form currentChildForm;
+        private IconButton _currentBtn;
+        private Panel _leftBorderBtn;
+        private Form _currentChildForm;
         
         HotelServicios _hotelServicios;
 
         public FrmInicio()
         {
             InitializeComponent();
-            currentBtn = new IconButton();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
-            panelMenu.Controls.Add(leftBorderBtn);
+            _currentBtn = new IconButton();
+            _leftBorderBtn = new Panel();
+            _leftBorderBtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(_leftBorderBtn);
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             _hotelServicios = new HotelServicios();    
         }
-
+        private void Reset()
+        {
+            if (_currentChildForm != null)
+            {
+                _currentChildForm.Close();
+            }
+            DisableButton();
+            _leftBorderBtn.Visible = false;
+            imgFormularioActual.IconChar = IconChar.Home;
+            imgFormularioActual.IconColor = Color.CornflowerBlue;
+            LblTitulo.Text = "Inicio";
+        }
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
                 DisableButton();
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 37, 81);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
+                _currentBtn = (IconButton)senderBtn;
+                _currentBtn.BackColor = Color.FromArgb(37, 37, 81);
+                _currentBtn.ForeColor = color;
+                _currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                _currentBtn.IconColor = color;
+                _currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                _currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
 
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
+                _leftBorderBtn.BackColor = color;
+                _leftBorderBtn.Location = new Point(0, _currentBtn.Location.Y);
+                _leftBorderBtn.Visible = true;
+                _leftBorderBtn.BringToFront();
 
-                imgFormularioActual.IconChar = currentBtn.IconChar;
+                imgFormularioActual.IconChar = _currentBtn.IconChar;
                 imgFormularioActual.IconColor = color;
-                LblTitulo.Text = currentBtn.Text;
+                LblTitulo.Text = _currentBtn.Text;
             }
         }
-
         private void DisableButton()
         {
-            currentBtn.BackColor = Color.White;
-            currentBtn.ForeColor = Color.CornflowerBlue;
-            currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-            currentBtn.IconColor = Color.CornflowerBlue;
-            currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            _currentBtn.BackColor = Color.White;
+            _currentBtn.ForeColor = Color.CornflowerBlue;
+            _currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+            _currentBtn.IconColor = Color.CornflowerBlue;
+            _currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            _currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
         }
-
         private void OpenChildForm(Form childForm)
         {
-            if (currentChildForm != null)
+            if (_currentChildForm != null)
             {
-                currentChildForm.Close();
+                _currentChildForm.Close();
             }
-            currentChildForm = childForm;
+            _currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -125,20 +134,7 @@ namespace NLayer.Formularios
         private void btnInicio_Click(object sender, EventArgs e)
         {
             Reset();
-        }
-
-        private void Reset()
-        {
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            DisableButton();
-            leftBorderBtn.Visible = false;
-            imgFormularioActual.IconChar = IconChar.Home;
-            imgFormularioActual.IconColor = Color.CornflowerBlue;
-            LblTitulo.Text = "Inicio";
-        }
+        }       
 
         //drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -155,7 +151,7 @@ namespace NLayer.Formularios
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea cerrar la aplicacion?", "Salir", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Desea cerrar la aplicacion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
         }
 

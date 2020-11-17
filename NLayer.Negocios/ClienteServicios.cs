@@ -10,16 +10,15 @@ namespace NLayer.Negocios
 {
     public partial class HotelServicios
     {
-        List<Cliente> listaclientes;
+        List<Cliente> _listaclientes;
       
         public int IngresarCliente(Cliente item)
         {
-            //faltan validaciones de negocio.
-            if (listaclientes.Any(o => o.Nombre == item.Nombre))
-            {
-                throw new ReservasException("El cliente ya existe");
-            }
-            if (listaclientes.Any(o => o.Dni == item.Dni))
+            //if (listaclientes.Any(o => o.Nombre == item.Nombre))
+            //{
+            //    throw new ReservasException("El cliente ya existe");
+            //}
+            if (_listaclientes.Any(o => o.Dni == item.Dni))
             {
                 throw new ReservasException("El DNI se encuentra registrado");
             }
@@ -37,8 +36,7 @@ namespace NLayer.Negocios
         }
         public int ModificarCliente(Cliente item)
         {
-            //faltan validaciones de negocio.
-            if (listaclientes.Any(o => o.Dni == item.Dni && o.Id != item.Id))
+            if (_listaclientes.Any(o => o.Dni == item.Dni && o.Id != item.Id))
             {
                 throw new ReservasException("El DNI se encuentra registrado");
             }
@@ -55,24 +53,22 @@ namespace NLayer.Negocios
         }
         public List<Cliente> TraerClientes()
         {
-            //listaclientes = ClienteMapper.TraerTodos();
-            return listaclientes;
+            return _listaclientes;
         }
         private void ClienteCache()
         {
-            listaclientes = ClienteMapper.TraerTodos();
+            _listaclientes = ClienteMapper.TraerTodos();
         }
         public bool EliminarCliente(int id)
         {
-            //faltan validaciones de negocio.
-            if (!listaclientes.Any(o => o.Id == id))
+            if (!_listaclientes.Any(o => o.Id == id))
             {
                 throw new ReservasException("No se pudo encontrar el cliente");
             }           
             
-            if (listaReservas.Any(o => o.IdCliente == id))
+            if (_listaReservas.Any(o => o.IdCliente == id))
             {
-                throw new ReservasException("El Cliente tiene reservas activas. Primero debe eliminar las reservas.");
+                throw new ReservasException("Cliente con reservas. Debe eliminarlas.");
             }
 
             TransactionResult resultado = ClienteMapper.Delete(id);

@@ -37,9 +37,5 @@ namespace NLayer.Entidades
         public int Telefono { get => _telefono; set => _telefono = value; }
 
         public DateTime FechaNacimiento { get => _fechaNac; set => _fechaNac = value; }
-
-
-
-
     }
 }

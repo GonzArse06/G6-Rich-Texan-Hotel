@@ -14,8 +14,7 @@ namespace NLayer.Formularios
 {
     public partial class FrmReservas : Form
     {
-        Form formularios;
-      
+        Form _formularios;      
         List<Reserva> _lstReservas;
         List<Habitacion> _lstHabitaciones;
         ListViewItem _listViewItem;
@@ -23,61 +22,28 @@ namespace NLayer.Formularios
         List<Cliente> _lstClientes;
         HotelServicios _hotelServicios;
   
-   
-        public ListViewItem Item { get => _items; }
         public FrmReservas(HotelServicios srv)
         {
-            InitializeComponent();
-           
+            InitializeComponent();           
             _lstReservas = new List<Reserva>();
             _lstHabitaciones = new List<Habitacion>();
             _listViewItem = new ListViewItem();
             _lstClientes = new List<Cliente>();
-            _hotelServicios = srv;          
-          
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                formularios = new FrmAbmReservas(AbmTipo.Alta,idSeleccionado,  _hotelServicios);
-                formularios.Owner = this;
-                var ret =formularios.ShowDialog();
-                if (ret != DialogResult.Cancel)
-                {
-                    CargarListView((Hotel)cbxHoteles.SelectedItem);
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                lblResultado.Text = "ERROR -> " + ex.Message;
-            }
+            _hotelServicios = srv;                    
         }
         private void CargarListView(Hotel hotel)
         {
             lstReservas.Items.Clear();
             _lstReservas = _hotelServicios.TraerReservas();
             /*if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
-            {
-            }
+            {             }
             else
-            {
-                _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
+            {                _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
             }
             _lstHabitaciones = _hotel.Habitaciones;
             foreach (var h in _hotel.Habitaciones)
-            {
-                h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
-            }
-            var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
+            {                h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
+            }            var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
              */
 
             _lstHabitaciones = _hotelServicios.TraerTodoPorId(hotel.Id);
@@ -98,33 +64,7 @@ namespace NLayer.Formularios
                 }
             }
         }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado,  _hotelServicios);
-                if (lstReservas.SelectedItems.Count == 1)
-                {
-                    LlenarTextboxChild(formulario);
-                    formulario.Owner = this;
-                    var ret = formulario.ShowDialog();
-                    if (ret != DialogResult.Cancel)
-                    {
-                        CargarListView((Hotel)cbxHoteles.SelectedItem);
-                    }
-                    
-                }
-                else
-                    lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
-            }
-            catch (Exception ex)
-            {
-                lblResultado.Text = "ERROR -> " + ex.Message;
-            }
-        }
-
+        
         private void LlenarTextboxChild(FrmAbmReservas formulario)
         {
             _items = (ListViewItem)lstReservas.SelectedItems[0];
@@ -135,29 +75,6 @@ namespace NLayer.Formularios
             formulario.dtFechaIngreso.Text = _items.SubItems[5].Text;
             formulario.dtFechaEgreso.Text = _items.SubItems[6].Text;
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try 
-            { 
-                if (lstReservas.SelectedItems.Count == 1)
-                {
-                    if (MessageBox.Show("Esta seguro de Eliminar?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        _items = (ListViewItem)lstReservas.SelectedItems[0];
-                        int resultado = _hotelServicios.EliminarReserva(int.Parse(_items.Text));
-                        LogResultado(resultado, "Eliminar reserva");
-                    }
-                else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
-                }
-            }
-            catch (Exception ex)
-            {
-                lblResultado.Text = "ERROR -> " + ex.Message;
-            }
-        }
-
         private void LogResultado(int resultado, string mensaje)
         {
             if (resultado == -1)
@@ -166,6 +83,73 @@ namespace NLayer.Formularios
             {
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
                 CargarListView(((Hotel)cbxHoteles.SelectedItem));
+            }
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
+                _formularios = new FrmAbmReservas(AbmTipo.Alta, idSeleccionado, _hotelServicios);
+                _formularios.Owner = this;
+                var ret = _formularios.ShowDialog();
+                if (ret != DialogResult.Cancel)
+                {
+                    CargarListView((Hotel)cbxHoteles.SelectedItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
+                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _hotelServicios);
+                if (lstReservas.SelectedItems.Count == 1)
+                {
+                    LlenarTextboxChild(formulario);
+                    formulario.Owner = this;
+                    var ret = formulario.ShowDialog();
+                    if (ret != DialogResult.Cancel)
+                    {
+                        CargarListView((Hotel)cbxHoteles.SelectedItem);
+                    }
+                }
+                else
+                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para realizar la modificacion.";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try 
+            { 
+                if (lstReservas.SelectedItems.Count == 1)
+                {
+                    if (MessageBox.Show("Esta seguro de Eliminar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        _items = (ListViewItem)lstReservas.SelectedItems[0];
+                        int resultado = _hotelServicios.EliminarReserva(int.Parse(_items.Text));
+                        LogResultado(resultado, "Eliminar reserva");
+                    }
+                }
+                else
+                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
 
@@ -181,20 +165,17 @@ namespace NLayer.Formularios
             cbxHoteles.DisplayMember = "Nombre";
             cbxHoteles.ValueMember = "Id";
         }
-
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
             try
             {
+                lblResultado.Text = "Exportando...";
                 _hotelServicios.DescargarAExcel(lstReservas);
+                lblResultado.Text = "OK -> Exportacion exitosa.";
             }
             catch (Exception ex)
             {
                 lblResultado.Text = "ERROR -> " + ex.Message;
-            }
-            finally
-            {
-                lblResultado.Text = "OK -> Exportacion exitosa.";
             }
         }
     }

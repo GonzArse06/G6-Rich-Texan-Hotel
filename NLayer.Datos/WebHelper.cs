@@ -8,15 +8,15 @@ namespace NLayer.Datos
 {
     public class WebHelper
     {
-        static WebClient client;
-        static string rutaBase;
+        static WebClient _client;
+        static string _rutaBase;
 
         static WebHelper()
         {
-            client = new WebClient();
-            client.Encoding = Encoding.UTF8;
-            rutaBase = ConfigurationSettings.AppSettings["urlREST"];
-            client.Headers.Add("ContentType", "application/json");
+            _client = new WebClient();
+            _client.Encoding = Encoding.UTF8;
+            _rutaBase = ConfigurationSettings.AppSettings["urlREST"];
+            _client.Headers.Add("ContentType", "application/json");
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
 
@@ -27,9 +27,9 @@ namespace NLayer.Datos
         /// <returns></returns>
         public static string Get(string url)
         {
-            var uri = rutaBase + url;
+            var uri = _rutaBase + url;
 
-            return client.DownloadString(uri);
+            return _client.DownloadString(uri);
 
         }
 
@@ -41,12 +41,10 @@ namespace NLayer.Datos
         /// <returns></returns>
         public static string Post(string url, NameValueCollection parametros)
         {
-            string uri = rutaBase + url;
-
+            string uri = _rutaBase + url;
             try
             {
-                var response = client.UploadValues(uri, parametros);
-
+                var response = _client.UploadValues(uri, parametros);
                 return Encoding.Default.GetString(response);
             }
             catch (Exception ex)
@@ -59,11 +57,11 @@ namespace NLayer.Datos
 
         public static string Delete(string url, NameValueCollection parametros)
         {
-            string uri = rutaBase + url;
+            string uri = _rutaBase + url;
 
             try
             {
-                var response = client.UploadValues(uri, "DELETE", parametros);
+                var response = _client.UploadValues(uri, "DELETE", parametros);
                 return Encoding.Default.GetString(response);
             }
             catch (Exception ex)
@@ -76,13 +74,12 @@ namespace NLayer.Datos
 
         public static string Put(string url, NameValueCollection parametros)
         {
-            string uri = rutaBase + url;
+            string uri = _rutaBase + url;
 
             try
             {
-                var response = client.UploadValues(uri, "PUT", parametros);
+                var response = _client.UploadValues(uri, "PUT", parametros);
                 return Encoding.Default.GetString(response);
-
             }
             catch (Exception ex)
             {

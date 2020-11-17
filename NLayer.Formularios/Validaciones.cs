@@ -24,16 +24,16 @@ namespace NLayer.Formularios
             }
             return mensaje;
         }
-        public static void LimpiarTextBox(ControlCollection controls)
-        {
-            foreach (Control a in controls)
-            {
-                if (a is TextBox && a.Enabled == true && ((TextBox)a).ReadOnly == false)
-                {
-                    a.Text = string.Empty;
-                }
-            }
-        }       
+        //public static void LimpiarTextBox(ControlCollection controls)
+        //{
+        //    foreach (Control a in controls)
+        //    {
+        //        if (a is TextBox && a.Enabled == true && ((TextBox)a).ReadOnly == false)
+        //        {
+        //            a.Text = string.Empty;
+        //        }
+        //    }
+        //}       
     }
 
     public  class LogHelper

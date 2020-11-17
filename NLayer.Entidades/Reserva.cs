@@ -10,54 +10,48 @@ namespace NLayer.Entidades
     [DataContract]
     public class Reserva
     {
-        private int idHabitacion;
+        private int _idHabitacion;
+        private int _idCliente;
+        private int _cantidadHuespedes;
+        private int _id;
+        private DateTime _fechaIngreso;
+        private DateTime _fechaEgreso;
+
         [DataMember]
         public int IdHabitacion
         {
-            get { return idHabitacion; }
-            set { idHabitacion = value; }
+            get { return _idHabitacion; }
+            set { _idHabitacion = value; }
         }
-
-        private int idCliente;
         [DataMember]
         public int IdCliente
         {
-            get { return idCliente; }
-            set { idCliente = value; }
+            get { return _idCliente; }
+            set { _idCliente = value; }
         }
-
-        private int cantidadHuespedes;
         [DataMember]
         public int CantidadHuespedes
         {
-            get { return cantidadHuespedes; }
-            set { cantidadHuespedes = value; }
+            get { return _cantidadHuespedes; }
+            set { _cantidadHuespedes = value; }
         }
-
-        private int id;
         [DataMember]
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get { return _id; }
+            set { _id = value; }
         }
-
-        private DateTime fechaIngreso;
         [DataMember]
         public DateTime FechaIngreso
         {
-            get { return fechaIngreso; }
-            set { fechaIngreso = value; }
+            get { return _fechaIngreso; }
+            set { _fechaIngreso = value; }
         }
-
-        private DateTime fechaEgreso;
         [DataMember]
         public DateTime FechaEgreso
         {
-            get { return fechaEgreso; }
-            set { fechaEgreso = value; }
+            get { return _fechaEgreso; }
+            set { _fechaEgreso = value; }
         }
-
-
     }
 }

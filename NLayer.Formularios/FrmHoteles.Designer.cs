@@ -58,10 +58,10 @@
             this.ChEstrellas});
             this.lstHoteles.FullRowSelect = true;
             this.lstHoteles.HideSelection = false;
-            this.lstHoteles.Location = new System.Drawing.Point(9, 54);
-            this.lstHoteles.Margin = new System.Windows.Forms.Padding(2);
+            this.lstHoteles.Location = new System.Drawing.Point(12, 66);
+            this.lstHoteles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstHoteles.Name = "lstHoteles";
-            this.lstHoteles.Size = new System.Drawing.Size(625, 308);
+            this.lstHoteles.Size = new System.Drawing.Size(832, 378);
             this.lstHoteles.TabIndex = 4;
             this.lstHoteles.UseCompatibleStateImageBehavior = false;
             this.lstHoteles.View = System.Windows.Forms.View.Details;
@@ -94,29 +94,29 @@
             // 
             // txtBuscador
             // 
-            this.txtBuscador.Location = new System.Drawing.Point(9, 31);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscador.Location = new System.Drawing.Point(12, 38);
+            this.txtBuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(451, 20);
+            this.txtBuscador.Size = new System.Drawing.Size(600, 22);
             this.txtBuscador.TabIndex = 5;
+            this.txtBuscador.Visible = false;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 405);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 504);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(819, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1092, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 17);
-            this.lblResultado.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
             // 
             // btnCerrar
             // 
@@ -125,10 +125,10 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(769, 10);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Location = new System.Drawing.Point(1025, 12);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
+            this.btnCerrar.Size = new System.Drawing.Size(53, 38);
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -139,10 +139,10 @@
             this.btnExportarExcel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportarExcel.Location = new System.Drawing.Point(644, 249);
-            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportarExcel.Location = new System.Drawing.Point(859, 306);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Size = new System.Drawing.Size(164, 50);
+            this.btnExportarExcel.Size = new System.Drawing.Size(219, 62);
             this.btnExportarExcel.TabIndex = 11;
             this.btnExportarExcel.Text = "EXPORTAR A EXCEL";
             this.btnExportarExcel.UseVisualStyleBackColor = true;
@@ -154,10 +154,10 @@
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.Location = new System.Drawing.Point(644, 182);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(859, 224);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(164, 50);
+            this.btnEliminar.Size = new System.Drawing.Size(219, 62);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -169,10 +169,10 @@
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.Location = new System.Drawing.Point(644, 118);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(859, 145);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(164, 50);
+            this.btnEditar.Size = new System.Drawing.Size(219, 62);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -184,10 +184,10 @@
             this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNuevo.IconColor = System.Drawing.Color.Black;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.Location = new System.Drawing.Point(644, 54);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Location = new System.Drawing.Point(859, 66);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(164, 50);
+            this.btnNuevo.Size = new System.Drawing.Size(219, 62);
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -195,9 +195,9 @@
             // 
             // FrmHoteles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 427);
+            this.ClientSize = new System.Drawing.Size(1092, 526);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnEliminar);
@@ -206,7 +206,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.lstHoteles);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmHoteles";
             this.Text = "Hoteles";
             this.Load += new System.EventHandler(this.FrmHoteles_Load);

@@ -16,12 +16,12 @@ namespace NLayer.Formularios
     public partial class FrmAbmHoteles : Form
     {
         AbmTipo _tipo;
-        HotelServicios hotelServicios ;
+        HotelServicios _hotelServicios ;
         public FrmAbmHoteles(AbmTipo tipo, HotelServicios serv )
         {
             InitializeComponent();
             _tipo = tipo;
-            hotelServicios =serv;
+            _hotelServicios =serv;
             switch (_tipo)
             {
                 case AbmTipo.Alta:
@@ -36,15 +36,9 @@ namespace NLayer.Formularios
         {
             Text = "Nuevo Hotel";
         }
-
         private void InicializarModificacion()
         {
             Text = "Modificar Hotel";
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Guardar();           
         }
         private void Guardar()
         {
@@ -62,19 +56,17 @@ namespace NLayer.Formularios
                     hotel.Nombre = txtNombre.Text;
                     hotel.Direccion = txtDireccion.Text;
                     hotel.Amenities = cbAmenities.Checked;
-                    hotel.Estrellas = int.Parse(nuEstrellas.Value.ToString());
-
-                   
+                    hotel.Estrellas = int.Parse(nuEstrellas.Value.ToString());                   
                     int resultado = -1;
                     switch (_tipo)
                     {
                         case AbmTipo.Alta:
-                            resultado = hotelServicios.IngresarHotel(hotel);
-                            LogResultado(resultado, "Ingresar Hotel");
+                            resultado = _hotelServicios.IngresarHotel(hotel);
+                            LogHelper.LogResultado(lblResultado, resultado, "Ingresar Hotel");
                             break;
                         case AbmTipo.Modificacion:
-                            resultado = hotelServicios.ModificarHotel(hotel);
-                            LogResultado(resultado, "Modificar Hotel");
+                            resultado = _hotelServicios.ModificarHotel(hotel);
+                            LogHelper.LogResultado(lblResultado, resultado, "Modificar Hotel");
                             break;
                     }
                     this.DialogResult = DialogResult.OK; //cierra
@@ -85,42 +77,27 @@ namespace NLayer.Formularios
                 }
             }
         }
-        private void LogResultado(int resultado, string mensaje)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                //Estaticas.LimpiarTextBox(Controls); //LimpiarTextBox();
-            }
+            Guardar();
         }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
         }
+
         //drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
+        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        //private extern static void ReleaseCapture();
 
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
-        private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void btnCerrar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        //[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        //private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
+        //private void panelTop_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ReleaseCapture();
+        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
+        //}
     }
 }

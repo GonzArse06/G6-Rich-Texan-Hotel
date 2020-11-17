@@ -14,44 +14,24 @@ namespace NLayer.Formularios
 {
     public partial class FrmClientes : Form
     {
-        Form formularios;
-        HotelServicios _clienteServicios;
-        List<Cliente> _Lstclientes;
-        ListViewItem _listViewItem;
-        ListViewItem _items;
-        public ListViewItem Item { get => _items; }
+        private Form formularios;
+        private HotelServicios _clienteServicios;
+        private List<Cliente> _Lstclientes;
+        private ListViewItem _listViewItem;
+        private ListViewItem _items;
+
         public FrmClientes(HotelServicios serv)
         {
             InitializeComponent();
             _clienteServicios = serv;
             _listViewItem = new ListViewItem();
         }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            formularios = new FrmAbmClientes(AbmTipo.Alta, _clienteServicios);
-            formularios.Owner = this;
-            var ret= formularios.ShowDialog();
-            if (ret != DialogResult.Cancel)
-            {                
-                CargarListView();
-            }
-        }
-
-        private void FrmClientes_Load(object sender, EventArgs e)
-        {            
-            CargarListView();
-
-        }
         private void CargarListView()
         {
             lstClientes.Items.Clear();
             _Lstclientes = _clienteServicios.TraerClientes();
-                     
+
             foreach (Cliente a in _Lstclientes)
             {
                 _listViewItem = lstClientes.Items.Add(a.Id.ToString());
@@ -64,25 +44,6 @@ namespace NLayer.Formularios
                 _listViewItem.SubItems.Add(a.FechaAlta.ToString("d"));
             }
         }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
-            formularios.Owner = this;
-            if (lstClientes.SelectedItems.Count==1)
-            {
-                LlenarTextboxChild(formularios);
-                formularios.Owner = this;
-                var ret = formularios.ShowDialog();
-                if (ret != DialogResult.Cancel)
-                {
-                    CargarListView();
-                }
-            }
-            else
-                lblResultado.Text = "Debe seleccionar una fila para realizar la modificacion.";
-        }
-
         private void LlenarTextboxChild(FrmAbmClientes formularios)
         {
             _items = (ListViewItem)lstClientes.SelectedItems[0];
@@ -95,19 +56,63 @@ namespace NLayer.Formularios
             formularios.txtTelefono.Text = _items.SubItems[6].Text;
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                formularios = new FrmAbmClientes(AbmTipo.Alta, _clienteServicios);
+                formularios.Owner = this;
+                var ret = formularios.ShowDialog();
+                if (ret != DialogResult.Cancel)
+                {
+                    CargarListView();
+                }
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+        }
+        private void FrmClientes_Load(object sender, EventArgs e)
+        {            
+            CargarListView();
 
         }
-
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
+                formularios.Owner = this;
+                if (lstClientes.SelectedItems.Count == 1)
+                {
+                    LlenarTextboxChild(formularios);
+                    formularios.Owner = this;
+                    var ret = formularios.ShowDialog();
+                    if (ret != DialogResult.Cancel)
+                    {
+                        CargarListView();
+                    }
+                }
+                else
+                    lblResultado.Text = "ERROR ->Debe seleccionar una fila para realizar la modificacion.";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> " + ex.Message;
+            }
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if (lstClientes.SelectedItems.Count == 1)
                 {
-                    if (MessageBox.Show("Esta seguro de Eliminar el cliente?", "Alerta!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Esta seguro de eliminar el cliente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     {
                         _items = (ListViewItem)lstClientes.SelectedItems[0];
                         var resultado = _clienteServicios.EliminarCliente(int.Parse(_items.Text));
@@ -117,9 +122,10 @@ namespace NLayer.Formularios
                             CargarListView();
                         }
                     }
-                    else
-                        lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
                 }
+                else
+                  lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                
             }
             catch (Exception ex)
             {
@@ -131,15 +137,13 @@ namespace NLayer.Formularios
         {
             try
             {
+                lblResultado.Text = "Exportando...";
                 _clienteServicios.DescargarAExcel(lstClientes);
+                lblResultado.Text = "OK -> Exportacion exitosa.";
             }
             catch (Exception ex)
             {
                 lblResultado.Text = "ERROR -> " + ex.Message;
-            }
-            finally
-            {
-                lblResultado.Text = "OK -> Exportacion exitosa.";
             }
         }
     }
