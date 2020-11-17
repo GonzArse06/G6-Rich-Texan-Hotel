@@ -140,7 +140,6 @@
             this.btnCerrar.Size = new System.Drawing.Size(53, 38);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Visible = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnExportarExcel

@@ -72,7 +72,7 @@ namespace NLayer.Formularios
         private void DisableButton()
         {
             _currentBtn.BackColor = Color.White;
-            _currentBtn.ForeColor = Color.CornflowerBlue;
+            _currentBtn.ForeColor = Color.Black;
             _currentBtn.TextAlign = ContentAlignment.MiddleLeft;
             _currentBtn.IconColor = Color.CornflowerBlue;
             _currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;

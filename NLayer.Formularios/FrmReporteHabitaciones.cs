@@ -40,7 +40,7 @@ namespace NLayer.Formularios
                     _listViewItem = lstHabitaciones.Items.Add(a.Id.ToString());
                     _listViewItem.SubItems.Add(a.Categoria);
                     _listViewItem.SubItems.Add(a.CantidadPlazas.ToString());
-                    _listViewItem.SubItems.Add(a.Cancelable.ToString());
+                    _listViewItem.SubItems.Add(a.CancelableTexto);
                     _listViewItem.SubItems.Add(a.Precio.ToString());
                 }
             }

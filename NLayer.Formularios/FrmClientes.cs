@@ -62,6 +62,7 @@ namespace NLayer.Formularios
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 formularios = new FrmAbmClientes(AbmTipo.Alta, _clienteServicios);
@@ -84,6 +85,7 @@ namespace NLayer.Formularios
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
@@ -108,6 +110,7 @@ namespace NLayer.Formularios
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 if (lstClientes.SelectedItems.Count == 1)

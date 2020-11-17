@@ -60,6 +60,10 @@ namespace NLayer.Formularios
 
             }
         }
+        public static void LimpiarLog(ToolStripLabel lblResultado)
+        {
+            lblResultado.Text = string.Empty;
+        }
 
 
     }

@@ -41,7 +41,6 @@ namespace NLayer.Formularios
 
         private void CargarListView(int idCliente)
         {
-            lstReporte.Items.Clear();
             double PrecioFinal = 0;
             foreach (Reserva a in _LstReservas)
             {
@@ -71,23 +70,47 @@ namespace NLayer.Formularios
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FrmBuscarCliente formulario = new FrmBuscarCliente(_hotelServicios);
-            formulario.Owner = this;
-            formulario.ShowDialog();
-            var obj = formulario.Tag;
-            if (obj != null && obj is Cliente)
+            try
             {
-                txtIdCliente.Text = ((Cliente)obj).Id.ToString();
-                txtNombreCliente.Text = ((Cliente)obj).ToString();
+                FrmBuscarCliente formulario = new FrmBuscarCliente(_hotelServicios);
+                formulario.Owner = this;
+                formulario.ShowDialog();
+                var obj = formulario.Tag;
+                if (obj != null && obj is Cliente)
+                {
+                    txtIdCliente.Text = ((Cliente)obj).Id.ToString();
+                    txtNombreCliente.Text = ((Cliente)obj).ToString();
+                }
             }
-        }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> "+ex.Message;
+            }
+}
         private void btnEjecutar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtIdCliente.Text))
-                lblResultado.Text = "ERROR -> Debe seleccionar un cliente";
-            else
+            lblResultado.Text = string.Empty;
+            try 
             {
-                CargarListView(int.Parse(txtIdCliente.Text));
+                if (string.IsNullOrEmpty(txtIdCliente.Text))
+                    lblResultado.Text = "ERROR -> Debe seleccionar un cliente";
+                else
+                {
+                    int idCliente = int.Parse(txtIdCliente.Text);
+                    Cliente cliente = _hotelServicios.TraerClientes().SingleOrDefault(x => x.Id == idCliente);
+                    if (cliente == null)
+                        lblResultado.Text = "ERROR -> El cliente no existe";
+                    else
+                    {
+                        txtNombreCliente.Text = cliente.ToString();
+                        lstReporte.Items.Clear();
+                        CargarListView(idCliente);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "ERROR -> "+ex.Message;
             }
         }
         private void btnExportarExcel_Click(object sender, EventArgs e)

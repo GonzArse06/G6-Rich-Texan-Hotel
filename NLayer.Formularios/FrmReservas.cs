@@ -91,6 +91,7 @@ namespace NLayer.Formularios
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
@@ -109,6 +110,7 @@ namespace NLayer.Formularios
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
@@ -133,7 +135,8 @@ namespace NLayer.Formularios
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try 
+            LogHelper.LimpiarLog(lblResultado);
+            try
             { 
                 if (lstReservas.SelectedItems.Count == 1)
                 {

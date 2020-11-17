@@ -182,6 +182,7 @@
             this.txtBuscador.Name = "txtBuscador";
             this.txtBuscador.Size = new System.Drawing.Size(572, 22);
             this.txtBuscador.TabIndex = 5;
+            this.txtBuscador.Visible = false;
             // 
             // btnCerrar
             // 

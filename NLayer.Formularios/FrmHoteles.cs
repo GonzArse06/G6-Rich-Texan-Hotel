@@ -68,6 +68,7 @@ namespace NLayer.Formularios
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 _formularios = new FrmAbmHoteles(AbmTipo.Alta, _hotelServicios);
@@ -85,6 +86,7 @@ namespace NLayer.Formularios
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             { 
                 FrmAbmHoteles formulario = new FrmAbmHoteles(AbmTipo.Modificacion, _hotelServicios);
@@ -109,6 +111,7 @@ namespace NLayer.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            LogHelper.LimpiarLog(lblResultado);
             try
             {
                 if (lstHoteles.SelectedItems.Count == 1)
