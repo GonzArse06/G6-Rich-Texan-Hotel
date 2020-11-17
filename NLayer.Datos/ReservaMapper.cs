@@ -13,7 +13,7 @@ namespace NLayer.Datos
     {
         public static List<Reserva> Reserva_getAll()
         {
-            string json2 = WebHelper.Get("/Hotel/Reservas"); // trae un texto en formato json de una web
+            string json2 = WebHelper.Get("/Hotel/Reservas"); 
             List<Reserva> resultado = JsonConvert.DeserializeObject<List<Reserva>>(json2);
             return resultado;
         }

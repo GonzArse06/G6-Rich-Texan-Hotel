@@ -11,34 +11,25 @@ namespace NLayer.Entidades
     [DataContract]
     public class Cliente:Persona
     {
-        private DateTime fechaAlta;
-        private bool activo;
+        private DateTime _fechaAlta;
+        private bool _activo;
         private int _id;
-
-        [DataMember]
-        public string Usuario { get; set; }
+        private string _usuario;
 
         public Cliente()
         {
-            //this.Usuario = "pau";
             this.Usuario = ConfigurationManager.AppSettings["Legajo"];
-            this.fechaAlta = DateTime.Now; //-> revisar casos de modificaciones cuando se crea un nuevo contructor.
-            this.activo = true;
+            this._fechaAlta = DateTime.Now; //-> revisar casos de modificaciones cuando se crea un nuevo contructor.
+            this._activo = true;
         }
         [DataMember]
         public int Id { get => _id; set => _id = value; }
         [DataMember]
-        public bool Activo
-        {
-            get { return activo; }
-            set { activo = value; }
-        }
+        public string Usuario { get => _usuario; set => _usuario = value; }
         [DataMember]
-        public DateTime FechaAlta
-        {
-            get { return fechaAlta; }
-            set { fechaAlta = value; }
-        }
+        public bool Activo { get { return _activo; } set { _activo = value; } }
+        [DataMember]
+        public DateTime FechaAlta { get { return _fechaAlta; } set { _fechaAlta = value; } }
 
         public override string ToString()
         {

@@ -10,7 +10,7 @@ namespace NLayer.Datos
     {
         public static List<Hotel> Hotel_getAll()
         {
-            string json2 = WebHelper.Get("/Hotel/Hoteles/"+ConfigurationManager.AppSettings["Legajo"]); // trae un texto en formato json de una web
+            string json2 = WebHelper.Get("/Hotel/Hoteles/"+ConfigurationManager.AppSettings["Legajo"]); 
             List<Hotel> resultado = JsonConvert.DeserializeObject<List<Hotel>>(json2);
             return resultado;
         }

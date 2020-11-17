@@ -26,8 +26,6 @@ namespace NLayer.Datos
             
         public static List<Cliente> TraerTodos()
         {
-            //string json2 = WebHelper.Get("/cliente/" + "pau"); // trae un texto en formato json de una web
-            // string json2 = WebHelper.Get("/cliente"); // trae un texto en formato json de una web
             string json2 = WebHelper.Get("/cliente/" + ConfigurationManager.AppSettings["Legajo"]);
             List<Cliente> resultado = MapList<Cliente>(json2);
             return resultado;
@@ -64,7 +62,6 @@ namespace NLayer.Datos
             n.Add("Nombre", cliente.Nombre);
             n.Add("Apellido", cliente.Apellido);
             n.Add("Direccion", cliente.Direccion);
-            //n.Add("Usuario", "pau");
             n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             n.Add("Email", cliente.Email); // STRING
             n.Add("Telefono", cliente.Telefono.ToString()); // INT

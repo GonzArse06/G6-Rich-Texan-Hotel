@@ -125,6 +125,7 @@
             this.cbxHoteles.Name = "cbxHoteles";
             this.cbxHoteles.Size = new System.Drawing.Size(228, 30);
             this.cbxHoteles.TabIndex = 9;
+            this.cbxHoteles.SelectedIndexChanged += new System.EventHandler(this.cbxHoteles_SelectedIndexChanged);
             // 
             // btnCerrar
             // 

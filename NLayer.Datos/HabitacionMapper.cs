@@ -11,7 +11,6 @@ namespace NLayer.Datos
         {
             NameValueCollection obj = new NameValueCollection();
             obj.Add("Id", id.ToString());
-            //NameValueCollection obj = ReverseMap(item);
             string result = WebHelper.Delete("/Hotel/Habitaciones", obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
@@ -20,7 +19,7 @@ namespace NLayer.Datos
 
         public static List<Habitacion> Habitacion_getAllByHotel(int id)
         {
-            string json2 = WebHelper.Get("/Hotel/Habitaciones/" + id.ToString()); // trae un texto en formato json de una web
+            string json2 = WebHelper.Get("/Hotel/Habitaciones/" + id.ToString()); 
             List<Habitacion> resultado = JsonConvert.DeserializeObject<List<Habitacion>>(json2);
             return resultado;
         }
