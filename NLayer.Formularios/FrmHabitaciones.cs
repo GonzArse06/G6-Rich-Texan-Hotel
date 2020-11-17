@@ -29,8 +29,7 @@ namespace NLayer.Formularios
         private void CargarListView(Hotel _hotel)
         {
             lstHabitaciones.Items.Clear();
-            _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
-            _lstHabitaciones = _hotel.Habitaciones;
+            _lstHabitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
             foreach (Habitacion a in _lstHabitaciones)
             {
                 _listViewItem = lstHabitaciones.Items.Add(a.Id.ToString());
@@ -73,7 +72,7 @@ namespace NLayer.Formularios
             try
             {
                 int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmHabitaciones formularios = new FrmAbmHabitaciones(AbmTipo.Alta, idSeleccionado);
+                FrmAbmHabitaciones formularios = new FrmAbmHabitaciones(AbmTipo.Alta, idSeleccionado,_hotelServicios);
                 formularios.Owner = this;
                
                 var ret = formularios.ShowDialog();
@@ -101,7 +100,7 @@ namespace NLayer.Formularios
                 if (lstHabitaciones.SelectedItems.Count == 1)
                 {
                     int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                    FrmAbmHabitaciones formulario = new FrmAbmHabitaciones(AbmTipo.Modificacion, idSeleccionado);
+                    FrmAbmHabitaciones formulario = new FrmAbmHabitaciones(AbmTipo.Modificacion, idSeleccionado,_hotelServicios);
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
                     var ret = formulario.ShowDialog();

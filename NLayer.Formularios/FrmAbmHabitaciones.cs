@@ -17,11 +17,13 @@ namespace NLayer.Formularios
     {
         AbmTipo _tipo;
         int _idHotel;
-        public FrmAbmHabitaciones(AbmTipo tipo, int idHotel)
+        HotelServicios _hotelServicios;
+        public FrmAbmHabitaciones(AbmTipo tipo, int idHotel,HotelServicios serv)
         {
             InitializeComponent();
             _tipo = tipo;
             _idHotel = idHotel;
+            _hotelServicios = serv;
             switch (_tipo)
             {
                 case AbmTipo.Alta:
@@ -60,16 +62,16 @@ namespace NLayer.Formularios
                     habitacion.Cancelable = cbCancelable.Checked;
                     habitacion.Precio = double.Parse(txtPrecio.Text);
 
-                    HotelServicios habitacionServicios = new HotelServicios();
+                    //HotelServicios habitacionServicios = new HotelServicios();
                     int resultado = -1;
                     switch (_tipo)
                     {
                         case AbmTipo.Alta:
-                            resultado = habitacionServicios.IngresarHabitacion(habitacion);
+                            resultado = _hotelServicios.IngresarHabitacion(habitacion);
                             LogHelper.LogResultado(lblResultado, resultado, "Ingresar Habitacion");
                             break;
                         case AbmTipo.Modificacion:
-                            resultado = habitacionServicios.ModificarHabitacion(habitacion);
+                            resultado = _hotelServicios.ModificarHabitacion(habitacion);
                             LogHelper.LogResultado(lblResultado, resultado, "Modificar Habitacion");
                             break;
                     }
