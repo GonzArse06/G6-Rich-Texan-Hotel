@@ -55,10 +55,6 @@ namespace NLayer.Datos
             n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             return n;
         }
-        
-        private List<T> MapList<T>(string json)
-        {
-            return JsonConvert.DeserializeObject<List<T>>(json);         
-        }
+     
     }
 }

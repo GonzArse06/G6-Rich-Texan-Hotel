@@ -75,16 +75,7 @@ namespace NLayer.Formularios
             formulario.dtFechaIngreso.Text = _items.SubItems[5].Text;
             formulario.dtFechaEgreso.Text = _items.SubItems[6].Text;
         }
-        private void LogResultado(int resultado, string mensaje)
-        {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView(((Hotel)cbxHoteles.SelectedItem));
-            }
-        }
+    
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -144,7 +135,8 @@ namespace NLayer.Formularios
                     {
                         _items = (ListViewItem)lstReservas.SelectedItems[0];
                         int resultado = _hotelServicios.EliminarReserva(int.Parse(_items.Text));
-                        LogResultado(resultado, "Eliminar reserva");
+                        LogHelper.LogResultado(lblResultado, resultado, "Eliminar reserva");
+                        CargarListView(((Hotel)cbxHoteles.SelectedItem));
                     }
                 }
                 else
@@ -173,7 +165,7 @@ namespace NLayer.Formularios
             try
             {
                 lblResultado.Text = "Exportando...";
-                _hotelServicios.DescargarAExcel(lstReservas);
+                _hotelServicios.DescargarAExcel(lstReservas.ToList(), lstReservas.ToHeaders());
                 lblResultado.Text = "OK -> Exportacion exitosa.";
             }
             catch (Exception ex)

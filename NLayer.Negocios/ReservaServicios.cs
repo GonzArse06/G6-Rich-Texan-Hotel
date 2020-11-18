@@ -3,9 +3,7 @@ using NLayer.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace NLayer.Negocios
 {
@@ -29,7 +27,7 @@ namespace NLayer.Negocios
             }
 
             var reservas = _listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion);
-
+            var cliente = _listaclientes.FirstOrDefault(o => o.Id == reserva.IdCliente);
             for (DateTime i = reserva.FechaIngreso; i <= reserva.FechaEgreso; i= i.AddDays(1))
             {
                 if (reservas.Where( t => i >= t.FechaIngreso & i < t.FechaEgreso).Any())
@@ -40,6 +38,8 @@ namespace NLayer.Negocios
             TransactionResult resultado = ReservaMapper.Insert(reserva);
             if (resultado.IsOk)
             {
+                reserva.Id = resultado.Id;
+                EnviarMail(reserva, cliente.Email);
                 ReservaCache();
                 return resultado.Id;
             }
@@ -55,16 +55,10 @@ namespace NLayer.Negocios
             //{
 
             //}
-            //if (old.IdHabitacion != reserva.IdHabitacion)
-            //{
-            //    if (reserva.CantidadHuespedes > hab.CantidadPlazas)
-            //    {
-            //        throw new ReservasException("Cantidad de huespedes superior a plaza.");
-            //    }
-            //}
+
             if (reserva.CantidadHuespedes > hab.CantidadPlazas)
             {
-                throw new ReservasException("Cantidad de huespedes superior a plaza.");
+                throw new ReservasException("Cantidad de huespedes superior a las plazas.");
             }
             if (reserva.FechaIngreso.Date < DateTime.Today.Date)
             {
@@ -76,6 +70,7 @@ namespace NLayer.Negocios
             }
 
             var reservas = _listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion && o.Id != reserva.Id);
+            var cliente = _listaclientes.FirstOrDefault(o => o.Id == reserva.IdCliente);
 
             for (DateTime i = reserva.FechaIngreso; i <= reserva.FechaEgreso; i = i.AddDays(1))
             {
@@ -87,6 +82,8 @@ namespace NLayer.Negocios
             TransactionResult resultado = ReservaMapper.Update(reserva);
             if (resultado.IsOk)
             {
+                reserva.Id = resultado.Id;
+                EnviarMail(reserva, cliente.Email);
                 ReservaCache();
                 return resultado.Id;
             }
@@ -117,14 +114,24 @@ namespace NLayer.Negocios
                 throw new ReservasException(resultado.Error);
             }
         }
-        public void DescargarAExcel(ListView listView)
-        {
-            Exportar.ExportarAExcel(listView);
-        }
+        //public void DescargarAExcel(ListView listView)
+        //{
+        //    Exportar.ExportarAExcel(listView);
+        //}
 
         public void DescargarAExcel(List<string[]> listView, string[] headers)
         {
             Exportar.ExportarAExcel(listView, headers);
+        }
+
+        public void EnviarMail(Reserva item, string mail)
+        {
+            string message = string.Format(@"Bienvenido,\n  
+                a continuacion los datos de la reserva: 
+                Cliente: {3}
+                Habitacion: {2}
+                Fechas: {0} - {1}", item.FechaIngreso, item.FechaEgreso, item.IdHabitacion, item.IdCliente);
+            ClienteMapper.EnviarMail(mail, "Su reserva No. " + item.Id + " en Rich Texan Hotel", "Bienvenido,\n  a continuacion los datos de la reserva: ");
         }
     }
 }

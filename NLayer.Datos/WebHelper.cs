@@ -49,7 +49,7 @@ namespace NLayer.Datos
             }
             catch (Exception ex)
             {
-                return "{ \"isOk\":false,\"id\":-1,\"error\":"+ex.Message+"}";
+                return "{ \"isOk\":false,\"id\":-1,\"error\":'" + ex.Message + "'}";
             }
 
 
@@ -66,7 +66,7 @@ namespace NLayer.Datos
             }
             catch (Exception ex)
             {
-                return "{ \"isOk\":false,\"id\":-1,\"error\":" + ex.Message + "}";
+                return "{ \"isOk\":false,\"id\":-1,\"error\":'" + ex.Message + "'}";
             }
 
 
@@ -83,7 +83,7 @@ namespace NLayer.Datos
             }
             catch (Exception ex)
             {
-                return "{ \"isOk\":false,\"id\":-1,\"error\":" + ex.Message + "}";
+                return "{ \"isOk\":false,\"id\":-1,\"error\":'" + ex.Message + "'}";
             }
         }
     }

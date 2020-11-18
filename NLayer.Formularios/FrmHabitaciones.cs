@@ -50,16 +50,6 @@ namespace NLayer.Formularios
             formulario.cbCancelable.Checked = cancelable;
             formulario.txtPrecio.Text = _items.SubItems[4].Text;
         }
-        private void LogResultado(int resultado, string mensaje)
-        {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView(((Hotel)cbxHoteles.SelectedItem));
-            }
-        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -128,7 +118,8 @@ namespace NLayer.Formularios
                     {
                         _items = (ListViewItem)lstHabitaciones.SelectedItems[0];
                         int resultado = _hotelServicios.EliminarHabitacion(int.Parse(_items.Text));
-                        LogResultado(resultado, "Eliminar habitacion");
+                        LogHelper.LogResultado(lblResultado, resultado, "Eliminar habitacion");
+                        CargarListView(((Hotel)cbxHoteles.SelectedItem));
                     }
                 }
                 else

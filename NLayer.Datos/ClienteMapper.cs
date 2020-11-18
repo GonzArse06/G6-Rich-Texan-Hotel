@@ -27,7 +27,7 @@ namespace NLayer.Datos
         public static List<Cliente> TraerTodos()
         {
             string json2 = WebHelper.Get("/cliente/" + ConfigurationManager.AppSettings["Legajo"]);
-            List<Cliente> resultado = MapList<Cliente>(json2);
+            List<Cliente> resultado = JsonConvert.DeserializeObject<List<Cliente>>(json2);
             return resultado;
         }
 
@@ -49,10 +49,6 @@ namespace NLayer.Datos
             return resultadoTransaccion;
         }
 
-        private static List<T> MapList<T>(string json)
-        {
-            return JsonConvert.DeserializeObject<List<T>>(json);            
-        }
 
         private static NameValueCollection ReverseMap(Cliente cliente)
         {

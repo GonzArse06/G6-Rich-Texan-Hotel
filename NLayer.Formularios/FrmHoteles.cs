@@ -51,16 +51,6 @@ namespace NLayer.Formularios
             formularios.cbAmenities.Checked = amenities;// _items.SubItems[3].Text;
             formularios.nuEstrellas.Text = _items.SubItems[4].Text;
         }
-        private void LogResultado(int resultado, string mensaje)
-        {
-            if (resultado == -1)
-                lblResultado.Text = "ERROR -> " + mensaje;
-            else
-            {
-                lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
-                CargarListView();
-            }
-        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -120,7 +110,8 @@ namespace NLayer.Formularios
                     {
                         _items = (ListViewItem)lstHoteles.SelectedItems[0];
                         int resultado = _hotelServicios.EliminarHotel(int.Parse(_items.Text));
-                        LogResultado(resultado, "Eliminar Hotel");
+                        CargarListView();
+                        LogHelper.LogResultado(lblResultado, resultado, "Eliminar Hotel");
                     }
                 }
                 else
