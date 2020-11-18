@@ -127,7 +127,7 @@
             this.btnBuscarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarCliente.IconSize = 18;
             this.btnBuscarCliente.Location = new System.Drawing.Point(311, 86);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(33, 26);
             this.btnBuscarCliente.TabIndex = 5;
@@ -141,7 +141,7 @@
             this.btnBuscarHabitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHabitacion.IconSize = 18;
             this.btnBuscarHabitacion.Location = new System.Drawing.Point(311, 119);
-            this.btnBuscarHabitacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarHabitacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarHabitacion.Name = "btnBuscarHabitacion";
             this.btnBuscarHabitacion.Size = new System.Drawing.Size(33, 26);
             this.btnBuscarHabitacion.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.dtFechaIngreso.CalendarFont = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaIngreso.Location = new System.Drawing.Point(178, 184);
-            this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Size = new System.Drawing.Size(129, 20);
             this.dtFechaIngreso.TabIndex = 9;
@@ -163,7 +163,7 @@
             this.dtFechaEgreso.CalendarFont = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaEgreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaEgreso.Location = new System.Drawing.Point(178, 215);
-            this.dtFechaEgreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtFechaEgreso.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaEgreso.Name = "dtFechaEgreso";
             this.dtFechaEgreso.Size = new System.Drawing.Size(129, 20);
             this.dtFechaEgreso.TabIndex = 10;
@@ -177,7 +177,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
             this.btnCancelar.Location = new System.Drawing.Point(208, 256);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 43);
             this.btnCancelar.TabIndex = 12;
@@ -196,7 +196,7 @@
             this.btnGuardar.IconSize = 40;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(86, 256);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(117, 43);
             this.btnGuardar.TabIndex = 11;
@@ -223,7 +223,7 @@
             this.btnBuscarHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHotel.IconSize = 18;
             this.btnBuscarHotel.Location = new System.Drawing.Point(311, 54);
-            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Size = new System.Drawing.Size(33, 27);
             this.btnBuscarHotel.TabIndex = 3;
@@ -251,6 +251,7 @@
             // 
             // txtIdHabitacion
             // 
+            this.txtIdHabitacion.Enabled = false;
             this.txtIdHabitacion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHabitacion.Location = new System.Drawing.Point(178, 118);
             this.txtIdHabitacion.Name = "txtIdHabitacion";
@@ -260,6 +261,7 @@
             // 
             // txtIdCliente
             // 
+            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCliente.Location = new System.Drawing.Point(178, 86);
             this.txtIdCliente.Name = "txtIdCliente";
@@ -269,12 +271,14 @@
             // 
             // txtIdHotel
             // 
+            this.txtIdHotel.Enabled = false;
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHotel.Location = new System.Drawing.Point(178, 54);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.ReadOnly = true;
             this.txtIdHotel.Size = new System.Drawing.Size(129, 26);
             this.txtIdHotel.TabIndex = 2;
+            this.txtIdHotel.TextChanged += new System.EventHandler(this.txtIdHotel_TextChanged);
             // 
             // txtIdReserva
             // 
@@ -312,7 +316,7 @@
             this.Controls.Add(this.lblIdHabitacion);
             this.Controls.Add(this.lblIdCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(454, 383);
             this.Name = "FrmAbmReservas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

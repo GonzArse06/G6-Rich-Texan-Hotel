@@ -99,6 +99,11 @@ namespace NLayer.Formularios
             txtIdHotel.Text = _idHotel.ToString();
         }
 
+        private void btnBuscarHotel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         ////drag Form
         //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         //private extern static void ReleaseCapture();

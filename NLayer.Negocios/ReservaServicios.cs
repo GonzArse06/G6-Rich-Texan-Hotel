@@ -126,12 +126,14 @@ namespace NLayer.Negocios
 
         public void EnviarMail(Reserva item, string mail)
         {
-            string message = string.Format(@"Bienvenido,\n  
-                a continuacion los datos de la reserva: 
-                Cliente: {3}
-                Habitacion: {2}
-                Fechas: {0} - {1}", item.FechaIngreso, item.FechaEgreso, item.IdHabitacion, item.IdCliente);
-            ClienteMapper.EnviarMail(mail, "Su reserva No. " + item.Id + " en Rich Texan Hotel", "Bienvenido,\n  a continuacion los datos de la reserva: ");
+            //  U + 2600 \u2600
+            //char o = '\uF650';
+            //o = '✔';//⌛
+            string asunto = "Su reserva No. " + item.Id + " en Rich Texan Hotel";
+
+
+            string message = string.Format("Bienvenido, <br>a continuacion los datos de la reserva: <br><br>Cliente: {3}<br>Habitacion: {2}<br>Fechas: {0} - {1}<br><br>Saludos cordiales,<br><b>Rich Texan Hotel</b>", item.FechaIngreso.ToShortDateString(), item.FechaEgreso.ToShortDateString(), item.IdHabitacion, item.IdCliente);
+            ClienteMapper.EnviarMail(mail, asunto, message);
         }
     }
 }

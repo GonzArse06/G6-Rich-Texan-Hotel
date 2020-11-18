@@ -51,46 +51,49 @@
             // 
             this.lblIidHotel.AutoSize = true;
             this.lblIidHotel.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIidHotel.Location = new System.Drawing.Point(83, 36);
+            this.lblIidHotel.Location = new System.Drawing.Point(62, 29);
+            this.lblIidHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIidHotel.Name = "lblIidHotel";
-            this.lblIidHotel.Size = new System.Drawing.Size(71, 23);
+            this.lblIidHotel.Size = new System.Drawing.Size(57, 18);
             this.lblIidHotel.TabIndex = 0;
             this.lblIidHotel.Text = "Id Hotel";
             // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(196, 105);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDireccion.Location = new System.Drawing.Point(147, 85);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(263, 29);
+            this.txtDireccion.Size = new System.Drawing.Size(198, 25);
             this.txtDireccion.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(196, 69);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(147, 56);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(263, 29);
+            this.txtNombre.Size = new System.Drawing.Size(198, 25);
             this.txtNombre.TabIndex = 2;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(83, 73);
+            this.lblNombre.Location = new System.Drawing.Point(62, 59);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(73, 23);
+            this.lblNombre.Size = new System.Drawing.Size(59, 18);
             this.lblNombre.TabIndex = 8;
             this.lblNombre.Text = "Nombre";
             // 
             // lblDireccion
             // 
             this.lblDireccion.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(83, 109);
+            this.lblDireccion.Location = new System.Drawing.Point(62, 89);
+            this.lblDireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(108, 30);
+            this.lblDireccion.Size = new System.Drawing.Size(81, 24);
             this.lblDireccion.TabIndex = 9;
             this.lblDireccion.Text = "Direccion";
             // 
@@ -98,9 +101,10 @@
             // 
             this.lblAmenities.AutoSize = true;
             this.lblAmenities.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmenities.Location = new System.Drawing.Point(83, 143);
+            this.lblAmenities.Location = new System.Drawing.Point(62, 116);
+            this.lblAmenities.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmenities.Name = "lblAmenities";
-            this.lblAmenities.Size = new System.Drawing.Size(87, 23);
+            this.lblAmenities.Size = new System.Drawing.Size(71, 18);
             this.lblAmenities.TabIndex = 10;
             this.lblAmenities.Text = "Amenities";
             // 
@@ -108,9 +112,10 @@
             // 
             this.lblEstrellas.AutoSize = true;
             this.lblEstrellas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstrellas.Location = new System.Drawing.Point(83, 175);
+            this.lblEstrellas.Location = new System.Drawing.Point(62, 142);
+            this.lblEstrellas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstrellas.Name = "lblEstrellas";
-            this.lblEstrellas.Size = new System.Drawing.Size(74, 23);
+            this.lblEstrellas.Size = new System.Drawing.Size(60, 18);
             this.lblEstrellas.TabIndex = 11;
             this.lblEstrellas.Text = "Estrellas";
             // 
@@ -119,17 +124,17 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 406);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 260);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(731, 28);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(439, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 22);
+            this.lblResultado.Size = new System.Drawing.Size(0, 17);
             // 
             // btnCancelar
             // 
@@ -140,10 +145,10 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Red;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
-            this.btnCancelar.Location = new System.Drawing.Point(281, 233);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(211, 189);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(156, 53);
+            this.btnCancelar.Size = new System.Drawing.Size(117, 43);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,10 +164,10 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 40;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(119, 233);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(89, 189);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(156, 53);
+            this.btnGuardar.Size = new System.Drawing.Size(117, 43);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -175,10 +180,10 @@
             this.btnBuscarHotel.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscarHotel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarHotel.IconSize = 22;
-            this.btnBuscarHotel.Location = new System.Drawing.Point(416, 31);
-            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarHotel.Location = new System.Drawing.Point(312, 25);
+            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
-            this.btnBuscarHotel.Size = new System.Drawing.Size(44, 32);
+            this.btnBuscarHotel.Size = new System.Drawing.Size(33, 26);
             this.btnBuscarHotel.TabIndex = 20;
             this.btnBuscarHotel.UseVisualStyleBackColor = true;
             this.btnBuscarHotel.Visible = false;
@@ -187,10 +192,10 @@
             // 
             this.cbAmenities.AutoSize = true;
             this.cbAmenities.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAmenities.Location = new System.Drawing.Point(196, 141);
-            this.cbAmenities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbAmenities.Location = new System.Drawing.Point(147, 115);
+            this.cbAmenities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbAmenities.Name = "cbAmenities";
-            this.cbAmenities.Size = new System.Drawing.Size(47, 27);
+            this.cbAmenities.Size = new System.Drawing.Size(38, 22);
             this.cbAmenities.TabIndex = 4;
             this.cbAmenities.Text = "SI";
             this.cbAmenities.UseVisualStyleBackColor = true;
@@ -198,8 +203,8 @@
             // nuEstrellas
             // 
             this.nuEstrellas.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuEstrellas.Location = new System.Drawing.Point(196, 173);
-            this.nuEstrellas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nuEstrellas.Location = new System.Drawing.Point(147, 141);
+            this.nuEstrellas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nuEstrellas.Maximum = new decimal(new int[] {
             5,
             0,
@@ -211,7 +216,7 @@
             0,
             0});
             this.nuEstrellas.Name = "nuEstrellas";
-            this.nuEstrellas.Size = new System.Drawing.Size(264, 29);
+            this.nuEstrellas.Size = new System.Drawing.Size(198, 25);
             this.nuEstrellas.TabIndex = 5;
             this.nuEstrellas.Value = new decimal(new int[] {
             1,
@@ -221,20 +226,20 @@
             // 
             // txtIdHotel
             // 
+            this.txtIdHotel.Enabled = false;
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdHotel.Location = new System.Drawing.Point(196, 31);
-            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdHotel.Location = new System.Drawing.Point(147, 25);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.ReadOnly = true;
-            this.txtIdHotel.Size = new System.Drawing.Size(212, 30);
+            this.txtIdHotel.Size = new System.Drawing.Size(160, 26);
             this.txtIdHotel.TabIndex = 1;
             // 
             // FrmAbmHoteles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(585, 347);
+            this.ClientSize = new System.Drawing.Size(439, 282);
             this.Controls.Add(this.txtIdHotel);
             this.Controls.Add(this.nuEstrellas);
             this.Controls.Add(this.cbAmenities);
@@ -250,9 +255,9 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblIidHotel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(600, 385);
+            this.MinimumSize = new System.Drawing.Size(454, 320);
             this.Name = "FrmAbmHoteles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoteles";

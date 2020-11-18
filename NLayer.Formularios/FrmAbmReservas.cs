@@ -141,6 +141,11 @@ namespace NLayer.Formularios
             }
         }
 
+        private void txtIdHotel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         //private extern static void ReleaseCapture();
 

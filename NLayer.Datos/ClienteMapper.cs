@@ -61,7 +61,8 @@ namespace NLayer.Datos
             n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
             n.Add("Email", cliente.Email); // STRING
             n.Add("Telefono", cliente.Telefono.ToString()); // INT
-            n.Add("FechaAlta", cliente.FechaAlta.ToShortDateString()); // DateTime
+            //n.Add("FechaAlta", cliente.FechaAlta.ToShortDateString()); // DateTime
+            n.Add("FechaAlta", cliente.FechaAlta.ToString("yyyy-MM-dd")); // DateTime
             n.Add("Activo", cliente.Activo.ToString()); // bool
             return n;
         }
