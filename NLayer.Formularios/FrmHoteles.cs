@@ -141,7 +141,8 @@ namespace NLayer.Formularios
             try
             {
                 lblResultado.Text = "Exportando...";
-                _hotelServicios.DescargarAExcel(lstHoteles);
+                _hotelServicios.DescargarAExcel(lstHoteles.ToList(), lstHoteles.ToHeaders());
+
                 lblResultado.Text = "OK -> Exportacion exitosa.";
             }
             catch (Exception ex)

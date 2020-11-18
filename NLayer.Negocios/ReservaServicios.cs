@@ -121,5 +121,10 @@ namespace NLayer.Negocios
         {
             Exportar.ExportarAExcel(listView);
         }
+
+        public void DescargarAExcel(List<string[]> listView, string[] headers)
+        {
+            Exportar.ExportarAExcel(listView, headers);
+        }
     }
 }
