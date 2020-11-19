@@ -139,7 +139,7 @@ namespace NLayer.Formularios
                 else
                 {
                     LogHelper.LogResultado(lblResultado, false, "Debe seleccionar una fila poder eliminar");
-                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                   
                 }
                     
                 
@@ -147,7 +147,7 @@ namespace NLayer.Formularios
             catch (Exception ex)
             {
                 LogHelper.LogResultado(lblResultado, false, ex.Message);
-                //lblResultado.Text = "ERROR -> " + ex.Message;
+
             }
         }
 

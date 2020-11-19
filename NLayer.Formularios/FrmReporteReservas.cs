@@ -101,7 +101,7 @@ namespace NLayer.Formularios
                 if (string.IsNullOrEmpty(txtIdCliente.Text))
                 {
                     LogHelper.LogResultado(lblResultado, false, "Debe seleccionar un cliente");
-                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                   
                 }
          
                 else
@@ -111,7 +111,7 @@ namespace NLayer.Formularios
                     if (cliente == null)
                     {
                         LogHelper.LogResultado(lblResultado, false, "El cliente no existe");
-                        //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                        
                     }
            
                     else

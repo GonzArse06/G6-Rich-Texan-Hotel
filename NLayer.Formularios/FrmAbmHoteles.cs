@@ -80,7 +80,7 @@ namespace NLayer.Formularios
                 }
                 catch (Exception e)
                 {
-                    lblResultado.Text = "ERROR -> " + e.Message;
+                    LogHelper.LogResultado(lblResultado, false, e.Message);
                 }
             }
         }

@@ -100,7 +100,7 @@ namespace NLayer.Formularios
                 else
                 {
                     LogHelper.LogResultado(lblResultado, false, "Debe seleccionar una fila para realizar la modificacion");
-                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+            
                 }
          
             }
@@ -128,7 +128,7 @@ namespace NLayer.Formularios
                 else
                 {
                     LogHelper.LogResultado(lblResultado, false, "Debe seleccionar una fila para realizar la modificacion");
-                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+               
                 }
            
             }

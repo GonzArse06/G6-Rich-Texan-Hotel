@@ -7,11 +7,12 @@ namespace NLayer.Datos
 {
     public class HabitacionMapper
     {
+        private static string path = "/Hotel/Habitaciones";
         public static TransactionResult Delete(int id)
         {
             NameValueCollection obj = new NameValueCollection();
             obj.Add("Id", id.ToString());
-            string result = WebHelper.Delete("/Hotel/Habitaciones", obj);
+            string result = WebHelper.Delete(path, obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }
@@ -40,7 +41,7 @@ namespace NLayer.Datos
         {
             NameValueCollection obj = ReverseMap(item);
 
-            string result = WebHelper.Post("/Hotel/Habitaciones", obj);
+            string result = WebHelper.Post(path, obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }
@@ -48,7 +49,7 @@ namespace NLayer.Datos
         public static TransactionResult Update(Habitacion item)
         {
             NameValueCollection obj = ReverseMap(item);
-            string result = WebHelper.Put("/Hotel/Habitaciones", obj);
+            string result = WebHelper.Put(path, obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }

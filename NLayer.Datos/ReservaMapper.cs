@@ -11,9 +11,10 @@ namespace NLayer.Datos
 {
     public class ReservaMapper
     {
+        private static string path = "/Hotel/Reservas";
         public static List<Reserva> Reserva_getAll()
         {
-            string json2 = WebHelper.Get("/Hotel/Reservas"); 
+            string json2 = WebHelper.Get(path); 
             List<Reserva> resultado = JsonConvert.DeserializeObject<List<Reserva>>(json2);
             return resultado;
         }
@@ -22,7 +23,7 @@ namespace NLayer.Datos
         {
             NameValueCollection obj = ReverseMap(item);
 
-            string result = WebHelper.Post("/Hotel/Reservas", obj);
+            string result = WebHelper.Post(path, obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }
@@ -30,14 +31,14 @@ namespace NLayer.Datos
         public static TransactionResult Update(Reserva item)
         {
             NameValueCollection obj = ReverseMap(item);
-            string result = WebHelper.Put("/Hotel/Reservas", obj);
+            string result = WebHelper.Put(path, obj);
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }
         public static TransactionResult Delete(int id)
         {
             NameValueCollection obj = new NameValueCollection();
             obj.Add("Id", id.ToString());
-            string result = WebHelper.Delete("/Hotel/Reservas", obj);
+            string result = WebHelper.Delete(path, obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }

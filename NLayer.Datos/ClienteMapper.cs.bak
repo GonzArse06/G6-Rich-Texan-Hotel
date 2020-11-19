@@ -68,7 +68,7 @@ namespace NLayer.Datos
 
         private static TransactionResult MapResultado(string json)
         {
-            TransactionResult lst = MapObj<TransactionResult>(json);
+            TransactionResult lst = JsonConvert.DeserializeObject<TransactionResult>(json);
             return lst;
         }
 
@@ -78,19 +78,7 @@ namespace NLayer.Datos
             obj.Add("Id", id.ToString());
 
             string result = WebHelper.Delete("/cliente", obj);
-            return MapObj<TransactionResult>(result);
+            return JsonConvert.DeserializeObject<TransactionResult>(result);
         }
-
-        private static T MapObj<T>(string json)
-        {
-            var lst = JsonConvert.DeserializeObject<T>(json);
-            return lst;
-        }
-        //public Cliente TraerPorCodigo(int codigo)
-        //{
-        //    string json2 = WebHelper.Get("/api/v1/cliente/" + codigo.ToString()); // trae un texto en formato json de una web
-        //    Cliente resultado = MapObj(json2);
-        //    return resultado;
-        //}
     }
 }
