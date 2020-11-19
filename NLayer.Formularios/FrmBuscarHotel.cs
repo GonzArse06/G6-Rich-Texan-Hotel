@@ -10,6 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de Busqueda. Tiene un listBox con los hoteles. Esto se agrega por si el usuario no conoce el id.
+/// Para seleccionar se puede usar el boton o un dobleclick.
+/// El dato elegido lo lleva al formulario de ABM.
+/// Se pasa el objeto de HotelServicio para no instanciarlo nuevamente.
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmBuscarHotel : Form

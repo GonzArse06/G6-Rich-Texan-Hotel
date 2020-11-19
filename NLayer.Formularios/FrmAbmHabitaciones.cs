@@ -13,6 +13,13 @@ using System.Runtime.InteropServices;
 
 namespace NLayer.Formularios
 {
+    /// <summary>
+    /// El formulario de ABM realiza las operaciones de Alta y Modificacion. (La baja se gestiona en el form de transaccion.)
+    /// En el contructor pasamos un enum para identificar el tipo de operacion y el objeto de hotelservicio para no instanciar uno nuevo.
+    /// Ademas se pasa el ID del hotel seleccionado en el combobox.
+    /// Usamos un metodo estatico para validar los input y un controlador de usuarios personalizado de tipo TextBox para los campos numericos.
+    /// 
+    /// </summary>
     public partial class FrmAbmHabitaciones : Form
     {
         AbmTipo _tipo;
@@ -62,7 +69,6 @@ namespace NLayer.Formularios
                     habitacion.Cancelable = cbCancelable.Checked;
                     habitacion.Precio = double.Parse(txtPrecio.Text);
 
-                    //HotelServicios habitacionServicios = new HotelServicios();
                     int resultado = -1;
                     switch (_tipo)
                     {
@@ -90,30 +96,11 @@ namespace NLayer.Formularios
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                this.Close();
+            this.DialogResult = DialogResult.Cancel;            
         }
         private void FrmAbmHabitaciones_Load(object sender, EventArgs e)
         {
             txtIdHotel.Text = _idHotel.ToString();
         }
-
-        private void btnBuscarHotel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        ////drag Form
-        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        //private extern static void ReleaseCapture();
-
-        //[DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        //private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
-        //private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
-        //}
     }
 }

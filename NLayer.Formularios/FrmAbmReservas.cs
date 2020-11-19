@@ -11,6 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+/// <summary>
+/// El formulario de ABM realiza las operaciones de Alta y Modificacion. (La baja se gestiona en el form de transaccion.)
+/// En el contructor pasamos un enum para identificar el tipo de operacion y el objeto de hotelservicio para no instanciar uno nuevo.
+/// Ademas se pasa el ID del hotel seleccionado en el combobox.
+/// Usamos un metodo estatico para validar los input y un controlador de usuarios personalizado de tipo TextBox para los campos numericos.
+/// 
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmAbmReservas : Form
@@ -101,8 +109,6 @@ namespace NLayer.Formularios
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            //if (MessageBox.Show("Esta seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    this.Close();
         }
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -132,7 +138,6 @@ namespace NLayer.Formularios
             formulario.Owner = this;
             formulario.ShowDialog();
             var obj = formulario.Tag;
-            //var obj = this.Tag;
             if (obj != null && obj is Hotel)
             {
                 _idHotel = ((Hotel)obj).Id;
@@ -140,21 +145,5 @@ namespace NLayer.Formularios
                 this.txtIdHabitacion.Text = string.Empty;
             }
         }
-
-        private void txtIdHotel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        //private extern static void ReleaseCapture();
-
-        //[DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        //private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
-        //private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
-        //}
     }
 }

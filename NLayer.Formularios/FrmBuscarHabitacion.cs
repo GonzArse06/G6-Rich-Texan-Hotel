@@ -10,6 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de Busqueda. Tiene un listBox con todas las habitaciones del hotel seleccionado. Esto se agrega por si el usuario no conoce el id.
+/// Para seleccionar se puede usar el boton o un dobleclick.
+/// El dato elegido lo lleva al formulario de ABM.
+/// Se pasa el objeto de HotelServicio para no instanciarlo nuevamente.
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmBuscarHabitacion : Form
@@ -20,7 +27,7 @@ namespace NLayer.Formularios
         public FrmBuscarHabitacion(int idHotel, HotelServicios serv)
         {
             InitializeComponent();
-            _habitacionServicios = serv; // new HotelServicios();
+            _habitacionServicios = serv; 
             _lista = new List<Habitacion>();
             _idHotel = idHotel;
         }
@@ -41,7 +48,7 @@ namespace NLayer.Formularios
             else
             {
                 int idHabitacion = ((Habitacion)listBox1.SelectedItem).Id;
-                this.Tag = listBox1.SelectedItem;//Habitacion
+                this.Tag = listBox1.SelectedItem;
                 ((FrmAbmReservas)Owner).txtIdHabitacion.Text = idHabitacion.ToString();
                 this.Close();
             }

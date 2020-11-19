@@ -278,7 +278,6 @@
             this.txtIdHotel.ReadOnly = true;
             this.txtIdHotel.Size = new System.Drawing.Size(129, 26);
             this.txtIdHotel.TabIndex = 2;
-            this.txtIdHotel.TextChanged += new System.EventHandler(this.txtIdHotel_TextChanged);
             // 
             // txtIdReserva
             // 

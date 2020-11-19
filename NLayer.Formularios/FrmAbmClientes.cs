@@ -12,10 +12,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 /// <summary>
-/// El formulario de ABM realiza las operaciones de Alta y Modificacion. La baja se gestiona en el form de transaccion. 
+/// El formulario de ABM realiza las operaciones de Alta y Modificacion. (La baja se gestiona en el form de transaccion.)
 /// En el contructor pasamos un enum para identificar el tipo de operacion y el objeto de hotelservicio para no instanciar uno nuevo.
 /// Usamos un metodo estatico para validar los input y un controlador de usuarios personalizado de tipo TextBox para los campos numericos.
-/// 
 /// 
 /// </summary>
 
