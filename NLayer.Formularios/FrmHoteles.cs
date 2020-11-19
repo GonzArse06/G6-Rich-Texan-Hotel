@@ -10,6 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de transaccion cuenta con un ListView para mostrar todos los hoteles registrados. 
+/// Este ListView actualiza la informacion en cada nuevo registro de ABM.
+/// En la derecha se encuentran los botones de Alta, Modificacion, baja y la exportacion a excel de los datos del ListView.
+/// En el caso de modificacion, llevamos los datos del objeto seleccionado al form de ABM
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmHoteles : Form
@@ -48,7 +55,7 @@ namespace NLayer.Formularios
             formularios.txtIdHotel.Text = _items.Text;
             formularios.txtNombre.Text = _items.SubItems[1].Text;
             formularios.txtDireccion.Text = _items.SubItems[2].Text;
-            formularios.cbAmenities.Checked = amenities;// _items.SubItems[3].Text;
+            formularios.cbAmenities.Checked = amenities;
             formularios.nuEstrellas.Text = _items.SubItems[4].Text;
         }
 

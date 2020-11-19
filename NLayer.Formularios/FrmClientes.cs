@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
-/// El formulario de transaccion cuenta con un ListView para mostrar todos los clientes registrados. Este se actualiza en cada nuevo registro de ABM.
+/// El formulario de transaccion cuenta con un ListView para mostrar todos los clientes registrados. 
+/// Este ListView actualiza la informacion en cada nuevo registro de ABM.
 /// En la derecha se encuentran los botones de Alta, Modificacion, baja y la exportacion a excel de los datos del ListView.
 /// En el caso de modificacion, llevamos los datos del objeto seleccionado al form de ABM
 /// </summary>

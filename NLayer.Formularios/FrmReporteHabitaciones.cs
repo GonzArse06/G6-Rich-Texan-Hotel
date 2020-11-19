@@ -10,6 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de Reoporte cuenta con un ListView para mostrar todo el detalle de las habitaciones por el hotel seleccionado del combobox.
+/// Tiene un boton para exportar la informacion del ListView a Excel.
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmReporteHabitaciones : Form

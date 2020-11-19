@@ -10,6 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de Reoporte cuenta con un ListView para mostrar todo el detalle de las reservas de un cliente seleccionado.
+/// Para ejecutar el reporte es necesario tener el ID del cliente. Este se puede escribir directamente en el TextBox o buscarlo desde el boton de busqueda (form buscar cliente).
+/// el reporte muestra el importe total a pagar por cada reserva y un TextBox con el importe total, suma de todos los totales de reserva.
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmReporteReservas : Form

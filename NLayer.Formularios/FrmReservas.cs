@@ -10,6 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de transaccion cuenta con un ListView para mostrar todas las reservas que corresponden a la opcion del combobox seleccionada. 
+/// Este ListView actualiza la informacion en cada nuevo registro de ABM.
+/// En la derecha se encuentran los botones de Alta, Modificacion, baja y la exportacion a excel de los datos del ListView.
+/// En el caso de modificacion, llevamos los datos del objeto seleccionado al form de ABM
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmReservas : Form
@@ -35,17 +42,6 @@ namespace NLayer.Formularios
         {
             lstReservas.Items.Clear();
             _lstReservas = _hotelServicios.TraerReservas();
-            /*if (_hotel.Habitaciones != null && _hotel.Habitaciones.Count() > 0)
-            {             }
-            else
-            {                _hotel.Habitaciones = _hotelServicios.TraerTodoPorId(_hotel.Id);
-            }
-            _lstHabitaciones = _hotel.Habitaciones;
-            foreach (var h in _hotel.Habitaciones)
-            {                h.Reservas = _lstReservas.Where(o => o.IdHabitacion == h.Id).ToList();
-            }            var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
-             */
-
             _lstHabitaciones = _hotelServicios.TraerTodoPorId(hotel.Id);
             var misreservas = _lstReservas.Where(o => _lstHabitaciones.Select(p => p.Id).Contains(o.IdHabitacion));
 
