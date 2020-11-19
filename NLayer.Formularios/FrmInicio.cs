@@ -12,7 +12,10 @@ using System.Runtime.InteropServices;
 using NLayer.Negocios;
 
 /// <summary>
-/// 
+/// El formulario de inicio es un contenedor que cuenta con 3 secciones principales:
+/// - Panel Top: imagen de inicio, con funcion de boton de inicio que reestablece valores; una barra que permite mover el form; y unas imagenes que minimizan, maximizan y cierran el form.
+/// - Panel Izquierdo: botones con diseño que abre las transacciones
+/// - Panel Central: contenedor donde se abren los formularios de las transacciones. 
 /// </summary>
 
 namespace NLayer.Formularios
