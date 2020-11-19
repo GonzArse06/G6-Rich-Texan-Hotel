@@ -92,7 +92,7 @@ namespace NLayer.Formularios
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
         private void btnEditar_Click(object sender, EventArgs e)
@@ -113,11 +113,15 @@ namespace NLayer.Formularios
                     }
                 }
                 else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para realizar la modificacion.";
+                {
+                    LogHelper.LogResultado(lblResultado, false, "Debe seleccionar una fila para realizar la modificacion");
+                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                }
+              
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -136,11 +140,15 @@ namespace NLayer.Formularios
                     }
                 }
                 else
-                    lblResultado.Text = "ERROR -> Debe seleccionar una fila para poder eliminar.";
+                {
+                    LogHelper.LogResultado(lblResultado, false, " Debe seleccionar una fila para poder eliminar");
+                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                }
+       
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
 
@@ -161,13 +169,24 @@ namespace NLayer.Formularios
             try
             {
                 lblResultado.Text = "Exportando...";
-                _hotelServicios.DescargarAExcel(lstReservas.ToList(), lstReservas.ToHeaders());
-                lblResultado.Text = "OK -> Exportacion exitosa.";
+
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.Filter = "Excel (*.xls)|*.xls";
+                if (fichero.ShowDialog() == DialogResult.OK)
+                {
+                    _hotelServicios.DescargarAExcel(lstReservas.ToList(), lstReservas.ToHeaders(), fichero.FileName);
+                    LogHelper.LogResultado(lblResultado, true, "Exportacion exitosa");
+
+                }
+                lblResultado.Text = string.Empty;
+
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
+
+           
         }
     }
 }

@@ -97,7 +97,8 @@ namespace NLayer.Formularios
                 }
                 catch (Exception e)
                 {
-                    lblResultado.Text = "ERROR -> " + e.Message;
+                    LogHelper.LogResultado(lblResultado, false, e.Message);
+                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
                 }
             }
         }

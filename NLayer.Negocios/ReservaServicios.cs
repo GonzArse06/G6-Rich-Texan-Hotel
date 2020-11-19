@@ -119,9 +119,9 @@ namespace NLayer.Negocios
             }
         }
 
-        public void DescargarAExcel(List<string[]> listView, string[] headers)
+        public void DescargarAExcel(List<string[]> listView, string[] headers, string fileName)
         {
-            Exportar.ExportarAExcel(listView, headers);
+            Exportar.ExportarAExcel(listView, headers, fileName);
         }
 
         public void EnviarMail(Reserva item, string mail)

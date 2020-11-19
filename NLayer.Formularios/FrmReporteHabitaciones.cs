@@ -51,7 +51,7 @@ namespace NLayer.Formularios
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -73,13 +73,22 @@ namespace NLayer.Formularios
             try
             {
                 lblResultado.Text = "Exportando...";
-                _hotelServicios.DescargarAExcel(lstHabitaciones.ToList(), lstHabitaciones.ToHeaders());
-                lblResultado.Text = "OK -> Exportacion exitosa.";
+
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.Filter = "Excel (*.xls)|*.xls";
+                if (fichero.ShowDialog() == DialogResult.OK)
+                {
+                    _hotelServicios.DescargarAExcel(lstHabitaciones.ToList(), lstHabitaciones.ToHeaders(), fichero.FileName);
+                    LogHelper.LogResultado(lblResultado, true, "Exportacion exitosa");
+
+                }
+                lblResultado.Text = string.Empty;
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
+           
         }
     }
 }

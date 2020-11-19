@@ -82,7 +82,7 @@ namespace NLayer.Formularios
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
         private void FrmClientes_Load(object sender, EventArgs e)
@@ -108,11 +108,14 @@ namespace NLayer.Formularios
                     }
                 }
                 else
-                    lblResultado.Text = "ERROR ->Debe seleccionar una fila para realizar la modificacion.";
+                {
+                    LogHelper.LogResultado(lblResultado, true, "Debe seleccionar una fila para realizar la modificacion");
+                }
+                    
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -134,12 +137,17 @@ namespace NLayer.Formularios
                     }
                 }
                 else
-                  lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                {
+                    LogHelper.LogResultado(lblResultado, false, "Debe seleccionar una fila poder eliminar");
+                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                }
+                    
                 
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
+                //lblResultado.Text = "ERROR -> " + ex.Message;
             }
         }
 
@@ -148,12 +156,21 @@ namespace NLayer.Formularios
             try
             {
                 lblResultado.Text = "Exportando...";
-                _clienteServicios.DescargarAExcel(lstClientes.ToList(), lstClientes.ToHeaders());
-                lblResultado.Text = "OK -> Exportacion exitosa.";
+
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.Filter = "Excel (*.xls)|*.xls";
+                if (fichero.ShowDialog() == DialogResult.OK)
+                {
+                    _clienteServicios.DescargarAExcel(lstClientes.ToList(), lstClientes.ToHeaders(), fichero.FileName);
+                    LogHelper.LogResultado(lblResultado, true, "Exportacion exitosa");
+                   
+                }
+                lblResultado.Text = string.Empty;
+
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
     }

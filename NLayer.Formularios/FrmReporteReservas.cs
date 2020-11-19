@@ -90,7 +90,7 @@ namespace NLayer.Formularios
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> "+ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
 }
         private void btnEjecutar_Click(object sender, EventArgs e)
@@ -99,13 +99,21 @@ namespace NLayer.Formularios
             try 
             {
                 if (string.IsNullOrEmpty(txtIdCliente.Text))
-                    lblResultado.Text = "ERROR -> Debe seleccionar un cliente";
+                {
+                    LogHelper.LogResultado(lblResultado, false, "Debe seleccionar un cliente");
+                    //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                }
+         
                 else
                 {
                     int idCliente = int.Parse(txtIdCliente.Text);
                     Cliente cliente = _hotelServicios.TraerClientes().SingleOrDefault(x => x.Id == idCliente);
                     if (cliente == null)
-                        lblResultado.Text = "ERROR -> El cliente no existe";
+                    {
+                        LogHelper.LogResultado(lblResultado, false, "El cliente no existe");
+                        //lblResultado.Text = "ERROR -> Debe seleccionar una fila poder eliminar.";
+                    }
+           
                     else
                     {
                         txtNombreCliente.Text = cliente.ToString();
@@ -116,7 +124,7 @@ namespace NLayer.Formularios
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> "+ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
         }
         private void btnExportarExcel_Click(object sender, EventArgs e)
@@ -124,13 +132,23 @@ namespace NLayer.Formularios
             try
             {
                 lblResultado.Text = "Exportando...";
-                _hotelServicios.DescargarAExcel(lstReporte.ToList(), lstReporte.ToHeaders());
-                lblResultado.Text = "OK -> Exportacion exitosa.";
+
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.Filter = "Excel (*.xls)|*.xls";
+                if (fichero.ShowDialog() == DialogResult.OK)
+                {
+                    _hotelServicios.DescargarAExcel(lstReporte.ToList(), lstReporte.ToHeaders(), fichero.FileName);
+                    LogHelper.LogResultado(lblResultado, true, "Exportacion exitosa");
+
+                }
+                lblResultado.Text = string.Empty;
+
             }
             catch (Exception ex)
             {
-                lblResultado.Text = "ERROR -> " + ex.Message;
+                LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
+           
         }
     }
 }

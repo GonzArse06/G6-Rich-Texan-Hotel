@@ -18,17 +18,16 @@ namespace NLayer.Formularios
     {
         public static string Validaciones(ControlCollection controls)
         {
-            string mensaje = "";
-
+           
             foreach (Control a in controls)
             {
                 if (a is TextBox && a.Enabled == true && ((TextBox) a).ReadOnly == false )
                 {
                     if (string.IsNullOrEmpty(a.Text))
-                        mensaje = "Hay campos vacios. Revisar!";
+                       return "Hay campos vacios. Revisar!";
                 }
             }
-            return mensaje;
+            return string.Empty;
         }
         
         public static List<string[]> ToList(this ListView listView)
@@ -52,6 +51,8 @@ namespace NLayer.Formularios
             
         }
 
+       
+
     }
 
     public  class LogHelper
@@ -65,6 +66,10 @@ namespace NLayer.Formularios
                 lblResultado.Text = "OK -> " + mensaje + ". ID: " + resultado;
 
             }
+            //limpia despues de 3 segundos, se podria configurar el tiempo en appsettings
+            Task.Delay(TimeSpan.FromSeconds(10))
+                      .ContinueWith((t) => lblResultado.Text = string.Empty, TaskScheduler.FromCurrentSynchronizationContext());
+
         }
         public static void LogResultado(ToolStripLabel lblResultado, bool resultado, string mensaje)
         {
@@ -77,6 +82,10 @@ namespace NLayer.Formularios
                 lblResultado.Text = "OK -> " + mensaje + ". ";
 
             }
+            //limpia despues de 3 segundos, se podria configurar el tiempo en appsettings
+            Task.Delay(TimeSpan.FromSeconds(10))
+                      .ContinueWith((t) => lblResultado.Text = string.Empty, TaskScheduler.FromCurrentSynchronizationContext());
+
         }
         public static void LimpiarLog(ToolStripLabel lblResultado)
         {
