@@ -27,7 +27,6 @@ namespace NLayer.Datos
         public static TransactionResult Update (Hotel item)
         {
             NameValueCollection obj = ReverseMap(item);
-            //return JsonConvert.SerializeObject(item);
             string result = WebHelper.Put("/Hotel/Hoteles", obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);

@@ -8,6 +8,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Clase que valida el input del mail en el ABM de cliente.
+/// </summary>
+
 namespace NLayer.Negocios
 {
     public class ValidationHelper
@@ -50,14 +54,6 @@ namespace NLayer.Negocios
             {
                 return false;
             }
-        }
-        public static bool IsUInteger(string number)
-        {
-            if (string.IsNullOrWhiteSpace(number))
-                return false;
-
-            return uint.TryParse(number, out uint i);
-
         }
     }    
 }

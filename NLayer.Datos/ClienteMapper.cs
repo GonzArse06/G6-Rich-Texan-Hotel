@@ -59,11 +59,10 @@ namespace NLayer.Datos
             n.Add("Apellido", cliente.Apellido);
             n.Add("Direccion", cliente.Direccion);
             n.Add("Usuario", ConfigurationManager.AppSettings["Legajo"]);
-            n.Add("Email", cliente.Email); // STRING
-            n.Add("Telefono", cliente.Telefono.ToString()); // INT
-            //n.Add("FechaAlta", cliente.FechaAlta.ToShortDateString()); // DateTime
-            n.Add("FechaAlta", cliente.FechaAlta.ToString("yyyy-MM-dd")); // DateTime
-            n.Add("Activo", cliente.Activo.ToString()); // bool
+            n.Add("Email", cliente.Email); 
+            n.Add("Telefono", cliente.Telefono.ToString()); 
+            n.Add("FechaAlta", cliente.FechaAlta.ToString("yyyy-MM-dd"));
+            n.Add("Activo", cliente.Activo.ToString()); 
             return n;
         }
 
@@ -81,17 +80,5 @@ namespace NLayer.Datos
             string result = WebHelper.Delete("/cliente", obj);
             return JsonConvert.DeserializeObject<TransactionResult>(result);
         }
-
-            //private Cliente MapObj(string json)
-            //{
-            //    var lst = JsonConvert.DeserializeObject<Cliente>(json);
-            //    return lst;
-            //}
-            //public Cliente TraerPorCodigo(int codigo)
-            //{
-            //    string json2 = WebHelper.Get("/api/v1/cliente/" + codigo.ToString()); // trae un texto en formato json de una web
-            //    Cliente resultado = MapObj(json2);
-            //    return resultado;
-            //}
-        }
+    }
 }

@@ -4,6 +4,10 @@ using System.Configuration;
 using System.Net;
 using System.Text;
 
+/// <summary>
+/// WebHelper con Get, Post, Update, Delete.
+/// </summary>
+
 namespace NLayer.Datos
 {
     public class WebHelper

@@ -37,7 +37,6 @@ namespace NLayer.Datos
         {
             NameValueCollection obj = new NameValueCollection();
             obj.Add("Id", id.ToString());
-            //NameValueCollection obj = ReverseMap(item);
             string result = WebHelper.Delete("/Hotel/Reservas", obj);
 
             return JsonConvert.DeserializeObject<TransactionResult>(result);
@@ -48,10 +47,8 @@ namespace NLayer.Datos
 
             NameValueCollection n = new NameValueCollection();
             n.Add("Id", item.Id.ToString());
-            //n.Add("FechaEgreso", item.FechaEgreso.ToShortDateString());
             n.Add("FechaEgreso", item.FechaEgreso.ToString("yyyy-MM-dd"));
             n.Add("FechaIngreso", item.FechaIngreso.ToString("yyyy-MM-dd"));
-            //n.Add("FechaIngreso", item.FechaIngreso.ToShortDateString());
             n.Add("CantidadHuespedes", item.CantidadHuespedes.ToString());
             n.Add("IdCliente", item.IdCliente.ToString());
             n.Add("IdHabitacion", item.IdHabitacion.ToString());
