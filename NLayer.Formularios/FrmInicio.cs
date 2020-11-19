@@ -11,6 +11,10 @@ using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using NLayer.Negocios;
 
+/// <summary>
+/// 
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmInicio : Form
