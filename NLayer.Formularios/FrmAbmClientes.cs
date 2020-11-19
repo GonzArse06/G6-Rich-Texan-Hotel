@@ -11,6 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+/// <summary>
+/// El formulario de ABM realiza las operaciones de Alta y Modificacion. La baja se gestiona en el form de transaccion. 
+/// En el contructor pasamos un enum para identificar el tipo de operacion y el objeto de hotelservicio para no instanciar uno nuevo.
+/// Usamos un metodo estatico para validar los input y un controlador de usuarios personalizado de tipo TextBox para los campos numericos.
+/// 
+/// 
+/// </summary>
 
 namespace NLayer.Formularios
 {
@@ -80,12 +87,10 @@ namespace NLayer.Formularios
                         case AbmTipo.Alta:
                             resultado = _clienteServicios.IngresarCliente(cliente);
                             LogHelper.LogResultado(lblResultado, resultado, "Ingresar Cliente");
-                            //LogResultado(resultado, "Ingresar Cliente");
                             break;
                         case AbmTipo.Modificacion:
                             resultado = _clienteServicios.ModificarCliente(cliente);
                             LogHelper.LogResultado(lblResultado, resultado, "Modificar Cliente");
-                                //LogResultado(resultado, "Modificar Cliente");
                             break;
                     }
                     this.DialogResult = DialogResult.OK;
@@ -105,18 +110,5 @@ namespace NLayer.Formularios
         {
             Guardar();
         }
-
-        ////drag Form
-        //[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        //private extern static void ReleaseCapture();
-
-        //[DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        //private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
-
-        //private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x112, 0xf012, 0);
-        //}
     }
 }

@@ -10,6 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// El formulario de transaccion cuenta con un ListView para mostrar todos los clientes registrados. este se actualiza en cada ABM.
+/// En la derecha se encuentran los botones de Alta, Modificacion, baja y la exportacion a excel de los datos del ListView.
+/// 
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class FrmClientes : Form
