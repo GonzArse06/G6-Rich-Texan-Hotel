@@ -50,12 +50,6 @@ namespace NLayer.Negocios
         }
         public int ModificarReserva(Reserva reserva, Habitacion hab)
         {
-            //var old = _listaReservas.Where(o => o.Id == reserva.Id).FirstOrDefault();
-            //if (old==null)
-            //{
-
-            //}
-
             if (reserva.CantidadHuespedes > hab.CantidadPlazas)
             {
                 throw new ReservasException("Cantidad de huespedes superior a las plazas.");
@@ -94,7 +88,6 @@ namespace NLayer.Negocios
         }
         public List<Reserva> TraerReservas()
         {
-            //listaReservas = ReservaMapper.Reserva_getAll();
             return _listaReservas;
         }
         private void ReservaCache()
@@ -114,10 +107,6 @@ namespace NLayer.Negocios
                 throw new ReservasException(resultado.Error);
             }
         }
-        //public void DescargarAExcel(ListView listView)
-        //{
-        //    Exportar.ExportarAExcel(listView);
-        //}
 
         public void DescargarAExcel(List<string[]> listView, string[] headers)
         {
@@ -126,11 +115,7 @@ namespace NLayer.Negocios
 
         public void EnviarMail(Reserva item, string mail)
         {
-            //  U + 2600 \u2600
-            //char o = '\uF650';
-            //o = '✔';//⌛
             string asunto = "Su reserva No. " + item.Id + " en Rich Texan Hotel";
-
 
             string message = string.Format("Bienvenido, <br>a continuacion los datos de la reserva: <br><br>Cliente: {3}<br>Habitacion: {2}<br>Fechas: {0} - {1}<br><br>Saludos cordiales,<br><b>Rich Texan Hotel</b>", item.FechaIngreso.ToShortDateString(), item.FechaEgreso.ToShortDateString(), item.IdHabitacion, item.IdCliente);
             ClienteMapper.EnviarMail(mail, asunto, message);

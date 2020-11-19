@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Control de usuario personalizado para los textbox que requieren textos.
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public partial class TextoNumerico : TextBox

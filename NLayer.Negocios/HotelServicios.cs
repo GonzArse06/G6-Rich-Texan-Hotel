@@ -7,6 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// La clase HotelServicio es una clase parcial que une el codigo con ClienteServicio y ReservaServicio.
+/// en el contructor, se carga toda la informacion de las API, para luego los metodos de traer traigan la informacion de la lista en donde se guardo.
+/// Se uso un metodo para simular un cache, que actualiza la informacion de las listas cuando se ejecuta correctamente una transaccion de Alta, baja o modificacion.
+/// en esta capa, dejamos las validaciones de negocio:
+/// - Cliente: control de duplicados por DNI. No se puede eliminar cliente si tiene una reserva.
+/// - Reserva: cantidad de huespedes no supere a las plazas. fecha de ingreso no puede ser inferior al dia de registro. la fecha de egreso debe ser mayor a la fecha de ingreso. Habitacion reservada en la fecha elegida.
+///     -  si la reserva esta confirmada, se envia mail.
+/// - 
+/// </summary>
+
 namespace NLayer.Negocios
 {
     public partial class HotelServicios

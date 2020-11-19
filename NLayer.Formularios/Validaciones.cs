@@ -7,6 +7,11 @@ using System.Windows.Forms;
 using static System.Windows.Forms.Control;
 using static System.Windows.Forms.ListViewItem;
 
+/// <summary>
+/// Clase estatica de validaciones de input, conversion de tipo de dato para la generacion de excel.
+/// LogHelper permite mostrar el resultado de las transacciones y limpiar el log.
+/// </summary>
+
 namespace NLayer.Formularios
 {
     public static class Estaticas
@@ -25,16 +30,6 @@ namespace NLayer.Formularios
             }
             return mensaje;
         }
-        //public static void LimpiarTextBox(ControlCollection controls)
-        //{
-        //    foreach (Control a in controls)
-        //    {
-        //        if (a is TextBox && a.Enabled == true && ((TextBox)a).ReadOnly == false)
-        //        {
-        //            a.Text = string.Empty;
-        //        }
-        //    }
-        //}    
         
         public static List<string[]> ToList(this ListView listView)
         {
@@ -87,7 +82,5 @@ namespace NLayer.Formularios
         {
             lblResultado.Text = string.Empty;
         }
-
-
     }
 }

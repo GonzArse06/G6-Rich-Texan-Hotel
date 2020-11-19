@@ -14,10 +14,6 @@ namespace NLayer.Negocios
       
         public int IngresarCliente(Cliente item)
         {
-            //if (listaclientes.Any(o => o.Nombre == item.Nombre))
-            //{
-            //    throw new ReservasException("El cliente ya existe");
-            //}
             if (_listaclientes.Any(o => o.Dni == item.Dni))
             {
                 throw new ReservasException("El DNI se encuentra registrado");
