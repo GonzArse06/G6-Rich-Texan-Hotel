@@ -16,6 +16,7 @@ using NLayer.Negocios;
 /// - Panel Top: imagen de inicio, con funcion de boton de inicio que reestablece valores; una barra que permite mover el form; y unas imagenes que minimizan, maximizan y cierran el form.
 /// - Panel Izquierdo: botones con diseño que abre las transacciones
 /// - Panel Central: contenedor donde se abren los formularios de las transacciones. 
+/// instanciamos un objeto de hotel servicio que pasamos a los forms hijos para aprovechar la consulta de datos.
 /// </summary>
 
 namespace NLayer.Formularios
