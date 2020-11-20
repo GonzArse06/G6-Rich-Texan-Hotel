@@ -70,10 +70,10 @@ namespace NLayer.Formularios
                 _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
                 _listViewItem.SubItems.Add(categoria);
                 _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
-                _listViewItem.SubItems.Add(precio.ToString());
+                _listViewItem.SubItems.Add(string.Format("{0:c}", precio));
 
             }
-            txtImporteTotal.Text = PrecioFinal.ToString();
+            txtImporteTotal.Text = string.Format("{0:c}", PrecioFinal);
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {

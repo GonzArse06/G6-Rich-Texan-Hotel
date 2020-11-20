@@ -39,6 +39,12 @@ namespace NLayer.Negocios
 
             var reservas = _listaReservas.Where(o => o.IdHabitacion == reserva.IdHabitacion);
             var cliente = _listaclientes.FirstOrDefault(o => o.Id == reserva.IdCliente);
+
+            if (cliente == null)
+            {
+                throw new ReservasException("El cliente no existe.");
+            }
+
             for (DateTime i = reserva.FechaIngreso; i <= reserva.FechaEgreso; i= i.AddDays(1))
             {
                 if (reservas.Where( t => i >= t.FechaIngreso & i < t.FechaEgreso).Any())

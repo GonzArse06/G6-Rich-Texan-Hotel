@@ -46,7 +46,7 @@ namespace NLayer.Formularios
                     _listViewItem.SubItems.Add(a.Categoria);
                     _listViewItem.SubItems.Add(a.CantidadPlazas.ToString());
                     _listViewItem.SubItems.Add(a.CancelableTexto);
-                    _listViewItem.SubItems.Add(a.Precio.ToString());
+                    _listViewItem.SubItems.Add(string.Format("{0:c}", a.Precio));
                 }
             }
             catch (Exception ex)

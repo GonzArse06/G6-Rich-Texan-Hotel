@@ -42,11 +42,11 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.lblDNI = new System.Windows.Forms.Label();
+            this.txtApellido = new NLayer.Formularios.TextoOnlyString();
             this.txtNombre = new NLayer.Formularios.TextoOnlyString();
             this.txtTelefono = new NLayer.Formularios.TextoNumerico();
             this.txtDni = new NLayer.Formularios.TextoNumerico();
             this.txtIdCliente = new NLayer.Formularios.TextoNumerico();
-            this.txtApellido = new NLayer.Formularios.TextoOnlyString();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(319, 29);
-            this.txtDireccion.TabIndex = 6;
+            this.txtDireccion.TabIndex = 5;
             // 
             // txtMail
             // 
@@ -76,7 +76,7 @@
             this.txtMail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(319, 29);
-            this.txtMail.TabIndex = 8;
+            this.txtMail.TabIndex = 7;
             // 
             // lblNombre
             // 
@@ -143,7 +143,7 @@
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 16);
+            this.lblResultado.Size = new System.Drawing.Size(0, 22);
             // 
             // btnBuscarCliente
             // 
@@ -171,7 +171,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(156, 53);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 53);
-            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -206,13 +206,21 @@
             this.lblDNI.TabIndex = 18;
             this.lblDNI.Text = "DNI";
             // 
+            // txtApellido
+            // 
+            this.txtApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(203, 129);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(318, 29);
+            this.txtApellido.TabIndex = 4;
+            // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(203, 94);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(318, 29);
-            this.txtNombre.TabIndex = 19;
+            this.txtNombre.TabIndex = 3;
             // 
             // txtTelefono
             // 
@@ -221,7 +229,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(319, 30);
-            this.txtTelefono.TabIndex = 7;
+            this.txtTelefono.TabIndex = 6;
             // 
             // txtDni
             // 
@@ -230,7 +238,7 @@
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(257, 30);
-            this.txtDni.TabIndex = 3;
+            this.txtDni.TabIndex = 2;
             // 
             // txtIdCliente
             // 
@@ -242,14 +250,6 @@
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(204, 30);
             this.txtIdCliente.TabIndex = 1;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(203, 129);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(318, 29);
-            this.txtApellido.TabIndex = 20;
             // 
             // FrmAbmClientes
             // 

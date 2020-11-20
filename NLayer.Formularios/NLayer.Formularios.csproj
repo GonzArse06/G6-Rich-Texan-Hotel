@@ -136,6 +136,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextoMoneda.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextoMoneda.Designer.cs">
+      <DependentUpon>TextoMoneda.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextoOnlyString.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -33,6 +33,7 @@
             this.chFechaIngreso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFechaEgreso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chHabitacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCantidadHuespedes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ChPrecio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtIdCliente = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.lblImporteTotal = new System.Windows.Forms.Label();
             this.txtImporteTotal = new System.Windows.Forms.TextBox();
             this.btnEjecutar = new FontAwesome.Sharp.IconButton();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,10 +66,10 @@
             this.ChPrecio});
             this.lstReporte.FullRowSelect = true;
             this.lstReporte.HideSelection = false;
-            this.lstReporte.Location = new System.Drawing.Point(21, 79);
-            this.lstReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstReporte.Location = new System.Drawing.Point(28, 97);
+            this.lstReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstReporte.Name = "lstReporte";
-            this.lstReporte.Size = new System.Drawing.Size(780, 249);
+            this.lstReporte.Size = new System.Drawing.Size(1039, 306);
             this.lstReporte.TabIndex = 4;
             this.lstReporte.UseCompatibleStateImageBehavior = false;
             this.lstReporte.View = System.Windows.Forms.View.Details;
@@ -88,12 +88,17 @@
             // chFechaEgreso
             // 
             this.chFechaEgreso.Text = "Fecha de Egreso";
-            this.chFechaEgreso.Width = 120;
+            this.chFechaEgreso.Width = 129;
             // 
             // chHabitacion
             // 
-            this.chHabitacion.Text = "Nro Habitacion";
+            this.chHabitacion.Text = "Id Habitacion";
             this.chHabitacion.Width = 159;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Categoria";
+            this.columnHeader1.Width = 98;
             // 
             // chCantidadHuespedes
             // 
@@ -108,28 +113,28 @@
             // txtIdCliente
             // 
             this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdCliente.Location = new System.Drawing.Point(83, 9);
-            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdCliente.Location = new System.Drawing.Point(111, 11);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(121, 25);
-            this.txtIdCliente.TabIndex = 5;
+            this.txtIdCliente.Size = new System.Drawing.Size(160, 29);
+            this.txtIdCliente.TabIndex = 1;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 441);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 548);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(828, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1104, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 17);
+            this.lblResultado.Size = new System.Drawing.Size(0, 16);
             // 
             // btnCerrar
             // 
@@ -138,10 +143,10 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(761, 9);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(1015, 11);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(40, 31);
+            this.btnCerrar.Size = new System.Drawing.Size(53, 38);
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -152,11 +157,11 @@
             this.btnExportarExcel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExportarExcel.IconColor = System.Drawing.Color.Black;
             this.btnExportarExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportarExcel.Location = new System.Drawing.Point(637, 345);
-            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportarExcel.Location = new System.Drawing.Point(849, 425);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Size = new System.Drawing.Size(164, 50);
-            this.btnExportarExcel.TabIndex = 11;
+            this.btnExportarExcel.Size = new System.Drawing.Size(219, 62);
+            this.btnExportarExcel.TabIndex = 4;
             this.btnExportarExcel.Text = "EXPORTAR A EXCEL";
             this.btnExportarExcel.UseVisualStyleBackColor = true;
             this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
@@ -164,20 +169,18 @@
             // lblIidCliente
             // 
             this.lblIidCliente.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIidCliente.Location = new System.Drawing.Point(9, 11);
-            this.lblIidCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIidCliente.Location = new System.Drawing.Point(12, 14);
             this.lblIidCliente.Name = "lblIidCliente";
-            this.lblIidCliente.Size = new System.Drawing.Size(70, 19);
+            this.lblIidCliente.Size = new System.Drawing.Size(93, 23);
             this.lblIidCliente.TabIndex = 25;
             this.lblIidCliente.Text = "Id Cliente";
             // 
             // lblNombre
             // 
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(9, 38);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(12, 50);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(70, 19);
+            this.lblNombre.Size = new System.Drawing.Size(93, 23);
             this.lblNombre.TabIndex = 27;
             this.lblNombre.Text = "Nombre";
             // 
@@ -185,10 +188,10 @@
             // 
             this.txtNombreCliente.Enabled = false;
             this.txtNombreCliente.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCliente.Location = new System.Drawing.Point(83, 36);
-            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreCliente.Location = new System.Drawing.Point(111, 50);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(158, 25);
+            this.txtNombreCliente.Size = new System.Drawing.Size(209, 29);
             this.txtNombreCliente.TabIndex = 26;
             // 
             // btnBuscar
@@ -197,21 +200,20 @@
             this.btnBuscar.IconColor = System.Drawing.Color.CornflowerBlue;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(208, 8);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(277, 10);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(33, 26);
-            this.btnBuscar.TabIndex = 28;
+            this.btnBuscar.Size = new System.Drawing.Size(44, 32);
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblImporteTotal
             // 
             this.lblImporteTotal.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImporteTotal.Location = new System.Drawing.Point(248, 41);
-            this.lblImporteTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblImporteTotal.Location = new System.Drawing.Point(330, 50);
             this.lblImporteTotal.Name = "lblImporteTotal";
-            this.lblImporteTotal.Size = new System.Drawing.Size(92, 19);
+            this.lblImporteTotal.Size = new System.Drawing.Size(123, 23);
             this.lblImporteTotal.TabIndex = 30;
             this.lblImporteTotal.Text = "Importe Total";
             // 
@@ -219,10 +221,10 @@
             // 
             this.txtImporteTotal.Enabled = false;
             this.txtImporteTotal.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImporteTotal.Location = new System.Drawing.Point(344, 38);
-            this.txtImporteTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtImporteTotal.Location = new System.Drawing.Point(459, 50);
+            this.txtImporteTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImporteTotal.Name = "txtImporteTotal";
-            this.txtImporteTotal.Size = new System.Drawing.Size(121, 25);
+            this.txtImporteTotal.Size = new System.Drawing.Size(160, 29);
             this.txtImporteTotal.TabIndex = 29;
             // 
             // btnEjecutar
@@ -231,24 +233,20 @@
             this.btnEjecutar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEjecutar.IconColor = System.Drawing.Color.Black;
             this.btnEjecutar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEjecutar.Location = new System.Drawing.Point(344, 6);
-            this.btnEjecutar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEjecutar.Location = new System.Drawing.Point(459, 7);
+            this.btnEjecutar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEjecutar.Name = "btnEjecutar";
-            this.btnEjecutar.Size = new System.Drawing.Size(121, 24);
-            this.btnEjecutar.TabIndex = 31;
+            this.btnEjecutar.Size = new System.Drawing.Size(161, 30);
+            this.btnEjecutar.TabIndex = 3;
             this.btnEjecutar.Text = "Ejecutar";
             this.btnEjecutar.UseVisualStyleBackColor = true;
             this.btnEjecutar.Click += new System.EventHandler(this.btnEjecutar_Click);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Categoria";
-            // 
             // FrmReporteReservas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 463);
+            this.ClientSize = new System.Drawing.Size(1104, 570);
             this.Controls.Add(this.btnEjecutar);
             this.Controls.Add(this.lblImporteTotal);
             this.Controls.Add(this.txtImporteTotal);
@@ -261,7 +259,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.lstReporte);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmReporteReservas";
             this.Text = "Reporte de Reservas";
             this.statusStrip1.ResumeLayout(false);

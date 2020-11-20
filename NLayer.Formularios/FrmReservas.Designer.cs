@@ -80,7 +80,7 @@
             // chIdHabitacion
             // 
             this.chIdHabitacion.Text = "idHabitacion";
-            this.chIdHabitacion.Width = 84;
+            this.chIdHabitacion.Width = 90;
             // 
             // chIdCliente
             // 

@@ -145,7 +145,7 @@
             // 
             // dtFechaIngreso
             // 
-            this.dtFechaIngreso.CalendarFont = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaIngreso.CalendarFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaIngreso.Location = new System.Drawing.Point(237, 226);
             this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -155,7 +155,7 @@
             // 
             // dtFechaEgreso
             // 
-            this.dtFechaEgreso.CalendarFont = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaEgreso.CalendarFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaEgreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtFechaEgreso.Location = new System.Drawing.Point(237, 265);
             this.dtFechaEgreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -201,39 +201,34 @@
             // 
             this.txtNroHuespedes.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroHuespedes.Location = new System.Drawing.Point(237, 185);
-            this.txtNroHuespedes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNroHuespedes.Margin = new System.Windows.Forms.Padding(4);
             this.txtNroHuespedes.Name = "txtNroHuespedes";
             this.txtNroHuespedes.Size = new System.Drawing.Size(171, 30);
             this.txtNroHuespedes.TabIndex = 8;
             // 
             // txtIdHabitacion
             // 
-            this.txtIdHabitacion.Enabled = false;
             this.txtIdHabitacion.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHabitacion.Location = new System.Drawing.Point(237, 145);
-            this.txtIdHabitacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdHabitacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHabitacion.Name = "txtIdHabitacion";
-            this.txtIdHabitacion.ReadOnly = true;
             this.txtIdHabitacion.Size = new System.Drawing.Size(171, 30);
             this.txtIdHabitacion.TabIndex = 6;
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCliente.Location = new System.Drawing.Point(237, 106);
-            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(171, 30);
             this.txtIdCliente.TabIndex = 4;
             // 
             // txtIdHotel
             // 
-            this.txtIdHotel.Enabled = false;
             this.txtIdHotel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdHotel.Location = new System.Drawing.Point(237, 66);
-            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdHotel.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdHotel.Name = "txtIdHotel";
             this.txtIdHotel.ReadOnly = true;
             this.txtIdHotel.Size = new System.Drawing.Size(171, 30);
@@ -244,7 +239,7 @@
             this.txtIdReserva.Enabled = false;
             this.txtIdReserva.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdReserva.Location = new System.Drawing.Point(237, 27);
-            this.txtIdReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdReserva.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdReserva.Name = "txtIdReserva";
             this.txtIdReserva.ReadOnly = true;
             this.txtIdReserva.Size = new System.Drawing.Size(171, 30);
@@ -266,6 +261,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -284,6 +280,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmAbmReservas
             // 
