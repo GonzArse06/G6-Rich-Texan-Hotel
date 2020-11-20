@@ -86,11 +86,6 @@ namespace NLayer.Datos
             var lst = JsonConvert.DeserializeObject<T>(json);
             return lst;
         }
-        //public Cliente TraerPorCodigo(int codigo)
-        //{
-        //    string json2 = WebHelper.Get("/api/v1/cliente/" + codigo.ToString()); // trae un texto en formato json de una web
-        //    Cliente resultado = MapObj(json2);
-        //    return resultado;
-        //}
+
     }
 }

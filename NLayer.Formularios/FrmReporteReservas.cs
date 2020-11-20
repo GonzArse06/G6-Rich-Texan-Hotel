@@ -25,6 +25,7 @@ namespace NLayer.Formularios
         List<Habitacion> _LstHabitacion;
         List<Reserva> _LstReservas;
         ListViewItem _listViewItem;
+
         public FrmReporteReservas(HotelServicios serv)
         {
             InitializeComponent();
@@ -48,27 +49,31 @@ namespace NLayer.Formularios
         private void CargarListView(int idCliente)
         {
             double PrecioFinal = 0;
-            foreach (Reserva a in _LstReservas)
+       
+            foreach (Reserva a in _LstReservas.Where(o => o.IdCliente == idCliente))
             {
-                if(a.IdCliente == idCliente)
-                { 
-                    TimeSpan dias = a.FechaEgreso - a.FechaIngreso;
-                    int days = dias.Days;
-                    Habitacion habitacion = _LstHabitacion.SingleOrDefault(x => x.Id == a.IdHabitacion);
-                    if (habitacion != null) 
-                    {
-                        double precio = habitacion.Precio * days;
-                        PrecioFinal += precio;
-                        _listViewItem = lstReporte.Items.Add(a.Id.ToString());
-                        _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
-                        _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
-                        _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
-                        _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
-                        _listViewItem.SubItems.Add(precio.ToString());
-                    }
-                    txtImporteTotal.Text = PrecioFinal.ToString();
-                }                
+                double precio = 0;
+               
+
+                Habitacion habitacion = _LstHabitacion.SingleOrDefault(x => x.Id == a.IdHabitacion);
+                string categoria = habitacion == null? string.Empty: habitacion.Categoria;
+                if (habitacion != null && habitacion.Precio > 0) 
+                {
+                    int days = (a.FechaEgreso - a.FechaIngreso).Days;
+                    precio = habitacion.Precio * days;
+                    PrecioFinal += precio;
+                }
+
+                _listViewItem = lstReporte.Items.Add(a.Id.ToString());
+                _listViewItem.SubItems.Add(a.FechaIngreso.ToString("d"));
+                _listViewItem.SubItems.Add(a.FechaEgreso.ToString("d"));
+                _listViewItem.SubItems.Add(a.IdHabitacion.ToString());
+                _listViewItem.SubItems.Add(categoria);
+                _listViewItem.SubItems.Add(a.CantidadHuespedes.ToString());
+                _listViewItem.SubItems.Add(precio.ToString());
+
             }
+            txtImporteTotal.Text = PrecioFinal.ToString();
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -149,6 +154,11 @@ namespace NLayer.Formularios
                 LogHelper.LogResultado(lblResultado, false, ex.Message);
             }
            
+        }
+
+        private void lstReporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
