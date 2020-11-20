@@ -56,7 +56,8 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
             {
                 reserva.Id = resultado.Id;
-                EnviarMail(reserva, cliente.Email);
+
+                SendMailAsync(reserva, cliente.Email);
                 ReservaCache();
                 return resultado.Id;
             }
@@ -94,7 +95,7 @@ namespace NLayer.Negocios
             if (resultado.IsOk)
             {
                 reserva.Id = resultado.Id;
-                EnviarMail(reserva, cliente.Email);
+                SendMailAsync(reserva, cliente.Email);
                 ReservaCache();
                 return resultado.Id;
             }
@@ -136,6 +137,22 @@ namespace NLayer.Negocios
 
             string message = string.Format("Bienvenido, <br>a continuacion los datos de la reserva: <br><br>Cliente: {3}<br>Habitacion: {2}<br>Fechas: {0} - {1}<br><br>Saludos cordiales,<br><b>Rich Texan Hotel</b>", item.FechaIngreso.ToShortDateString(), item.FechaEgreso.ToShortDateString(), item.IdHabitacion, item.IdCliente);
             ClienteMapper.EnviarMail(mail, asunto, message);
+        }
+
+        /// <summary>
+        /// Se manda el mail y no espero la respuesta del enviado OK
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="mail"></param>
+        private void SendMailAsync(Reserva item, string mail)
+        {
+            string asunto = "Su reserva No. " + item.Id + " en Rich Texan Hotel";
+
+            string message = string.Format("Bienvenido, <br>a continuacion los datos de la reserva: <br><br>Cliente: {3}<br>Habitacion: {2}<br>Fechas: {0} - {1}<br><br>Saludos cordiales,<br><b>Rich Texan Hotel</b>", item.FechaIngreso.ToShortDateString(), item.FechaEgreso.ToShortDateString(), item.IdHabitacion, item.IdCliente);
+
+            ClienteMapper.EnviarMailAsync(mail, asunto, message);
+            //...do something with the Customer object asynchronously
+        
         }
     }
 }

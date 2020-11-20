@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Text;
-
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NLayer.Entidades;
 
@@ -12,6 +12,21 @@ namespace NLayer.Datos
     public class ClienteMapper
     {
 
+        /// <summary>
+        /// Lo hago sincronico para que tarde menos. si no se manda no me importa
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <param name="asunto"></param>
+        /// <param name="mensaje"></param>
+        public static void EnviarMailAsync(string mail, string asunto, string mensaje)
+        {
+            NameValueCollection n = new NameValueCollection();
+            n.Add("Para", mail);
+            n.Add("Asunto", asunto);
+            n.Add("Mensaje", mensaje);
+            WebHelper.PostAsync("/Utilidades", n);
+
+        }
         public static TransactionResult EnviarMail(string mail, string asunto, string mensaje)
         {
             NameValueCollection n = new NameValueCollection();

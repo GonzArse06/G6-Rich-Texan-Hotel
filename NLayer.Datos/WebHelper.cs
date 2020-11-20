@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 /// <summary>
 /// WebHelper con Get, Post, Update, Delete.
@@ -59,6 +60,28 @@ namespace NLayer.Datos
 
         }
 
+        public static async Task<string> PostAsync(string url, NameValueCollection parametros)
+        {
+            Uri uri = new Uri(_rutaBase + url);
+
+            //creo otra instancia para que no me bloquee los demas pedidos
+            using (WebClient asynClient = new WebClient())
+            {
+                try
+                {
+                    asynClient.UploadValuesAsync(uri, parametros);
+
+                    return "{ \"isOk\":true,\"id\":0,\"error\":''}";
+                }
+                catch (Exception ex)
+                {
+                    return "{ \"isOk\":false,\"id\":-1,\"error\":'" + ex.Message + "'}";
+                }
+            }    
+
+
+        }
+
         public static string Delete(string url, NameValueCollection parametros)
         {
             string uri = _rutaBase + url;
@@ -72,7 +95,6 @@ namespace NLayer.Datos
             {
                 return "{ \"isOk\":false,\"id\":-1,\"error\":'" + ex.Message + "'}";
             }
-
 
         }
 

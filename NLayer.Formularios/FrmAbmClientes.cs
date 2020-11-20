@@ -41,20 +41,20 @@ namespace NLayer.Formularios
         }
         private void InicializarAlta()
         {
-            txtIdCliente.Enabled = false;
-            btnBuscarCliente.Visible = false;
+            //txtIdCliente.Enabled = false;
+            //btnBuscarCliente.Visible = false;
             Text = "Nuevo Cliente";
         }
 
         private void InicializarModificacion()
         {
-            txtIdCliente.Enabled = false;
-            btnBuscarCliente.Visible = false;
+            //txtIdCliente.Enabled = false;
+            //btnBuscarCliente.Visible = false;
             Text = "Modificar Cliente";
         }
         private void Guardar()
         {
-            lblResultado.Text = "";
+            //lblResultado.Text = "";
            
             string mensaje = Estaticas.Validaciones(Controls);
 
