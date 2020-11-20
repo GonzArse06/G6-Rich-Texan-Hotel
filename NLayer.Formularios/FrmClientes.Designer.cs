@@ -41,7 +41,6 @@
             this.chMail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chTelefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFechaAlta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtBuscador = new System.Windows.Forms.TextBox();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
@@ -173,17 +172,6 @@
             this.chFechaAlta.Text = "Fecha Alta";
             this.chFechaAlta.Width = 119;
             // 
-            // txtBuscador
-            // 
-            this.txtBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscador.Location = new System.Drawing.Point(12, 38);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(572, 22);
-            this.txtBuscador.TabIndex = 5;
-            this.txtBuscador.Visible = false;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,17 +192,17 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 636);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 634);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1133, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1133, 24);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblResultado
             // 
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 16);
+            this.lblResultado.Size = new System.Drawing.Size(0, 18);
             // 
             // FrmClientes
             // 
@@ -223,7 +211,6 @@
             this.ClientSize = new System.Drawing.Size(1133, 658);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.lstClientes);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnEliminar);
@@ -247,7 +234,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnExportarExcel;
         private System.Windows.Forms.ListView lstClientes;
-        private System.Windows.Forms.TextBox txtBuscador;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.ColumnHeader chId;
         private System.Windows.Forms.ColumnHeader chNombre;

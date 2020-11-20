@@ -60,11 +60,11 @@ namespace NLayer.Formularios
 
             if (mensaje != "")
             {
-                MessageBox.Show(mensaje);
+                MessageBox.Show(mensaje,"Datos invalidos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if (!ValidationHelper.IsValidEmail(txtMail.Text))
             {
-                MessageBox.Show("Email invalido");
+                MessageBox.Show("Email invalido", "Datos invalidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

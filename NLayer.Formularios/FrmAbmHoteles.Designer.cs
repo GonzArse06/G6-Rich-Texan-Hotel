@@ -30,7 +30,6 @@
         {
             this.lblIidHotel = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblAmenities = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.txtIdHotel = new NLayer.Formularios.TextoNumerico();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.txtNombre = new NLayer.Formularios.TextoOnlyString();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuEstrellas)).BeginInit();
             this.SuspendLayout();
@@ -65,15 +65,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(263, 29);
             this.txtDireccion.TabIndex = 3;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(196, 69);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(263, 29);
-            this.txtNombre.TabIndex = 2;
             // 
             // lblNombre
             // 
@@ -227,11 +218,20 @@
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Calibri", 11.25F);
+            this.txtNombre.Location = new System.Drawing.Point(196, 68);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(264, 30);
+            this.txtNombre.TabIndex = 23;
+            // 
             // FrmAbmHoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 347);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtIdHotel);
@@ -244,7 +244,6 @@
             this.Controls.Add(this.lblAmenities);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblIidHotel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -272,11 +271,11 @@
         private System.Windows.Forms.ToolStripStatusLabel lblResultado;
         private FontAwesome.Sharp.IconButton btnBuscarHotel;
         public System.Windows.Forms.TextBox txtDireccion;
-        public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.CheckBox cbAmenities;
         public System.Windows.Forms.NumericUpDown nuEstrellas;
         public TextoNumerico txtIdHotel;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
+        public TextoOnlyString txtNombre;
     }
 }

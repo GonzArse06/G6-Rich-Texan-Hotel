@@ -34,7 +34,6 @@
             this.chDireccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chAmenities = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ChEstrellas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtBuscador = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
@@ -91,15 +90,6 @@
             // 
             this.ChEstrellas.Text = "Estrellas";
             this.ChEstrellas.Width = 128;
-            // 
-            // txtBuscador
-            // 
-            this.txtBuscador.Location = new System.Drawing.Point(12, 38);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(600, 22);
-            this.txtBuscador.TabIndex = 5;
-            this.txtBuscador.Visible = false;
             // 
             // statusStrip1
             // 
@@ -204,7 +194,6 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.lstHoteles);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmHoteles";
@@ -219,7 +208,6 @@
 
         #endregion
         private System.Windows.Forms.ListView lstHoteles;
-        private System.Windows.Forms.TextBox txtBuscador;
         private System.Windows.Forms.ColumnHeader chId;
         private System.Windows.Forms.ColumnHeader chNombre;
         private System.Windows.Forms.ColumnHeader chDireccion;

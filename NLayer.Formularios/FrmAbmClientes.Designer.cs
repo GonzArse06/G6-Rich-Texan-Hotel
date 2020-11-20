@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.lblIdCliente = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -44,9 +42,11 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.lblDNI = new System.Windows.Forms.Label();
+            this.txtNombre = new NLayer.Formularios.TextoOnlyString();
             this.txtTelefono = new NLayer.Formularios.TextoNumerico();
             this.txtDni = new NLayer.Formularios.TextoNumerico();
             this.txtIdCliente = new NLayer.Formularios.TextoNumerico();
+            this.txtApellido = new NLayer.Formularios.TextoOnlyString();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,15 +59,6 @@
             this.lblIdCliente.Size = new System.Drawing.Size(82, 23);
             this.lblIdCliente.TabIndex = 0;
             this.lblIdCliente.Text = "Id Cliente";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(203, 126);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(319, 29);
-            this.txtApellido.TabIndex = 5;
             // 
             // txtDireccion
             // 
@@ -86,15 +77,6 @@
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(319, 29);
             this.txtMail.TabIndex = 8;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(203, 91);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(319, 29);
-            this.txtNombre.TabIndex = 4;
             // 
             // lblNombre
             // 
@@ -151,10 +133,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblResultado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 396);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 387);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(584, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(581, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -224,11 +206,19 @@
             this.lblDNI.TabIndex = 18;
             this.lblDNI.Text = "DNI";
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(203, 94);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(318, 29);
+            this.txtNombre.TabIndex = 19;
+            // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(203, 197);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(319, 30);
             this.txtTelefono.TabIndex = 7;
@@ -237,7 +227,7 @@
             // 
             this.txtDni.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDni.Location = new System.Drawing.Point(203, 57);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(257, 30);
             this.txtDni.TabIndex = 3;
@@ -247,17 +237,27 @@
             this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCliente.Location = new System.Drawing.Point(203, 20);
-            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(204, 30);
             this.txtIdCliente.TabIndex = 1;
             // 
+            // txtApellido
+            // 
+            this.txtApellido.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(203, 129);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(318, 29);
+            this.txtApellido.TabIndex = 20;
+            // 
             // FrmAbmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 418);
+            this.ClientSize = new System.Drawing.Size(581, 409);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.txtIdCliente);
@@ -271,10 +271,8 @@
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.lblIdCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -302,13 +300,13 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnBuscarCliente;
-        public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtDireccion;
         public System.Windows.Forms.TextBox txtMail;
-        public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblDNI;
         public TextoNumerico txtIdCliente;
         public TextoNumerico txtDni;
         public TextoNumerico txtTelefono;
+        public TextoOnlyString txtNombre;
+        public TextoOnlyString txtApellido;
     }
 }

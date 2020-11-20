@@ -24,7 +24,7 @@ namespace NLayer.Formularios
                 if (a is TextBox && a.Enabled == true && ((TextBox) a).ReadOnly == false )
                 {
                     if (string.IsNullOrEmpty(a.Text))
-                       return "Hay campos vacios. Revisar!";
+                       return "Existen campos sin datos. Reintente";
                 }
             }
             return string.Empty;

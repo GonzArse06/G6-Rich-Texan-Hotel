@@ -37,7 +37,6 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblResultado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnBuscarHaitacion = new FontAwesome.Sharp.IconButton();
             this.cbCancelable = new System.Windows.Forms.CheckBox();
             this.lblIidHotel = new System.Windows.Forms.Label();
             this.txtCantidadPlazas = new NLayer.Formularios.TextoNumerico();
@@ -131,20 +130,6 @@
             // 
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 16);
-            // 
-            // btnBuscarHaitacion
-            // 
-            this.btnBuscarHaitacion.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscarHaitacion.IconColor = System.Drawing.Color.CornflowerBlue;
-            this.btnBuscarHaitacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscarHaitacion.IconSize = 18;
-            this.btnBuscarHaitacion.Location = new System.Drawing.Point(405, 63);
-            this.btnBuscarHaitacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscarHaitacion.Name = "btnBuscarHaitacion";
-            this.btnBuscarHaitacion.Size = new System.Drawing.Size(44, 32);
-            this.btnBuscarHaitacion.TabIndex = 20;
-            this.btnBuscarHaitacion.UseVisualStyleBackColor = true;
-            this.btnBuscarHaitacion.Visible = false;
             // 
             // cbCancelable
             // 
@@ -246,7 +231,6 @@
             this.Controls.Add(this.txtIdHotel);
             this.Controls.Add(this.lblIidHotel);
             this.Controls.Add(this.cbCancelable);
-            this.Controls.Add(this.btnBuscarHaitacion);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCancelable);
@@ -278,7 +262,6 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblResultado;
-        private FontAwesome.Sharp.IconButton btnBuscarHaitacion;
         public System.Windows.Forms.TextBox txtPrecio;
         public System.Windows.Forms.TextBox txtCategoria;
         public System.Windows.Forms.CheckBox cbCancelable;

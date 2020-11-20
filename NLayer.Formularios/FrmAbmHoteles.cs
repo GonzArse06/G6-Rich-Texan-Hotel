@@ -53,7 +53,7 @@ namespace NLayer.Formularios
             Hotel hotel = new Hotel();
             string mensaje = Estaticas.Validaciones(Controls);
             if (mensaje != "")
-                MessageBox.Show(mensaje);
+                MessageBox.Show(mensaje,"Datos invalidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 try

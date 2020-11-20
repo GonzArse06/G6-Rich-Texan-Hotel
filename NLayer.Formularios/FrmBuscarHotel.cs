@@ -39,7 +39,7 @@ namespace NLayer.Formularios
         {
             if (listBox1.SelectedIndex < 0)
             {
-                MessageBox.Show("Seleccione una opcion.");
+                MessageBox.Show("Seleccione una opcion.","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
