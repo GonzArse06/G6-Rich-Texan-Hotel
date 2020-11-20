@@ -100,10 +100,11 @@ namespace NLayer.Formularios
             LogHelper.LimpiarLog(lblResultado);
             try
             {
-                int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
-                FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _hotelServicios);
+
                 if (lstReservas.SelectedItems.Count == 1)
                 {
+                    int idSeleccionado = ((Hotel)cbxHoteles.SelectedItem).Id;
+                    FrmAbmReservas formulario = new FrmAbmReservas(AbmTipo.Modificacion, idSeleccionado, _hotelServicios);
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
                     var ret = formulario.ShowDialog();

@@ -71,6 +71,7 @@ namespace NLayer.Formularios
                 _formularios = new FrmAbmHoteles(AbmTipo.Alta, _hotelServicios);
                 _formularios.Owner = this;
                 var ret = _formularios.ShowDialog();
+                //si se cancelo, no necesito refrescar la vista
                 if (ret != DialogResult.Cancel)
                 {
                     CargarListView();
@@ -86,9 +87,10 @@ namespace NLayer.Formularios
             LogHelper.LimpiarLog(lblResultado);
             try
             { 
-                FrmAbmHoteles formulario = new FrmAbmHoteles(AbmTipo.Modificacion, _hotelServicios);
+               
                 if (lstHoteles.SelectedItems.Count == 1)
                 {
+                    FrmAbmHoteles formulario = new FrmAbmHoteles(AbmTipo.Modificacion, _hotelServicios);
                     LlenarTextboxChild(formulario);
                     formulario.Owner = this;
                     var ret = formulario.ShowDialog();

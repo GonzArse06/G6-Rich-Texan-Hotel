@@ -95,13 +95,15 @@ namespace NLayer.Formularios
             LogHelper.LimpiarLog(lblResultado);
             try
             {
-                FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
-                formularios.Owner = this;
+                //FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
+                //formularios.Owner = this;
                 if (lstClientes.SelectedItems.Count == 1)
                 {
+                    FrmAbmClientes formularios = new FrmAbmClientes(AbmTipo.Modificacion, _clienteServicios);
                     LlenarTextboxChild(formularios);
                     formularios.Owner = this;
                     var ret = formularios.ShowDialog();
+                    //si se cancelo, no necesito refrescar la vista
                     if (ret != DialogResult.Cancel)
                     {
                         CargarListView();
